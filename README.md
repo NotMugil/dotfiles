@@ -1,1 +1,11 @@
-# hyprland-dotfiles
+- Operating System • [Arch Linux](https://archlinux.org)
+- Window Manager/DE • [Hyprland](https://hyprland.org/)
+- Terminal • [Kitty](https://github.com/kovidgoyal/kitty)
+- Shell • Bash
+- Panel • [Waybar](https://github.com/Alexays/Waybar)
+- Launcher • [Rofi](https://github.com/davatorium/rofi)
+- File Manager • [Thunar]()/[Ranger]()
+- Notification Daemon • [dunst](https://github.com/dunst-project/dunst)
+- Wallpaper Daemon • [swww](https://github.com/LGFae/swww)
+- Text Editor • [neovim](https://neovim.io/)
+- Colorscheme • [Catppuccin Mocha](https://github.com/catppuccin/catppuccin)
