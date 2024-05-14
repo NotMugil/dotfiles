@@ -33,13 +33,13 @@
 
   3. Finally, Installing the dotfiles
      
-  > Cloning the repository into your local system.
+    >Cloning the repository into your local system.
   ```bash
     cd && git clone https://github.com/NotMugil/dotfiles.git
     cd dotfiles
   ```
 
-  > Copy the configs to their respective directories. Make sure to backup your previous configs if needed. 
+    >Copy the configs to their respective directories. Make sure to backup your previous configs if needed. 
   ```bash
     cp -r config/* ~/.config/
     cp -r .bashrc ~/
