@@ -1,0 +1,33 @@
+@import "../themes/mocha.css";
+
+box#sys-tray {
+    margin-top: 6px;
+    margin-bottom: 6px;
+    padding-left: 10px;
+    background-color: @base;
+    /* border-radius: 2px; */
+    /* border: 2px solid alpha(@secondary-container,0.95); */
+}
+
+#backlight,
+#pulseaudio{
+    color: @lavender;
+}
+
+#backlight.text,
+#pulseaudio.text{
+    margin-left: 1px;
+    margin-right: 10px;
+    color: @lavender;
+}
+
+#battery{
+    color: @overlay2;
+    padding-right: 2px;
+}
+
+#battery.text{
+    margin-left: 1px;
+    margin-right: 10px;
+    color: @subtext1;
+}
