@@ -28,12 +28,26 @@
   2. Installing required dependencies     
     
    ```bash
-   yay -Sy hyprland-git
+   yay -Sy kitty nano rofi dunst waybar playerctl mpv grim slurp jq bc pamixer pavucontrol waybar-cava cava xdg-desktop-portal-hyprland wl-clipboard socat cliphist hyprpicker nm-connection-editor dictd wl-clip-persist-git blueberry bluez bluez-utils nwg-look wlogout ttf-space-mono-nerd brightnessctl neovim thunar ranger yazi catppuccin-gtk-theme-mocha nm-connection-editor btop nvtop fastfetch neofetch 
    ```
 
-  3. 
+  3. Finally, Installing the dotfiles
+     
+  Cloning the repository into your local system.
+  ```bash
+    cd && git clone https://github.com/NotMugil/dotfiles.git
+    cd dotfiles
+  ```
 
+  Copy the configs to their respective directories. Make sure to backup your previous configs if needed. 
+  ```bash
+    cp -r config/* ~/.config/
+    cp -r .bashrc ~/
+    mkdir ~/.wallpapers
+    cp -r wallpapers/* ~/.wallpapers/
+  ```
 
+Congratulations, you are done installing the configurations! 🎉 
 
 ### Known Issues
 - [ ] Network management GUI
@@ -42,6 +56,7 @@
 ### Tasks
 - [ ] More panel styles && panel selector
 - [ ] Symlink management
+- [ ] Wlogout configuration
 
 # Credits
 _Thanks a lot for [r/unixporn](https://www.reddit.com/r/unixporn/) community for inspiring me to do this._
