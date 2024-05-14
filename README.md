@@ -52,6 +52,7 @@ Congratulations, you are done installing the configurations! 🎉
 ### Known Issues
 - [ ] Network management GUI
 - [ ] Waybar bluetooth icon
+- [ ] rofi and wallpaper select only focuses after mouse movement
 
 ### Tasks
 - [ ] More panel styles && panel selector
