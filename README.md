@@ -17,7 +17,7 @@
 
 ### Manual Installation
   > [!NOTE]
-  > Assuming that your AUR helperis [yay.](https://github.com/Jguer/yay)
+  > Assuming that your AUR helper is [yay.](https://github.com/Jguer/yay)
   > To install yay on your arch based system, follow the instructions mentioned [here.](https://github.com/Jguer/yay?tab=readme-ov-file#installation) 
   1. Installing git version of Hyprland
      
