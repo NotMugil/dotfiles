@@ -74,9 +74,9 @@ Congratulations, you are done installing the configurations! 🎉
 - [ ] rofi and wallpaper select only focuses after mouse movement
 
 ### Tasks
-- [ ] More panel styles && panel selector
+- [x] Wlogout configuration
+- [x] More panel styles && panel selector
 - [ ] Symlink management
-- [ ] Wlogout configuration
 
 # Credits
 _Thanks a lot for [r/unixporn](https://www.reddit.com/r/unixporn/) community for inspiring me to do this._
