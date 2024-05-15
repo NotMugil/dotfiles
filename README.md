@@ -54,6 +54,10 @@ Congratulations, you are done installing the configurations! 🎉
 >[!NOTE] 
 > Images included in the gallery may contain some softwares which may not be included in the packages list or the configurations.
 
+| **Browser with Catppuccin theme **                       |
+| -------------------------------------------------------- |
+| ![gallery-1](.github/assets/browser2.png)                |
+
 | **Spotify-tui (Spicetified) & Audio Visualizer**         |
 | -------------------------------------------------------- |
 | ![gallery-1](.github/assets/cava_w_spoitfy.png)          |
