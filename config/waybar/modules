@@ -138,7 +138,7 @@
 
 	"custom/powermenu": {
 		"format": "⏻",
-		"on-click": "~/.config/hypr/scripts/wlogout.sh",
+		"on-click": "wlogout -b 5",
 		"tooltip": false,
 	},
 
