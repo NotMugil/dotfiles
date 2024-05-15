@@ -18,9 +18,9 @@ window {
     fullscreen:                  false;
     transparency:                "real";
     cursor:                      "default";
-    background-color:            #1E1D2Fb1;
+    background-color:            #1E1D2F4d;
     border:                      2px;
-    border-color:                @FGA;
+    border-color:                @BDR;
 }
 
 /* Elements ----------------------------------------------------- */
@@ -31,10 +31,10 @@ element alternate.normal {
 }
 
 element selected.normal {
-    background-color:            @FGA;
+    background-color:            #1E1E2E99;
     text-color:                  white;
     border:                      1px solid;
-    border-color:                @selected;
+    border-color:                @BDR;
 }
 
 element-text {
