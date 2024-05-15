@@ -62,6 +62,8 @@ Congratulations, you are done installing the configurations! 🎉
 | -------------------------------------------------------- |
 | ![gallery-1](.github/assets/wallselect.png)              |
 
+## 💻 Development
+
 ### Known Issues
 - [ ] Network management GUI
 - [ ] Waybar bluetooth icon
