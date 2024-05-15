@@ -49,6 +49,19 @@
 
 Congratulations, you are done installing the configurations! 🎉 
 
+
+## 🖼️ Gallery
+>[!NOTE] 
+> Images included in the gallery may contain some softwares which may not be included in the packages list or the configurations.
+
+| **Spotify-tui (Spicetified) & Audio Visualizer**         |
+| -------------------------------------------------------- |
+| ![gallery-1](.github/assets/cava_w_spoitfy.png)          |
+
+| **Wallpaper Selector**                                   |
+| -------------------------------------------------------- |
+| ![gallery-1](.github/assets/wallselect.png)              |
+
 ### Known Issues
 - [ ] Network management GUI
 - [ ] Waybar bluetooth icon
