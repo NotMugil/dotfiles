@@ -58,10 +58,6 @@ Congratulations, you are done installing the configurations! 🎉
 | -------------------------------------------------------- |
 | ![gallery-1](.github/assets/file_manager_tui.png)        |
 
-|  **Lockscreen**                                          |
-| -------------------------------------------------------- |
-| ![gallery-1](.github/assets/hyprlock.png)                |
-
 | **Browser with Catppuccin theme**                        |
 | -------------------------------------------------------- |
 | ![gallery-1](.github/assets/browser2.png)                |
@@ -73,6 +69,10 @@ Congratulations, you are done installing the configurations! 🎉
 | **Wallpaper Selector**                                   |
 | -------------------------------------------------------- |
 | ![gallery-1](.github/assets/wallselect.png)              |
+
+|  **Lockscreen**                                          |
+| -------------------------------------------------------- |
+| ![gallery-1](.github/assets/hyprlock.png)                |
 
 ## 💻 Development
 
