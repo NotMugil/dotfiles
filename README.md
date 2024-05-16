@@ -54,6 +54,14 @@ Congratulations, you are done installing the configurations! 🎉
 >[!NOTE] 
 > Images included in the gallery may contain some softwares which may not be included in the packages list or the configurations.
 
+| **File Manger TUI & Terminal Clock**                     |
+| -------------------------------------------------------- |
+| ![gallery-1](.github/assets/file_manager_tui.png)        |
+
+|  **Lockscreen**                                          |
+| -------------------------------------------------------- |
+| ![gallery-1](.github/assets/hyprlock.png)                |
+
 | **Browser with Catppuccin theme**                        |
 | -------------------------------------------------------- |
 | ![gallery-1](.github/assets/browser2.png)                |
