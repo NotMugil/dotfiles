@@ -77,6 +77,11 @@ window#waybar {
 #bluetooth,
 #network{
     color: @subtext1;
+    margin: 0 6px;
+}
+
+#network {
+    margin-right: 10px;
 }
 
 tooltip {
