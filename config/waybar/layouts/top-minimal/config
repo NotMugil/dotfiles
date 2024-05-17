@@ -24,9 +24,7 @@
 
 	"modules-right": [
 		"bluetooth",
-		"custom/dot",
 		"network",
-		"custom/dot",
 		"group/sys-tray",
 		"clock",
 		"custom/powermenu"
