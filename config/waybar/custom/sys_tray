@@ -1,5 +1,4 @@
 {
-
     "group/sys-tray": {
         "orientation": "horizontal",
         "modules": [

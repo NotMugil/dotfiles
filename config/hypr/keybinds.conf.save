@@ -9,7 +9,7 @@ $mainMod = SUPER
 $terminal = kitty
 $browser = firefox
 $fileManager = thunar
-$menu = rofi -show drun -config ~/.config/rofi/launcher.rasi
+$menu = rofi -show drun 
 
 # Common Keybinds
 bind = $mainMod, Q, killactive,				#kill active window

@@ -1,3 +1,11 @@
 #!/bin/bash
 
-killall waybar && waybar -c ~/.config/waybar/config -s ~/.config/waybar/config.css    #toggle waybar
+waybar_config="$HOME/.config/waybar/config"
+waybar_style="$HOME/.config/waybar/config.css"
+
+if [ "$(pgrep -x "waybar")" ]; then
+	killall waybar && waybar -c $waybar_config -s $waybar_style
+else
+	waybar -c $waybar_config -s $waybar_style
+fi
+

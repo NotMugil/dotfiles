@@ -43,7 +43,40 @@
 	},
 },
 
-// PACMAN Style
+// Numbers Style workspace 
+"hyprland/workspaces#number": {
+	"all-outputs": true,
+	"on-click": "activate",
+	"format": "{icon}",
+	"on-scroll-up": "hyprctl dispatch workspace e+1",
+	"on-scroll-down": "hyprctl dispatch workspace e-1",
+	"persistent-workspaces": {
+		"1": [],
+		"2": [],
+		"3": [],
+		"4": [],
+		"5": [],
+	},
+	"format-icons": {
+		"1": "1",
+		"2": "2",
+		"3": "3",
+		"4": "4",
+		"5": "5",
+		"6": "6",
+		"7": "7",
+		"8": "8",
+		"9": "9",
+		"10": "10",
+
+		"urgent": "",
+		"default": ""
+	},
+},
+
+
+
+// PACMAN Style/
 "hyprland/workspaces#pacman": {
 	"active-only":false,
 	"all-outputs": true,
@@ -131,17 +164,18 @@
 	},
 
 	"bluetooth": {
+		"format-disabled": "off",
 		"format": " {device_alias}",
 		"on-click": "blueberry"
 	},
-
 
 	"network": {
 		"format-wifi": "{icon} {essid}",
 		"format-ethernet": "󰈁 {essid}",
 		"format-disconnected": "󰖪",
-		"tooltip-format": "Connected to {essid}",
+		"tooltip-format": "Left Click to Open Rofi Wifi Menu\nRight Click for Advanced Settings",
 		"on-click": "~/.config/rofi/scripts/rofi-wifi-menu.sh",
+		"on-click-right": "nm-connection-editor",
 		"format-icons": ["󰤯 ", "󰤟 ", "󰤢 ", "󰤥 ", "󰤨 "]
 	},
 	
@@ -176,4 +210,41 @@
 		"tooltip": false
 	},
 
+	"group/sys-settings": {
+	        "orientation": "horizontal",
+        	"modules": [
+            		"network#icon",
+            		"bluetooth#icon",
+            		"custom/wallpaper",
+        	]
+    	 },
+
+	"custom/wallpaper": {
+		"format": "",
+		"on-click": "~/.config/hypr/scripts/wallpaperSelect.sh",
+	},
+	 
+	"network#icon": {
+		"format-wifi": "{icon}",
+		"format-disconnected": "󰖪",
+		"on-click": "~/.config/rofi/scripts/rofi-wifi-menu.sh",
+		"on-click-right": "nm-connection-editor",
+		"format-icons": [
+			"󰤯 ", 
+			"󰤟 ", 
+			"󰤢 ", 
+			"󰤥 ", 
+			"󰤨 "
+		],
+		"tooltip-format": "Connected to {essid}",
+	},
+
+	"bluetooth#icon": {
+		"format": "",
+		"format-disabled": "",
+		"on-click": "blueberry",
+		"tooltip-format": "{status} to {device_alias}",
+	},
+	
 }
+
