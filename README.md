@@ -78,7 +78,7 @@ Congratulations, you are done installing the configurations! 🎉
 
 ### Known Issues
 - [ ] Network management GUI
-- [ ] Waybar bluetooth icon
+- [ ] Waybar bluetooth module not updating automatically
 - [ ] rofi and wallpaper select only focuses after mouse movement
 
 ### Tasks
