@@ -54,6 +54,10 @@ Congratulations, you are done installing the configurations! 🎉
 >[!NOTE] 
 > Images included in the gallery may contain some softwares which may not be included in the packages list or the configurations.
 
+| **File Manger TUI & Terminal Clock**                     |
+| -------------------------------------------------------- |
+| ![gallery-1](.github/assets/file_manager_tui.png)        |
+
 | **Browser with Catppuccin theme**                        |
 | -------------------------------------------------------- |
 | ![gallery-1](.github/assets/browser2.png)                |
@@ -66,11 +70,15 @@ Congratulations, you are done installing the configurations! 🎉
 | -------------------------------------------------------- |
 | ![gallery-1](.github/assets/wallselect.png)              |
 
+|  **Lockscreen**                                          |
+| -------------------------------------------------------- |
+| ![gallery-1](.github/assets/hyprlock.png)                |
+
 ## 💻 Development
 
 ### Known Issues
 - [ ] Network management GUI
-- [ ] Waybar bluetooth icon
+- [ ] Waybar bluetooth module not updating automatically
 - [ ] rofi and wallpaper select only focuses after mouse movement
 
 ### Tasks
