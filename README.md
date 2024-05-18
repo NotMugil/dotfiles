@@ -85,6 +85,7 @@ Congratulations, you are done installing the configurations! 🎉
 - [x] Wlogout configuration
 - [x] More panel styles && panel selector
 - [ ] Symlink management
+- [ ] Need to change workspace switch animation to match left waybar layout
 
 # Credits
 _Thanks a lot for [r/unixporn](https://www.reddit.com/r/unixporn/) community for inspiring me to do this._
