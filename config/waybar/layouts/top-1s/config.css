@@ -99,18 +99,34 @@ box#sys-settings {
     color: @overlay1;
 }
 #pulseaudio{
-    color: @overlay2;
+    color: @flamingo;
 }
+
 #battery{
-    color: @overlay1;
+	color: @sky;	
 }
+
+#battery.warning,
+#battery.warning.text{
+	color: @yellow;
+}
+
+#battery.critical,
+#battery.critical.text{
+	color: @red;
+}
+
+#battery.full,
+#battery.full.text{
+	color: @green;
+}	
 
 #battery.text{
     padding-left: 2px;
     padding-right: 8px;
 }
-#backlight.text{
-
+#backlight{
+	color: @teal;
 }
 #pulseaudio.text{
     padding-right: 8px;
