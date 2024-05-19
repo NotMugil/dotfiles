@@ -163,6 +163,13 @@
 		"format-alt": "{:%a %b %d}",	
 	},
 
+
+	"clock#vertical": {
+		"interval": 60,
+		"tooltip-format": "<big>{:%B %Y}</big>\n<tt><small>{calendar}</small></tt>",
+		"format": "{:%I\n%M}",	
+	},
+
 	"bluetooth": {
 		"format-disabled": "off",
 		"format": " {device_alias}",
