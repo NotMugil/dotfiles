@@ -80,6 +80,7 @@ Congratulations, you are done installing the configurations! 🎉
 - [ ] Network management GUI
 - [ ] Waybar bluetooth module not updating automatically
 - [ ] rofi and wallpaper select only focuses after mouse movement
+- [ ] naming wallpapers with whitespaces causes issues with rofi
 
 ### Tasks
 - [x] Wlogout configuration
