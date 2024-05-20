@@ -28,7 +28,7 @@
   2. Installing required dependencies     
     
    ```bash
-   yay -Sy kitty nano rofi dunst waybar playerctl mpv grim slurp jq bc pamixer pavucontrol waybar-cava cava xdg-desktop-portal-hyprland wl-clipboard socat cliphist hyprpicker nm-connection-editor dictd wl-clip-persist-git blueberry bluez bluez-utils nwg-look wlogout ttf-space-mono-nerd brightnessctl neovim thunar ranger yazi catppuccin-gtk-theme-mocha nm-connection-editor btop nvtop fastfetch neofetch 
+   yay -Sy kitty nano rofi-wayland dunst waybar playerctl mpv grim slurp jq bc pamixer pavucontrol waybar-cava cava xdg-desktop-portal-hyprland wl-clipboard socat cliphist hyprpicker nm-connection-editor dictd wl-clip-persist-git blueberry bluez bluez-utils nwg-look wlogout ttf-space-mono-nerd brightnessctl neovim thunar ranger yazi catppuccin-gtk-theme-mocha nm-connection-editor btop nvtop fastfetch neofetch 
    ```
 
   3. Finally, Installing the dotfiles
