@@ -1,0 +1,104 @@
+@import "colors/catppuccin-mocha.css";
+
+window#waybar {
+	background-color: rgba(0,0,0,0);
+}
+
+* {
+	font-family: SpaceMono Nerd Font;
+	font-weight: 600;
+	font-size: 9px;
+	padding: 0;
+	border-radius: 6px;
+}
+
+.modules-left {
+	margin-left: 6px;
+	margin-top: 2px;
+}
+
+.modules-center {
+	margin-top: 2px;
+}
+
+.modules-right {
+	margin-right: 6px;
+	margin-top: 2px;
+}
+
+
+#custom-launcher,
+#workspaces,
+#clock,
+#bluetooth,
+#custom-spotify,
+#network,
+#custom-powermenu,
+box#sys-tray{
+	margin: 2px 4px;	
+	background-color: @mantle;
+	box-shadow: 2px 3px @base;
+	border: 1px solid @overlay0;
+}
+
+#custom-launcher {
+	padding: 2px 12px 2px 10px;
+}
+
+#workspaces {
+	padding: 2px 10px;
+}
+
+#workspaces button {
+	padding: 0px 5px
+}
+
+box#sys-tray {
+	padding: 2px 10px 2px 10px;
+}
+
+#backlight{
+    color: @blue;
+}
+#pulseaudio{
+    color: @lavender;
+}
+#battery{
+    color: @overlay2;
+}
+
+#battery.text{
+    padding-right: 8px;
+}
+#backlight.text{
+
+}
+#pulseaudio.text{
+    padding-right: 8px;
+}
+
+#clock {
+	padding: 2px 10px;
+}
+
+#custom-powermenu {
+	padding: 2px 12px 2px 10px;
+}
+
+#custom-dot,
+#custom-right-arrw{
+	color: @mantle;
+}
+
+#bluetooth {
+	padding: 2px 4px 2px 10px;
+} 
+
+#network {
+	padding: 2px 8px;
+}
+
+#custom-spotify {
+	background-color: @mantle;
+	padding: 2px 10px;
+}
