@@ -54,6 +54,11 @@ Congratulations, you are done installing the configurations! 🎉
 >[!NOTE] 
 > Images included in the gallery may contain some softwares which may not be included in the packages list or the configurations.
 
+
+|  **Lockscreen**                                          |
+| -------------------------------------------------------- |
+| ![gallery-1](.github/assets/hyprlock.png)                |
+
 | **File Manger TUI & Terminal Clock**                     |
 | -------------------------------------------------------- |
 | ![gallery-1](.github/assets/file_manager_tui.png)        |
@@ -69,10 +74,6 @@ Congratulations, you are done installing the configurations! 🎉
 | **Wallpaper Selector**                                   |
 | -------------------------------------------------------- |
 | ![gallery-1](.github/assets/wallselect.png)              |
-
-|  **Lockscreen**                                          |
-| -------------------------------------------------------- |
-| ![gallery-1](.github/assets/hyprlock.png)                |
 
 ## 💻 Development
 
