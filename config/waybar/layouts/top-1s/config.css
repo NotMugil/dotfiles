@@ -1,0 +1,186 @@
+@import "themes/mocha.css";
+
+window#waybar {
+	background-color: rgba(0,0,0,0);
+}
+
+window > box {
+	background-color: @mantle;
+	border-radius: 0px;
+}
+
+* {
+	font-family: SpaceMono Nerd Font;
+	font-weight: 600;
+	font-size: 9px;
+	padding: 0;
+	border-radius: 6px;
+}
+
+.modules-left, .modules-center, .modules-right {
+	
+}
+
+#custom-launcher,
+#workspaces,
+#clock,
+#bluetooth,
+#custom-spotify,
+#network,
+#custom-powermenu,
+box#sys-tray{	
+	margin: 2px;
+	background-color: @mantle;
+	/* box-shadow: 2px 3px @base; */
+	/* border: 1px solid @overlay0; */
+}
+
+#custom-launcher {
+	color: @blue;
+	padding-left: 14px;
+}
+
+#workspaces {
+	padding: 2px 10px;
+}
+
+#workspaces button {
+	padding: 0px 5px;
+}
+
+#workspaces button.active {
+	color: @base;
+	background-color: @blue;
+	padding: 0px 12px;
+}
+
+#workspaces button.urgent {
+	color: @maroon;
+}
+
+#workspaces button:hover {
+	color: @blue;
+	background-color: @base;
+}
+
+box#sys-tray {
+	padding: 2px 10px 2px 10px;
+	margin: 4px;
+	background-color: @base;
+}
+
+box#sys-settings {
+	padding: 0px 4px;
+	margin: 4px;
+	background-color: @base;
+}
+
+#bluetooth.icon{
+	padding: 2px 4px;
+	color: @blue;
+}
+#network.icon{
+	color: @blue;
+	padding: 2px 4px;
+}
+#custom-wallpaper{
+	color: @blue;
+	margin: 4px;
+	padding: 2px 6px 2px 4px;
+}
+#network.icon.disconnected{
+	color: @lavender;
+	padding: 2px 4px;
+}
+#bluetooth.icon.disabled{
+	color: @lavender;
+}
+#backlight{
+    color: @overlay1;
+}
+#pulseaudio{
+    color: @flamingo;
+}
+
+#battery{
+	color: @sky;	
+}
+
+#battery.warning,
+#battery.warning.text{
+	color: @yellow;
+}
+
+#battery.critical,
+#battery.critical.text{
+	color: @red;
+}
+
+#battery.full,
+#battery.full.text{
+	color: @green;
+}	
+
+#battery.text{
+    padding-left: 2px;
+    padding-right: 8px;
+}
+#backlight{
+	color: @teal;
+}
+#pulseaudio.text{
+    padding-right: 8px;
+}
+
+#clock {
+	padding: 2px 10px;
+}
+
+#custom-powermenu {
+	padding: 2px 12px 2px 10px;
+}
+
+#custom-dot,
+#custom-right-arrw{
+	color: @mantle;
+}
+
+#bluetooth {
+	color: @overlay0;
+	padding: 2px 8px;
+	background-color: @base;
+	margin: 4px;
+} 
+
+#network {
+	color: @overlay1;
+	padding: 2px 8px;
+	background-color: @base;
+	margin: 4px;
+}
+
+#custom-spotify {
+	background-color: @mantle;
+	padding: 2px 10px;
+}
+
+#custom-powermenu {
+	padding-right: 14px;
+	color: @blue;
+}
+
+tooltip {
+    padding: 25px;
+    background-color: @base;
+    color: @overlay0;
+    font-family: CartographCF Nerd Font;
+}
+
+tooltip label {
+    padding: 15px;
+    color: @foreground;
+}
+
+label:focus {
+    background-color: @background;
+}
