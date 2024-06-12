@@ -1,0 +1,106 @@
+/* config - Wallpaper select */
+
+configuration {
+    mode:                        "drun";
+    show-icons:                  true;
+    display-drun:                "";
+    hover-select:                true;
+    font:                        "SpaceMono Nerd Font 10";
+}
+/* Config and colors ----------------------------------------------- */
+
+@import "default.rasi"
+
+/* Main Window ------------------------------------------------ */
+window {
+    width:                       70%;
+    height:                      85%;
+    margin:                      0px;
+    padding:                     0px;
+    border-radius:               5px;
+}
+/*****----- Inputbar -----*****/
+inputbar {
+    enabled:                     true;
+    spacing:                     10px;
+    margin:                      0% 28%;
+    padding:                     10px;
+    border:                      1px solid;
+    border-radius:               6px;
+    border-color:                white / 25%;
+    background-color:            white / 5%;
+    text-color:                  white;
+    children:                    [ "prompt", "entry" ];
+}
+
+prompt {
+    enabled:                     true;
+    background-color:            transparent;
+    text-color:                  inherit;
+}
+textbox-prompt-colon {
+    enabled:                     true;
+    expand:                      false;
+    str:                         "::";
+    background-color:            transparent;
+    text-color:                  inherit;
+}
+entry {
+    enabled:                     true;
+    background-color:            transparent;
+    text-color:                  inherit;
+    cursor:                      text;
+    placeholder:                 "Search";
+    placeholder-color:           inherit;
+}
+
+/* Main Box --------------------------------------------------- */
+mainbox {
+    children:                    ["inputbar", "listview" ];
+    background-color:            transparent;
+
+    spacing:                     40px;
+    margin:                      20px;
+    padding:                     20px;
+}
+
+/* ---- List ---- */
+listview {
+    columns:                     4;
+    lines:                       2;
+    cycle:                       true;
+    dynamic:                     true;
+    scrollbar:                   false;
+    layout:                      vertical;
+    reverse:                     false;
+    fixed-height:                true;
+    fixed-columns:               true;
+
+    background-color:           transparent;
+    text-color:                 @fg-col;
+
+    spacing:                     0px;
+    margin:                      0px;
+    padding:                     0px;
+}
+
+/* Elements --------------------------------------------------- */
+element {
+    cursor:                      pointer;
+    border-radius:               5px;
+    background-color:            transparent;
+    text-color:                  @fg-col;
+    orientation:                 vertical;
+
+    spacing:                     0px;
+    margin:                      0px;
+    padding:                     0px;
+}
+
+element-icon {
+    expand:                      false;
+    background-color:            transparent;
+    text-color:                  inherit;
+    size:                        30%;
+    cursor:                      inherit;
+}
