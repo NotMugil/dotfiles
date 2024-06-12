@@ -1,0 +1,105 @@
+{
+    "group/sys-tray": {
+        "orientation": "horizontal",
+        "modules": [
+            "group/battery-grp",
+            "group/pulseaudio-grp",
+            "group/backlight-grp"
+        ]
+    },
+
+    "group/pulseaudio-grp": {
+        "orientation": "horizontal",
+        "modules": [
+            "pulseaudio",
+            "pulseaudio#text"
+        ],
+    },
+    "group/battery-grp": {
+        "orientation": "horizontal",
+        "modules": [
+            "battery",
+            "battery#text"
+        ]
+    },
+    "group/backlight-grp": {
+        "orientation": "horizontal",
+        "modules": [
+            "backlight",
+            "backlight#text"
+        ]
+    },
+
+    "pulseaudio": {
+        "format": "{icon}",
+	"on-click": "pavucontrol",
+        "format-bluetooth": "{icon}",
+        "format-bluetooth-muted": "{icon}",
+        "tooltip": false,
+        "format-muted": "{icon}",
+        "format-icons": {
+            "default": [
+                " ",
+                " ",
+                "󰕾 "
+            ]
+        },
+    },
+    "pulseaudio#text": {
+        "tooltip": false,
+	"on-click": "pavucontrol",
+        "format": "<b>{volume}</b>",
+        "format-bluetooth": "<b>{volume}</b>"
+    },
+
+    "battery": {
+        "interval": 60,
+        "states": {
+            "warning": 30,
+            "critical": 15 
+        },
+        "format": "{icon}",
+        "format-icons": [
+            " ",
+            " ",
+            " ",
+            " ",
+            " "
+        ],
+        "format-charging": " ",
+        "format-plugged": " ",
+        "max-length": 25,
+        "tooltip": false
+    },
+
+    "battery#text": {
+        "interval": 60,
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "<b>{capacity}</b>",
+        "max-length": 25,
+        "tooltip": false
+    },
+
+    
+    "backlight": {
+        "device": "eDP-1",
+        "format": "{icon}",
+        "tooltip": false,
+        "format-icons": [
+		" ",
+		" ",
+		" "
+        ],
+        "on-click": ""
+    },
+    "backlight#text": {
+        "device": "eDP-1",
+        "format": "<b>{percent}</b>",
+        "interval": 15,
+        "exec": "",
+        "tooltip": false
+    }
+}

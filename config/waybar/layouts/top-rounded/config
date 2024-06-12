@@ -1,0 +1,32 @@
+{
+
+	"layer": "top",
+	"position": "top",
+	"output": "eDP-1",
+	//	 "margin": "10px 10px 0px 10px",
+
+	"include": [
+		"~/.config/waybar/modules",
+		"~/.config/waybar/custom/sys_tray",
+	],
+
+	"modules-left": [
+		"custom/launcher",
+		"hyprland/workspaces",
+		"custom/right-arrw",
+		"custom/spotify",
+		"cava"
+	],
+
+	"modules-center": [
+		
+	],
+
+	"modules-right": [
+		"bluetooth",
+		"network",
+		"group/sys-tray",
+		"clock",
+		"custom/powermenu"
+	],
+}
