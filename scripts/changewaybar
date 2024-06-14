@@ -19,10 +19,11 @@ menu() {
 
 # Function to refresh Waybar
 refresh_waybar() {
-    if [[ -x "$waybar_refresh_script" ]]; then
-        "$waybar_refresh_script"
+     if pgrep -x "waybar"; then
+        pkill -x waybar
+        waybar &
     else
-        echo "Waybar refresh script not found or not executable."
+        waybar &
     fi
 }
 
