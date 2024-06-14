@@ -107,14 +107,7 @@ Congratulations, you are done installing the configurations! 🎉
 - [x] More panel styles && panel selector
 
 ## Star History
-
-<a href="https://star-history.com/#NotMugil/dotfiles&Date">
- <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=NotMugil/dotfiles&type=Date&theme=dark" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=NotMugil/dotfiles&type=Date" />
-   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=NotMugil/dotfiles&type=Date" />
- </picture>
-</a>
+[![Star History Chart](https://api.star-history.com/svg?repos=NotMugil/dotfiles&type=Date)](https://star-history.com/#NotMugil/dotfiles&Date)
 
 # Credits
 _Thanks a lot for [r/unixporn](https://www.reddit.com/r/unixporn/) community for inspiring me to do this._
