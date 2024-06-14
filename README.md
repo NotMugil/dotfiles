@@ -73,7 +73,7 @@ Congratulations, you are done installing the configurations! 🎉
 
 | **Spotify (Spicetified) & Audio Visualizer**             |
 | -------------------------------------------------------- |
-| ![gallery-1](.github/assets/spoitfy.png)                 |
+| ![gallery-1](.github/assets/spotify.png)                 |
 
 | **File Manger TUI & Terminal Clock**                     |
 | -------------------------------------------------------- |
