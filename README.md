@@ -71,9 +71,9 @@ Congratulations, you are done installing the configurations! 🎉
 | -------------------------------------------------------- |
 | ![gallery-1](.github/assets/browser.png)                 |
 
-| **Spotify-tui (Spicetified) & Audio Visualizer**         |
+| **Spotify (Spicetified) & Audio Visualizer**             |
 | -------------------------------------------------------- |
-| ![gallery-1](.github/assets/cava_w_spoitfy.png)          |
+| ![gallery-1](.github/assets/spoitfy.png)                 |
 
 | **File Manger TUI & Terminal Clock**                     |
 | -------------------------------------------------------- |
