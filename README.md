@@ -108,6 +108,7 @@ Congratulations, you are done installing the configurations! 🎉
 
 ## Star History
 
+[![Star History Chart](https://api.star-history.com/svg?repos=NotMugil/dotfiles&type=Date)](https://star-history.com/#)
 <a href="https://star-history.com/#NotMugil/dotfiles&Date">
  <picture>
    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=NotMugil/dotfiles&type=Date&theme=dark" />
