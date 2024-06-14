@@ -69,7 +69,7 @@ Congratulations, you are done installing the configurations! 🎉
 
 | **Custom Startpage for firefox**                         |
 | -------------------------------------------------------- |
-| ![gallery-1](.github/assets/browser.png)                 |
+| ![gallery-1](.github/assets/browser2.png)                |
 
 | **Spotify (Spicetified) & Audio Visualizer**             |
 | -------------------------------------------------------- |
