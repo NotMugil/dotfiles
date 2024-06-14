@@ -1,15 +1,15 @@
 - Operating System • [Arch Linux](https://archlinux.org)
 - Window Manager/DE • [Hyprland](https://hyprland.org/)
-- Terminal • [Kitty](https://github.com/kovidgoyal/kitty)
+- Terminal • [kitty](https://github.com/kovidgoyal/kitty)
 - Shell • zsh
-- Aur Helper • [Yay](https://github.com/Jguer/yay)
-- Panel • [Waybar](https://github.com/Alexays/Waybar)
-- Launcher • [Rofi](https://github.com/davatorium/rofi)
-- File Manager • [Thunar]()/[yazi](https://github.com/sxyazi/yazi)
+- Aur Helper • [yay](https://github.com/Jguer/yay)
+- Panel • [waybar](https://github.com/Alexays/Waybar)
+- Launcher • [rofi](https://github.com/davatorium/rofi)
+- File Manager • [thunar](https://wiki.archlinux.org/title/thunar)/[yazi](https://github.com/sxyazi/yazi)
 - Notification Daemon • [swaync](https://github.com/ErikReider/SwayNotificationCenter)
 - Wallpaper Daemon • [swww](https://github.com/LGFae/swww)
 - Text Editor • [neovim](https://neovim.io/)
-- Colorscheme • [Catppuccin Mocha](https://github.com/catppuccin/catppuccin)
+- Colorscheme • [catppuccin mocha](https://github.com/catppuccin/catppuccin)
 
 ## ⚙️ Setup
   > [!WARNING]
@@ -61,37 +61,54 @@ Congratulations, you are done installing the configurations! 🎉
 
 |  **Lockscreen**                                          |
 | -------------------------------------------------------- |
-| ![gallery-1](.github/assets/hyprlock.png)                |
+| ![gallery-1](.github/assets/gallery-01.png)              |
 
 | **Wallpaper Selector**                                   |
 | -------------------------------------------------------- |
-| ![gallery-1](.github/assets/wallselect.png)              |
+| ![gallery-2](.github/assets/gallery-02.png)              |
 
 | **Custom Startpage for firefox**                         |
 | -------------------------------------------------------- |
-| ![gallery-1](.github/assets/browser2.png)                |
+| ![gallery-3](.github/assets/gallery-03.png)              |
 
 | **Spotify (Spicetified) & Audio Visualizer**             |
 | -------------------------------------------------------- |
-| ![gallery-1](.github/assets/spotify.png)                 |
+| ![gallery-4](.github/assets/gallery-04.png)              |
 
-| **File Manger TUI & Terminal Clock**                     |
+| **Rofi Menu from adi1090x**                              |
 | -------------------------------------------------------- |
-| ![gallery-1](.github/assets/file_manager_tui.png)        |
+| ![gallery-5](.github/assets/gallery-05.png)              |
+
+| **Notification Center (SwayNC)**                         |
+| -------------------------------------------------------- |
+| ![gallery-6](.github/assets/gallery-06.png)              |
+
+| **Neofetch**                                             |
+| -------------------------------------------------------- |
+| ![gallery-7](.github/assets/gallery-07.png)              |
+
+| **Btop + tty-clock**                                     |
+| -------------------------------------------------------- |
+| ![gallery-8](.github/assets/gallery-08.png)              |
+
 
 ## 💻 Development
 
 ### Known Issues
-- [ ] Network management GUI
-- [ ] Waybar bluetooth module not updating automatically
-- [ ] rofi and wallpaper select only focuses after mouse movement
+- [ ] Spacing in waybar style: minimal
+- [ ] Auto refresh for bluetooth, battery module in waybar
 - [ ] naming wallpapers with whitespaces causes issues with rofi
+- [x] Rofi and wallpaper select only focuses after mouse movement (fixed by installing rofi-wayland instead of regular rofi)
 
 ### Tasks
+- [ ] Symlink management
+- [ ] 
 - [x] Wlogout configuration
 - [x] More panel styles && panel selector
-- [ ] Symlink management
-- [ ] Need to change workspace switch animation to match left waybar layout
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=NotMugil/dotfiles&type=Date)](https://star-history.com/#)
 
 # Credits
 _Thanks a lot for [r/unixporn](https://www.reddit.com/r/unixporn/) community for inspiring me to do this._
