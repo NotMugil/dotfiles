@@ -67,7 +67,7 @@ Congratulations, you are done installing the configurations! 🎉
 | -------------------------------------------------------- |
 | ![gallery-1](.github/assets/file_manager_tui.png)        |
 
-| **Browser with Catppuccin theme**                        |
+| **Custom Startpage for firefox **                        |
 | -------------------------------------------------------- |
 | ![gallery-1](.github/assets/browser2.png)                |
 
