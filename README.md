@@ -63,9 +63,9 @@ Congratulations, you are done installing the configurations! 🎉
 | -------------------------------------------------------- |
 | ![gallery-1](.github/assets/hyprlock.png)                |
 
-| **File Manger TUI & Terminal Clock**                     |
+| **Wallpaper Selector**                                   |
 | -------------------------------------------------------- |
-| ![gallery-1](.github/assets/file_manager_tui.png)        |
+| ![gallery-1](.github/assets/wallselect.png)              |
 
 | **Custom Startpage for firefox**                         |
 | -------------------------------------------------------- |
@@ -75,9 +75,9 @@ Congratulations, you are done installing the configurations! 🎉
 | -------------------------------------------------------- |
 | ![gallery-1](.github/assets/cava_w_spoitfy.png)          |
 
-| **Wallpaper Selector**                                   |
+| **File Manger TUI & Terminal Clock**                     |
 | -------------------------------------------------------- |
-| ![gallery-1](.github/assets/wallselect.png)              |
+| ![gallery-1](.github/assets/file_manager_tui.png)        |
 
 ## 💻 Development
 
