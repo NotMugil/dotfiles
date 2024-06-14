@@ -29,6 +29,7 @@ window > box {
 #network,
 #custom-powermenu,
 box#sys-tray{	
+	color: @subtext1;
 	margin: 2px;
 	background-color: @mantle;
 	/* box-shadow: 2px 3px @base; */
@@ -36,7 +37,7 @@ box#sys-tray{
 }
 
 #custom-launcher {
-	color: @blue;
+	color: @green;
 	padding-left: 14px;
 }
 
@@ -49,8 +50,8 @@ box#sys-tray{
 }
 
 #workspaces button.active {
-	color: @base;
-	background-color: @blue;
+	color: @surface1;
+	background-color: @green;
 }
 
 #workspaces button.urgent {
@@ -67,13 +68,17 @@ box#sys-tray {
 }
 
 #backlight{
-    color: @blue;
+    color: @subtext1;
 }
 #pulseaudio{
-    color: @lavender;
+    color: @sutext1;
 }
 #battery{
-    color: @overlay2;
+    color: @subtext1;
+}
+
+.pulseaudio-grp{
+	color: @subtext1;
 }
 
 #battery.text{
@@ -94,11 +99,6 @@ box#sys-tray {
 	padding: 2px 12px 2px 10px;
 }
 
-#custom-dot,
-#custom-right-arrw{
-	color: @mantle;
-}
-
 #bluetooth {
 	padding: 2px 4px 2px 10px;
 } 
@@ -113,6 +113,7 @@ box#sys-tray {
 }
 
 #custom-powermenu {
+ 	color: @green;
 	padding-right: 14px;
 }
 
