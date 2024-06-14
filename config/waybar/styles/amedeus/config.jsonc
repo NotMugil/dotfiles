@@ -90,9 +90,9 @@
       "format-bluetooth": "<span color=\"#7aa2f7\">\uf282 </span>{volume}%",
       "on-click-right": "blueman-manager",
       "format-icons": [
-        "\uf026",
-        "\uf027",
-        "\uf028"
+        "\uf026 ",
+        "\uf027 ",
+        "\uf028 "
       ],
       "on-click": "pavucontrol",
     },
