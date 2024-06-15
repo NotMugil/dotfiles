@@ -4,7 +4,7 @@
     background-color: @crust;
     color: @text;
     font-family: "SpaceMonoNerdFont", "JetBrainsMono Nerd Font",monospace;
-    font-size: 11px;
+    font-size: 9px;
     /* border-bottom: 1px solid @surface0; */
 }
 
@@ -64,6 +64,10 @@ box.modules-right > box.horizontal,
 #custom-keyboard {
     padding-right: 17px;
     padding-left: 12px;
+}
+
+#battery{
+	font-size: 12px;
 }
 
 #custom-power-button {
@@ -265,4 +269,8 @@ tooltip label {
 
 label:focus {
     background-color: @background;
+}
+
+.sys-info{ 
+	font-size: 11px;
 }
