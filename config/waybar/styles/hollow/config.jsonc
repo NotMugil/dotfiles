@@ -7,9 +7,9 @@
 	"margin": "0px 0px 0px 0px",
 
 
-	"modules-left": ["custom/power-button","hyprland/workspaces","custom/keyboard", "group/pomo"],
-	"modules-center": [],
-	"modules-right": ["group/sys-info","battery","tray","group/clock","custom/notification"],
+	"modules-left": ["custom/power-button","hyprland/workspaces#roman"],
+	"modules-center": ["group/clock"],
+	"modules-right": ["tray","group/sys-info","battery","custom/notification"],
 
 	"battery": {
 		"bat": "BAT0",
@@ -82,7 +82,8 @@
 	},
 
 	"clock#time": {
-		"format": "{:%OI<small><span color='#9399b2'>:</span></small>%OM<span size='4pt'> </span>%p}",
+		"format": "{:%OI:%OM %p}",
+		"format-alt": "{:%A, %b %e}",
 		"interval": 60
 	},
 
@@ -121,8 +122,7 @@
 
 	"group/clock": {
 		"modules": [
-			"clock#time",
-			"clock#date"
+			"clock#time"
 		],
 		"orientation": "inherit"
 	},
@@ -173,6 +173,49 @@
 		"*": 5
 		}
 	},
+	
+	// Roman Style workspace
+        "hyprland/workspaces#roman": {
+                "all-outputs": true,
+                "on-click": "activate",
+                "format": "{icon}",
+                "on-scroll-up": "hyprctl dispatch workspace e+1",
+                "on-scroll-down": "hyprctl dispatch workspace e-1",
+                "format-icons": {
+                        "1": "I",
+                        "2": "II",
+                        "3": "III",
+                        "4": "IV",
+                        "5": "V",
+                        "6": "VI",
+                        "7": "VII",
+                        "8": "VIII",
+                        "9": "IX",   
+                        "10": "X",
+                        "11": "XI",
+                        "12": "XII",
+                        "13": "XIII",
+                        "14": "XIV",   
+                        "15": "XV",
+                        "16": "XVI",
+                        "17": "XVII",
+                        "18": "XVIII",
+                        "19": "XIX",
+                        "21": "XXI",
+                        "22": "XXII",
+                        "23": "XXIII",
+                        "24": "XXIV",
+                        "25": "XXV",
+                        "26": "XXVI",
+                        "27": "XXVII",
+                        "28": "XXVIII",
+                        "29": "XXIX",
+                        "30": "XXX",
+
+                        "urgent": "",
+                        "default": ""
+                },
+        },
 
 	"network": {
 		"format": "{icon}",
