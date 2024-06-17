@@ -1,4 +1,3 @@
-![](https://github.com/NotMugil/dotfiles/blob/main/
 
 - Operating System • [Arch Linux](https://archlinux.org)
 - Window Manager/DE • [Hyprland](https://hyprland.org/)
