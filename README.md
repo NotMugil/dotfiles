@@ -1,6 +1,5 @@
-<div id="top">
-  
-</div>
+![](https://github.com/NotMugil/dotfiles/blob/main/
+
 - Operating System • [Arch Linux](https://archlinux.org)
 - Window Manager/DE • [Hyprland](https://hyprland.org/)
 - Terminal • [kitty](https://github.com/kovidgoyal/kitty)
@@ -117,10 +116,4 @@ _Thanks a lot for [r/unixporn](https://www.reddit.com/r/unixporn/) community for
 
 <div align="center">
   <img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/footers/gray0_ctp_on_line.svg?sanitize=true"/>
-</div>
-
-
-<div align="right">
-  <br>
-  <a href="#top"><br><kbd> ^ </kbd><br></a>
 </div>
