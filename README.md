@@ -51,9 +51,8 @@ spicetify
 
   > Copy the configs to their respective directories. Make sure to backup your previous configs if needed. 
   ```bash
-    cp -r config/* ~/.config/
-    mkdir -p ~/.scripts
-    cp -r scripts/* ~/.scripts/
+    cp -r .config/* ~/.config/
+    cp -r .scripts/* ~/
   ```
 
 Congratulations, you are done installing the configurations! 🎉 
