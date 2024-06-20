@@ -1,6 +1,6 @@
-# Contributing to NotMugil's Dotfiles
+# Contributing to Community Standards
 
-Welcome to the dotfiles repository of NotMugil! We're glad you're interested in contributing. Before you get started, please take a moment to review the following guidelines.
+Thank you for your interest in contributing to Community Standards! We welcome any contributions, including bug fixes, feature enhancements, documentation improvements, and other general improvements. Before you get started, please take a moment to review the following guidelines.
 
 ## Table of Contents
 
@@ -54,7 +54,7 @@ To submit a pull request (PR) with your changes:
 
 ## Code of Conduct
 
-This project adheres to a [Code of Conduct](CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code. Please report unacceptable behavior to [notmugil@example.com](mailto:notmugil@example.com).
+This project adheres to a [Code of Conduct](CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code. Please report unacceptable behavior to [mugilsubramani@gmail.com](mailto:mugilsubramani@gmail.com).
 
 ## Resources
 
