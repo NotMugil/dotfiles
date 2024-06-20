@@ -2,12 +2,6 @@
 
 Describe your changes in detail here. Include any context or background information that reviewers should know.
 
-### Related Issue
-
-- Fixes #IssueNumber
-
-Replace `#IssueNumber` with the number of the issue your pull request resolves, if applicable.
-
 ### Checklist
 
 - [ ] I have tested these changes locally.
