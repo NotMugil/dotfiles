@@ -1,8 +1,12 @@
-<div id="top">
-    
+<div align="center">
+<p>
+<a href=""><img src="https://img.shields.io/github/stars/NotMugil/dotfiles?style=for-the-badge&logo=starship&color=C9CBFF&logoColor=C9CBFF&labelColor=302D41" alt="stars"><a>
+<a href=""><img alt="GitHub Issues or Pull Requests" src="https://img.shields.io/github/issues/NotMugil/dotfiles?style=for-the-badge&logo=gitbook&color=A6E3A1&logoColor=A6E3A1&labelColor=302D41"></a>
+<a href=""><img src="https://img.shields.io/github/license/NotMugil/dotfiles?style=for-the-badge&logo=&color=CBA6F7&logoColor=CBA6F7&labelColor=302D41" alt="LICENSE"></a>
+</p>
 </div>
 
-
+## Information
 - Operating System • [Arch Linux](https://archlinux.org)
 - Window Manager/DE • [Hyprland](https://hyprland.org/)
 - Terminal • [kitty](https://github.com/kovidgoyal/kitty)
