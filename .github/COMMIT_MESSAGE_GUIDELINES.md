@@ -19,7 +19,7 @@ Each commit message consists of a header, a body and a footer. The header has a 
   │                          
   │                          
   │
-  └─⫸ Commit Type: fix|feat|docs|perf|style|refactor|test
+  └─⫸ Commit Type: fix|feat|docs|perf|style|refactor|test|delete|rename|move
 ```
 
 ## Commit Message Types
