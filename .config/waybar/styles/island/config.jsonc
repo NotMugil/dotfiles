@@ -3,7 +3,7 @@
 
 	"layer": "top",
 	"position": "top",
-	"output": "eDP-1",
+	"output": ["HDMI-A-1","eDP-1"],
 	//	 "margin": "10px 10px 0px 10px",
         
 	"modules-left": [
