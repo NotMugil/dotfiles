@@ -11,7 +11,7 @@
 window#waybar {
   padding: 0;
   margin: 0;
-  background: rgba(26, 27, 38, 0.7);
+  background: rgba(26, 27, 38, 0.9);
 }
 
 /* when hovering over modules */
