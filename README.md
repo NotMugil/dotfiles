@@ -13,9 +13,7 @@
 </p>
 </div>
 
-<div align="center">
-  ![showcase](.github/assets/showcase.png)
-</div>
+![showcase](.github/assets/showcase.png)
 
 ## Information
 - Operating System • [Arch Linux](https://archlinux.org)
