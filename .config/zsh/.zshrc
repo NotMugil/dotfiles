@@ -11,3 +11,5 @@ source ${ZDOTDIR}/aliases-late.zsh
 
 PROMPT='%F{yellow}%3~%f $ '
 
+
+export PATH=$PATH:/home/rei/.spicetify
