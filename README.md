@@ -13,6 +13,10 @@
 </p>
 </div>
 
+<div align="center">
+  ![showcase](.github/assets/showcase.png)
+</div>
+
 ## Information
 - Operating System • [Arch Linux](https://archlinux.org)
 - Window Manager/DE • [Hyprland](https://hyprland.org/)
