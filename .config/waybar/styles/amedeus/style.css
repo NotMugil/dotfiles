@@ -1,17 +1,19 @@
+@import "colors/current-theme.css";
+
 * {
   font-family:
     SpaceMono Nerd Font,
     feather;
   font-weight: 500;
   font-size: 8pt;
-  color: #c0caf5;
+  color: @text;
 }
 
 /* main waybar */
 window#waybar {
   padding: 0;
   margin: 0;
-  background: rgba(26, 27, 38, 0.9);
+  background: @theme_base_color;
 }
 
 /* when hovering over modules */
@@ -42,8 +44,8 @@ tooltip {
 }
 
 #workspaces button:hover {
-  background: #11111b;
-  color: #cdd6f4;
+  background: alpha(#7aa2f7,0.2);
+  color: @overlay0;
 }
 
 /* Sets background, padding, margins, and borders for (all) modules */
@@ -60,6 +62,7 @@ tooltip {
   background: rgba(26, 27, 38, 0);
   padding: 0 10px;
   border: 0;
+  color: @subtext0;
 }
 
 #workspaces {
@@ -93,3 +96,11 @@ window#waybar.empty #window {
 #battery {
   border-radius: 0 12px 12px 0;
 }
+
+#custom-notification {
+	color: @subtext1;
+	margin-left: 2px;
+	margin-right:12px;
+	padding: 2px;
+}
+
