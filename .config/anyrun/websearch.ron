@@ -1,0 +1,4 @@
+Config(
+  prefix: "/",
+  engines: [DuckDuckGo, Google, Bing]
+)

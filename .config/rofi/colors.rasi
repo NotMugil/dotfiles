@@ -1,0 +1,5 @@
+* {
+  accent: #b4befe;
+}
+
+@import ".config/palletes/rofi/mocha"

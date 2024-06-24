@@ -1,0 +1,43 @@
+window#window {
+  background-color: transparent;
+}
+
+box#main {
+  padding: 8px;
+  border: 1px solid @borders;
+  border-radius: 16px;
+  background-color: @theme_base_color;
+}
+
+entry#entry {
+  border-radius: 10px;
+  box-shadow: none;
+}
+
+list#main {
+  background-color: transparent;
+}
+
+list#main > row {
+  padding: 0;
+}
+list#main > row:hover {
+  box-shadow: none;
+}
+
+row#match {
+  border-radius: 10px;
+  padding: 6px 8px;
+  margin-top: 8px;
+}
+
+label#match-title {
+  font-weight: normal;
+}
+
+label#match-desc {
+  font-size: 0.75rem;
+  font-weight: bold;
+  opacity: 0.8;
+}
+

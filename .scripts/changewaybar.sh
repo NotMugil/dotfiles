@@ -29,7 +29,7 @@ refresh_waybar() {
 
 # Main function
 main() {
-    selected_version=$(menu | rofi -dmenu -config ~/.config/rofi/waybar/config-waybar-layout.rasi -p "Select a version:")
+    selected_version=$(menu | rofi -dmenu -config ~/.config/rofi/waybar.rasi -p "Select a version:")
 
     if [[ -z "$selected_version" ]]; then
         echo "No version selected. Exiting."
