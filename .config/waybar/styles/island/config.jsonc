@@ -202,10 +202,10 @@
 
 		"network": {
 			"format-wifi": "{icon} {essid}",
-			"format-ethernet": "󰈁 {essid}",
+			"format-ethernet": "󰈁 {ifname}",
 			"format-disconnected": "󰖪",
-			"tooltip-format": "Left Click to Open Rofi Wifi Menu\nRight Click for Advanced Settings",
-			"on-click": "~/.config/rofi/scripts/rofi-wifi-menu.sh",
+			"tooltip-format": "Connected to {essid}/{ifname}",
+ 			"on-click": "kitty -e 'nmtui'",
 			"on-click-right": "nm-connection-editor",
 			"format-icons": ["󰤯 ", "󰤟 ", "󰤢 ", "󰤥 ", "󰤨 "]
 		},
@@ -217,11 +217,6 @@
 			"on-click": "playerctl play-pause",
 			"on-scroll-up": "playerctl next",
 			"on-scroll-down": "playerctl previous"
-		},
-
-		"custom/dot": {
-			"format": "  ",
-	    		"tooltip": false
 		},
 
 		"custom/launcher": {
@@ -236,46 +231,11 @@
 			"tooltip": false,
 		},
 
-		"custom/right-arrw": {
-			"format": "  ",
-			"tooltip": false
-		},
-
-		"group/sys-settings": {
-		        "orientation": "horizontal",
-	        	"modules": [
-	            		"network#icon",
-	            		"bluetooth#icon",
-	            		"custom/wallpaper",
-	        	]
-	    	 },
-
 		"custom/wallpaper": {
 			"format": "",
 			"on-click": "~/.config/hypr/scripts/wallpaperSelect.sh",
 		},
-		 
-		"network#icon": {
-			"format-wifi": "{icon}",
-			"format-disconnected": "󰖪",
-			"on-click": "~/.config/rofi/scripts/rofi-wifi-menu.sh",
-			"on-click-right": "nm-connection-editor",
-			"format-icons": [
-				"󰤯 ", 
-				"󰤟 ", 
-				"󰤢 ", 
-				"󰤥 ", 
-				"󰤨 "
-			],
-			"tooltip-format": "Connected to {essid}",
-		},
 
-		"bluetooth#icon": {
-			"format": "",
-			"format-disabled": "",
-			"on-click": "blueberry",
-			"tooltip-format": "{status} to {device_alias}",
-		},
 		"group/sys-tray": {
 	        "orientation": "horizontal",
 	        "modules": [
