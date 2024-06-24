@@ -22,6 +22,12 @@ apply_latte_theme() {
 	pkill waybar
 	waybar &
 
+ 	# Kitty
+	kitten themes --reload-in=all Catppuccin-Latte
+
+	# Commands to apply spicetify color
+	spicetify config color_scheme CatppuccinLatte
+	spicetify apply
 
 }
 
@@ -37,10 +43,17 @@ apply_frappe_theme() {
 	pkill xsettingsd
       	xsettingsd &
 
+	# Kitty
+	kitten themes --reload-in=all Catppuccin-Frappe
+
 	# Commands to apply waybar theme
 	ln -sf ~/.config/waybar/colors/catppuccin-frappe.css ~/.config/waybar/colors/current-theme.css
 	pkill waybar
 	waybar &
+
+	# Commands to apply spicetify color
+	spicetify config color_scheme CatppuccinLatte
+	spicetify apply
 
 }
 
@@ -61,6 +74,13 @@ apply_macchiato_theme() {
 	ln -sf ~/.config/waybar/colors/catppuccin-macchiato.css ~/.config/waybar/colors/current-theme.css
 	pkill waybar
 	waybar &
+	
+	# Kitty
+	kitten themes --reload-in=all Catppuccin-Macchiato
+
+	# Commands to apply spicetify color
+	spicetify config color_scheme CatppuccinMacchiato
+	spicetify apply
 }
 
 # Function to apply Mocha theme with selected color
@@ -76,10 +96,17 @@ apply_mocha_theme() {
 	pkill xsettingsd
       	xsettingsd &
 
+	# Kitty
+	kitten themes --reload-in=all Catppuccin-Mocha
+
 	# Commands to apply waybar theme
 	ln -sf ~/.config/waybar/colors/catppuccin-mocha.css ~/.config/waybar/colors/current-theme.css
 	pkill waybar
 	waybar &
+
+	# Commands to apply spicetify color
+	spicetify config color_scheme CatppuccinMocha
+	spicetify apply
 
 }
 
