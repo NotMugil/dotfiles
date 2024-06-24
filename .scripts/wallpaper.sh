@@ -4,7 +4,7 @@
 
 # Wallpapers Path
 wallpaperDir="$HOME/.wallpapers/"
-themesDir="$HOME/.config/rofi/themes"
+themesDir="$HOME/.config/rofi"
 
 # Transition config
 FPS=60
@@ -27,7 +27,7 @@ randomPicture="${PICS[$(( randomNumber % ${#PICS[@]} ))]}"
 randomChoice="[${#PICS[@]}] Random"
 
 # Rofi command
-rofiCommand="rofi -show -dmenu -theme ${themesDir}/wallpaper-select.rasi"
+rofiCommand="rofi -show -dmenu -theme ${themesDir}/wallpaper.rasi"
 
 # Execute command according the wallpaper manager
 executeCommand() {

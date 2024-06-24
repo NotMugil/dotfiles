@@ -1,0 +1,5 @@
+// <Anyrun config dir>/dictionary.ron
+Config(
+  prefix: ":def",
+  max_entries: 5,
+)
