@@ -1,11 +1,11 @@
-@import "colors/catppuccin-mocha.css";
+@import "colors/current-theme.css";
 
 window#waybar {
 	background-color: rgba(0,0,0,0);
 }
 
 window > box {
-	background-color: @mantle;
+	background-color: @theme_base_color;
 	margin: 6px 8px;
 }
 
@@ -21,23 +21,26 @@ window > box {
 	
 }
 
+
+
 #custom-launcher,
 #workspaces,
 #clock,
-#bluetooth,
+#bluetooth.connected,
 #custom-spotify,
 #network,
+#network.linked,
+#network.ethernet,
+#network.wifi,
 #custom-powermenu,
 box#sys-tray{	
-	color: @subtext1;
+	color: @theme_selected_bg_color;
 	margin: 2px;
-	background-color: @mantle;
-	/* box-shadow: 2px 3px @base; */
-	/* border: 1px solid @overlay0; */
+	background-color: @theme_base_color;
 }
 
 #custom-launcher {
-	color: @green;
+	color: @theme_selected_bg_color;
 	padding-left: 14px;
 }
 
@@ -46,12 +49,13 @@ box#sys-tray{
 }
 
 #workspaces button {
+	color: @subtext1;
 	padding: 0px 5px
 }
 
 #workspaces button.active {
-	color: @surface1;
-	background-color: @green;
+	color: @base;
+	background-color: @theme_selected_bg_color;
 }
 
 #workspaces button.urgent {
@@ -59,7 +63,7 @@ box#sys-tray{
 }
 
 #workspaces button:hover {
-	color: @blue;
+	color: @theme_selected_bg_color;
 	background-color: @base;
 }
 
@@ -71,7 +75,7 @@ box#sys-tray {
     color: @subtext1;
 }
 #pulseaudio{
-    color: @sutext1;
+    color: @subtext1;
 }
 #battery{
     color: @subtext1;
@@ -99,11 +103,19 @@ box#sys-tray {
 	padding: 2px 12px 2px 10px;
 }
 
-#bluetooth {
+#bluetooth,
+#bluetooth.off,
+#bluetooth.on {
+	color: @subtext1;
 	padding: 2px 4px 2px 10px;
+	margin: 2px;
+	background-color: @theme_base_color;
 } 
 
-#network {
+#network,
+#network.disconnected,
+#network.disabled {
+	color: @subtext1;
 	padding: 2px 8px;
 }
 
@@ -113,7 +125,7 @@ box#sys-tray {
 }
 
 #custom-powermenu {
- 	color: @green;
+ 	color: @theme_selected_bg_color;
 	padding-right: 14px;
 }
 
@@ -131,4 +143,8 @@ tooltip label {
 
 label:focus {
     background-color: @background;
+}
+
+#clock{ 
+    color: @text;
 }

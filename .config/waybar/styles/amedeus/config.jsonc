@@ -26,7 +26,8 @@
       "cpu",
       "memory",
       "wireplumber",
-      "network"
+      "network",
+      "custom/notification"
     ],
     "clock#time": {
       "format": "<span color=\"#7aa2f7\">     </span>{:%H:%M:%S}",
@@ -96,8 +97,30 @@
       ],
       "on-click": "pavucontrol",
     },
+
+	"custom/notification": {
+	        "escape": true,
+	        "exec": "swaync-client -swb",
+	        "exec-if": "which swaync-client",
+	        "format": "{icon}",
+	        "format-icons": {
+	                "dnd-inhibited-none": "󰂚<sup></sup>",
+	                "dnd-inhibited-notification": "󰂚<span foreground='#f38ba8'><sup></sup></span>",
+	                "dnd-none": "󰂛",
+	                "dnd-notification": "󰂛<span foreground='#f38ba8'><sup></sup></span>",
+	                "inhibited-none": "󰂚<sup>󰜺</sup>",
+	                "inhibited-notification": "󰵙<span foreground='#f38ba8'><sup></sup></span>",
+	                "none": "󰂚<span color='#6c7086'><sup></sup></span>",
+	                "notification": "󰂚<span foreground='#f38ba8'><sup></sup></span>"
+	        },
+	        "on-click": "sleep 0.1 && swaync-client -t -sw",
+	        "on-click-right": "sleep 0.1 && swaync-client -d -sw",
+	        "return-type": "json",
+	        "tooltip": false
+	},
     "hyprland/window": {
-      "max-length": 64,
+     	"format": "<i>{}</i>",
+	 "max-length": 34,
     },
     "tray": {
       "icon-size": 10,
