@@ -1,15 +1,15 @@
 [
  {
-	"output": "eDP-1",
-	"height": 48, // Waybar height (to be removed for auto height)
+	"output": ["HDMI-A-1","eDP-1"],
+	"height": 20, // Waybar height (to be removed for auto height)
 	"layer": "top", // Waybar at top layer
 	"position": "top",
 	"margin": "0px 0px 0px 0px",
 
 
-	"modules-left": ["custom/power-button","hyprland/workspaces#roman"],
-	"modules-center": ["group/clock"],
-	"modules-right": ["tray","group/sys-info","battery","custom/notification"],
+	"modules-left": ["custom/power-button","hyprland/workspaces"],
+	"modules-center": ["hyprland/window",],
+	"modules-right": ["tray","group/clock","group/sys-info","battery","custom/notification"],
 
 	"battery": {
 		"bat": "BAT0",
@@ -48,7 +48,7 @@
 		"format-disabled": "󰂲",
 		"format-off": "󰂲",
 		"format-on": "",
-		"on-click": "blueman-manager",
+		"on-click": "blueberry",
 		"on-click-right": "rfkill toggle bluetooth",
 		"tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
 		"tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
@@ -150,77 +150,22 @@
 		"orientation": "horizontal"
 		},
 		"hyprland/workspaces": {
-			"active-only": false,
-			"all-outputs": true,
-			"format": "{icon} <sub>{name}</sub>",
+			"format": "{name}: {icon}",
 			"format-icons": {
-				"1": "",
-				"2": "",
-				"3": "",
-				"4": "",
-				"5": "",
-				"6": "",
-				"7": "",
-				"8": "",
-				"9": "",
-				"default": "",
-				"persistent": "",
-				"special": ""
+				"active": "",
+				"default": ""
+			},
+			"persistent-workspaces": {
+				"*": 4, // 5 workspaces by default on every monitor
+				"HDMI-A-1": 5 // but only three on HDMI-A-1
+			}
 		},
-		"on-scroll-down": "hyprctl dispatch workspace e+1",
-		"on-scroll-up": "hyprctl dispatch workspace e-1",
-		"persistent-workspaces": {
-		"*": 5
-		}
-	},
 	
-	// Roman Style workspace
-        "hyprland/workspaces#roman": {
-                "all-outputs": true,
-                "on-click": "activate",
-                "format": "{icon}",
-                "on-scroll-up": "hyprctl dispatch workspace e+1",
-                "on-scroll-down": "hyprctl dispatch workspace e-1",
-                "format-icons": {
-                        "1": "I",
-                        "2": "II",
-                        "3": "III",
-                        "4": "IV",
-                        "5": "V",
-                        "6": "VI",
-                        "7": "VII",
-                        "8": "VIII",
-                        "9": "IX",   
-                        "10": "X",
-                        "11": "XI",
-                        "12": "XII",
-                        "13": "XIII",
-                        "14": "XIV",   
-                        "15": "XV",
-                        "16": "XVI",
-                        "17": "XVII",
-                        "18": "XVIII",
-                        "19": "XIX",
-                        "21": "XXI",
-                        "22": "XXII",
-                        "23": "XXIII",
-                        "24": "XXIV",
-                        "25": "XXV",
-                        "26": "XXVI",
-                        "27": "XXVII",
-                        "28": "XXVIII",
-                        "29": "XXIX",
-                        "30": "XXX",
-
-                        "urgent": "",
-                        "default": ""
-                },
-        },
 
 	"network": {
 		"format": "{icon}",
 		"format-disconnected": "󰖪",
-		"format-ethernet": "󰈀/{cidr}",
+		"format-ethernet": "󰈀 /{ifname}",
 		"format-icons": [
 			"󰤯",
 			"󰤟",
@@ -262,7 +207,7 @@
 	},
 
 	"tray": {
-		"icon-size": 18
+		"icon-size": 12
 	},
 
 	"backlight": {
@@ -285,46 +230,17 @@
 		"tooltip": false
 	},
 
+	"hyprland/window": {
+		"max-length": 40,
+		"seperate-outputs": true,
+  		"on-click": "dunstify \"$(hyprctl activewindow -j | jq -r .title)\""
+	},
+
 	"image": {
 		"tooltip": false,
 		"path": "/home/rei/.face.icon",
 		"size": 47
 	},
 
-	"custom/keyboard": {
-		"format": "󰌌",
-		"on-click": "sleep 0.1 && toggle-keyboard.sh",
-		"tooltip": false
-	},
-
-	"custom/pomo-icon": {
-		"format": "",
-		"exec": "pomodoro-cli status --format json --time-format digital",
-		"return-type": "json",
-		"on-click": "pomodoro-cli start --silent --notify --add 5m; pkill -SIGRTMIN+10 waybar",
-		"on-click-middle": "pomodoro-cli pause; pkill -SIGRTMIN+10 waybar",
-		"on-click-right": "pomodoro-cli stop; pkill -SIGRTMIN+10 waybar",
-		"signal": 10,
-		"interval": 1
-	},
-
-	"custom/pomo-label": {
-		"format": "{}",
-		"exec": "pomodoro-cli status --format json --time-format digital",
-		"return-type": "json",
-		"on-click": "pomodoro-cli start --silent --notify --add 5m; pkill -SIGRTMIN+10 waybar",
-		"on-click-middle": "pomodoro-cli pause; pkill -SIGRTMIN+10 waybar",
-		"on-click-right": "pomodoro-cli stop; pkill -SIGRTMIN+10 waybar",
-		"signal": 10,
-		"interval": 1
-	},
-
-	"group/pomo": {
-		"modules": [
-			"custom/pomo-icon",
-			"custom/pomo-label"
-			],
-		"orientation": "inherit"
-	},
  }
 ]
