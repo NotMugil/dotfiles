@@ -1,7 +1,8 @@
+// Hollow 
 [
  {
 	"output": ["HDMI-A-1","eDP-1"],
-	"height": 20, // Waybar height (to be removed for auto height)
+	"height": 24, // Waybar height (to be removed for auto height)
 	"layer": "top", // Waybar at top layer
 	"position": "top",
 	"margin": "0px 0px 0px 0px",
@@ -15,6 +16,7 @@
 		"bat": "BAT0",
 		"format": "{icon}<span size='10pt'><b>{capacity}</b></span>",
 		"format-critical": "<span font_family='JetBrainsMono Nerd Font' color='#f38ba8'>{icon}</span><small><b>{capacity}</b></small>",
+		"format-charging": "<span font_family='JetBrainsMono Nerd Font' color='#eed49f'>{icon}</span><small><b>{capacity}</b></small>",
 		"format-good": "<span font_family='JetBrainsMono Nerd Font' color='#a6e3a1'>{icon}</span><small><b>{capacity}</b></small>",
 		"format-icons": [
 			"󰛞 󱢠 󱢠 󱢠 󱢠 ",
@@ -44,7 +46,7 @@
 
 	"bluetooth": {
 		"format": "",
-		"format-connected": "󰂱",
+		"format-connected": "",
 		"format-disabled": "󰂲",
 		"format-off": "󰂲",
 		"format-on": "",
@@ -150,7 +152,7 @@
 		"orientation": "horizontal"
 		},
 		"hyprland/workspaces": {
-			"format": "{name}: {icon}",
+			"format": "{icon} <span size='6pt'> <i>{name}</i> </span>",
 			"format-icons": {
 				"active": "",
 				"default": ""
@@ -164,10 +166,11 @@
 
 	"network": {
 		"format": "{icon}",
-		"format-disconnected": "󰖪",
-		"format-ethernet": "󰈀 /{ifname}",
+		"format-disabled": "󰖪",
+		"format-disconnected": "󰤯",
+		"format-ethernet": "󰈀",
 		"format-icons": [
-			"󰤯",
+			"󰤠",
 			"󰤟",
 			"󰤢",
 			"󰤥",
@@ -176,7 +179,7 @@
 		"format-linked": "󰖩",
 		"format-wifi": "{icon}",
 		"interval": 30,
-		"on-click": "nm-connection-editor",
+		"on-click": "kitty -e 'nmtui'",
 		"on-click-right": "rfkill toggle wifi",
 		"tooltip": true,
 		"tooltip-format": "interface:\t{ifname}\n\nconnected to {essid} at {signalStrength}% strength",

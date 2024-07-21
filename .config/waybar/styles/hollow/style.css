@@ -4,7 +4,7 @@
     background-color: @base;
     color: @text;
     font-family: "SpaceMonoNerdFont", "JetBrainsMono Nerd Font", monospace;
-    font-size: 9px;
+    font-size: 10px;
 }
 
 /* Space first and last modules evenly */
@@ -24,7 +24,7 @@
 #custom-power-button,
 #custom-keyboard,
 #custom-pomo-icon {
-    font-size: 8px; /* Reduced from 9px */
+    font-size: 10px; /* Reduced from 9px */
 }
 
 /* Active and inactive states */
@@ -54,6 +54,10 @@ box.modules-right > box.horizontal,
     padding: 3px 8px; /* Reduced from 5px 10px */
 }
 
+#custom-power-button{
+    padding: 0px 16px 0px 12px;
+}
+
 /* Styling workspace */
 #workspaces,
 #workspaces button,
@@ -62,16 +66,18 @@ box.modules-right > box.horizontal,
     all: unset;
 }
 #workspaces {
+    
     color: @blue;
     background-color: @mantle;
     margin: 7px 3px; /* Reduced from 10px 5px */
-    padding: 0px 16px; /* Reduced from 0px 20px */
+    padding: 0px 0px; /* Reduced from 0px 20px */
     border-radius: 3px; /* Reduced from 4px */
 }
+
 #workspaces > button {
-    padding: 0px 12px; /* Reduced from 0px 15px */
+    padding: 0px 8px 0px 12px; /* Reduced from 0px 15px */
     font-weight: 900;
-    border-radius: 0px;
+    border-radius: 3px;
 }
 #workspaces > button.empty {
     color: @blue;
@@ -110,9 +116,6 @@ box.modules-right > box.horizontal,
 }
 #pulseaudio {
     margin-right: 7px; /* Reduced from 10px */
-}
-#pulseaudio.bluetooth {
-    color: @blue;
 }
 
 /* Styling brightness and volume and slider */
