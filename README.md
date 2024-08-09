@@ -112,7 +112,7 @@ Congratulations, you are done installing the configurations! 🎉
 
 ### Known Issues
 - [ ] Spacing in waybar style: minimal
-- [ ] Auto refresh for bluetooth, battery module in waybar
+- [x] Auto refresh for bluetooth, battery module in waybar
 - [ ] naming wallpapers with whitespaces causes issues with rofi
 - [x] Rofi and wallpaper select only focuses after mouse movement (fixed by installing rofi-wayland instead of regular rofi)
 
