@@ -3,7 +3,7 @@
 # Basic aliases
 alias c='clear' # Clear terminal
 alias x='exit' # Close terminal or Exit
-alias e='$fileManager .' # Open current directory in thunar
+alias e='$fileManager .' # Open current directory in filemanger
 alias h='history -10' # Show last 10 history commands
 alias hc='history -c' # Clear history
 alias hg="history | grep " # +command

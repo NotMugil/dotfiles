@@ -36,6 +36,6 @@ export EDITOR='nano'
 export LANG=en_US.UTF-8
 
 # Set default file manager
-export fileManager='thunar'
+export fileManager='nemo'
 
 export RUST_BACKTRACE=1
