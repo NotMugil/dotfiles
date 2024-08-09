@@ -50,8 +50,7 @@
  waybar-cava cava xdg-desktop-portal-hyprland wl-clipboard socat cliphist hyprpicker \
  nm-connection-editor dictd wl-clip-persist-git blueman bluez bluez-utils nwg-look \
  wlogout ttf-space-mono-nerd brightnessctl neovim thunar imv yazi \
- catppuccin-gtk-theme-mocha nm-connection-editor btop nvtop fastfetch neofetch \
-spicetify 
+ catppuccin-gtk-theme-mocha nm-connection-editor btop nvtop fastfetch neofetch 
    ```
 
   3. Finally, Installing the dotfiles
