@@ -1,0 +1,634 @@
+// 
+// ██╗    ██╗ █████╗ ██╗   ██╗██████╗  █████╗ ██████╗     
+// ██║    ██║██╔══██╗╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗    - Author: NotMugil
+// ██║ █╗ ██║███████║ ╚████╔╝ ██████╔╝███████║██████╔╝    - Repo: https://github.com/NotMugil/dotfiles
+// ██║███╗██║██╔══██║  ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗    - Last Updated: 
+// ╚███╔███╔╝██║  ██║   ██║   ██████╔╝██║  ██║██║  ██║
+//  ╚══╝╚══╝ ╚═╝  ╚═╝   ╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+//                                        ███╗   ███╗ ██████╗ ██████╗ ██╗   ██╗██╗     ███████╗███████╗
+//                                        ████╗ ████║██╔═══██╗██╔══██╗██║   ██║██║     ██╔════╝██╔════╝
+//                                        ██╔████╔██║██║   ██║██║  ██║██║   ██║██║     █████╗  ███████╗
+//                                        ██║╚██╔╝██║██║   ██║██║  ██║██║   ██║██║     ██╔══╝  ╚════██║
+//                                        ██║ ╚═╝ ██║╚██████╔╝██████╔╝╚██████╔╝███████╗███████╗███████║
+//                                        ╚═╝     ╚═╝ ╚═════╝ ╚═════╝  ╚═════╝ ╚══════╝╚══════╝╚══════╝
+//                                                                                                                
+//   List of all the waybar modules used
+
+{
+
+	// ┌┐ ┌─┐┌┬┐┌┬┐┌─┐┬─┐┬ ┬
+	// ├┴┐├─┤ │  │ ├┤ ├┬┘└┬┘
+	// └─┘┴ ┴ ┴  ┴ └─┘┴└─ ┴ 
+
+	"battery": {
+		"bat": "BAT0",
+		"interval": 60,
+		"states": {
+		"warning": 40,
+		"critical": 20,
+		},
+		"format": "{icon} {capacity}%",
+		"format-icons": {
+			"default": [
+				"<span color=\"#f7768e\"> </span>",
+				"<span color=\"#f7768e\"> </span>",
+				"<span color=\"#7aa2f7\"> </span>",
+				"<span color=\"#7aa2f7\"> </span>",
+				"<span color=\"#7aa2f7\"> </span>",
+			],
+			"charging": [ " "," "," "," ",],
+		},
+		"format-charging": "<span color=\"#7aa2f7\">{icon}</span> {capacity}%",
+	},
+
+	"battery#hearts": {
+		"bat": "BAT0",
+		"format": "{icon}<span size='10pt'><b>{capacity}</b></span>",
+		"format-critical": "<span font_family='JetBrainsMono Nerd Font' color='#f38ba8'>{icon}</span><small><b>{capacity}</b></small>",
+		"format-charging": "<span font_family='JetBrainsMono Nerd Font' color='#eed49f'>{icon}</span><small><b>{capacity}</b></small>",
+		"format-good": "<span font_family='JetBrainsMono Nerd Font' color='#a6e3a1'>{icon}</span><small><b>{capacity}</b></small>",
+		"format-icons": [
+			"󰛞 󱢠 󱢠 󱢠 󱢠 ",
+			"󰣐 󱢠 󱢠 󱢠 󱢠 ",
+			"󰣐 󰛞 󱢠 󱢠 󱢠 ",
+			"󰣐 󰣐 󱢠 󱢠 󱢠 ",
+			"󰣐 󰣐 󰛞 󱢠 󱢠 ",
+			"󰣐 󰣐 󰣐 󱢠 󱢠 ",
+			"󰣐 󰣐 󰣐 󰛞 󱢠 ",
+			"󰣐 󰣐 󰣐 󰣐 󱢠 ",
+			"󰣐 󰣐 󰣐 󰣐 󰛞 ",
+			"󰣐 󰣐 󰣐 󰣐 󰣐 "
+		],
+		"format-time": "{H}hr & {m}min",
+		"format-warning": "<span font_family='JetBrainsMono Nerd Font' color='#f9e2af'>{icon}</span><small><b>{capacity}</b></small>",
+		"interval": 60,
+		"max-length": 25,
+		"states": {
+			"critical": 15,
+			"good": 100,
+			"warning": 30
+		},
+		"tooltip-format": "{time} (󰚥 plugged), at {capacity}%",
+		"tooltip-format-charging": "{time} (󰢟 charging), at {capacity}%",
+		"tooltip-format-discharging": "{time} (󱧦 discharging), at {capacity}%"
+	},
+
+	"battery#text": {
+		"interval": 60,
+		"states": {
+		    "warning": 30,
+		    "critical": 15
+		},
+		"format": "<b>{capacity}</b>",
+		"max-length": 25,
+		"tooltip": false
+	},
+
+	// ┌┐ ┬  ┬ ┬┌─┐┌┬┐┌─┐┌─┐┌┬┐┬ ┬
+	// ├┴┐│  │ │├┤  │ │ ││ │ │ ├─┤
+	// └─┘┴─┘└─┘└─┘ ┴ └─┘└─┘ ┴ ┴ ┴
+
+	"bluetooth": {
+		"format-disabled": "off",
+		"format": " {device_alias}",
+		"on-click": "blueberry",
+		"on-click-right": "rfkill toggle bluetooth",
+	},
+
+	"bluetooth#icon": {
+		"format": "",
+		"format-connected": "",
+		"format-disabled": "󰂲",
+		"format-off": "󰂲",
+		"format-on": "",
+		"on-click": "blueberry",
+		"on-click-right": "rfkill toggle bluetooth",
+		"tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+		"tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+		"tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+		"tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t󰥉{device_battery_percentage}%"
+	},
+
+	// ┌─┐┬  ┌─┐┌─┐┬┌─
+	// │  │  │ ││  ├┴┐
+	// └─┘┴─┘└─┘└─┘┴ ┴
+
+	"clock#date": {
+		"actions": {
+		"on-scroll-down": "shift_down",
+		"on-scroll-up": "shift_up"
+	},
+
+	"calendar": {
+		"format": {
+			"days": "<span weight='normal'>{}</span>",
+			"months": "<span color='#cdd6f4'><b>{}</b></span>",
+			"today": "<span color='#f38ba8'><u>{}</u></span>",
+			"weekdays": "<span color='#f9e2af'><b>{}</b></span>",
+			"weeks": "<span color='#a6e3a1'><b>W{}</b></span>"
+			},
+
+			"mode": "month",
+			"mode-mon-col": 1,
+			"on-scroll": 1,
+			"weeks-pos": "right"
+		},
+		"format": "{:%A, %b %e}",
+		"interval": 43200,
+		"tooltip-format": "<span color='#cdd6f4' font='SpaceMonoNerdFont 9'><small>{calendar}</small></span>"
+	},
+
+	"clock#time": {
+		"format": "{:%OI:%OM %p}",
+		"format-alt": "{:%A, %b %e}",
+		"interval": 60
+	},
+
+	// ┌─┐┌─┐┬ ┬
+	// │  ├─┘│ │
+	// └─┘┴  └─┘
+
+	"cpu": {
+		"format": "<span color=\"#7aa2f7\">      </span>{usage}%",
+		"interval": 4,
+	},
+
+	"cpu#icon": {
+	    "interval": 10,
+	    "format": "<span color=\"#f38ba8\"></span>  {}%",
+	    "max-length": 10
+	},
+
+
+	// ┌┬┐┌─┐┌┬┐┌─┐┬─┐┬ ┬
+	// │││├┤ ││││ │├┬┘└┬┘
+	// ┴ ┴└─┘┴ ┴└─┘┴└─ ┴ 
+
+	"memory": {
+		"format": "<span color=\"#7aa2f7\">     </span>{used}GiB",
+		"interval": 4,
+	},
+
+	"memory#icon": {
+	    "interval": 30,
+	    "format": "<span color=\"#89b4fa\"> </span> {used} GiB",
+	},
+
+
+	// ┌┬┐┬┌─┐┬┌─
+	//  │││└─┐├┴┐
+	// ─┴┘┴└─┘┴ ┴
+
+	"disk#icon": {
+	    "interval": 30,
+	    "format": "<span color=\"#f9e2af\"> </span> {used}",
+	    //"path": "/",
+	    "unit": "GB"
+	},
+
+	// ┌┬┐┌─┐┌┬┐┌─┐┌─┐┬─┐┌─┐┌┬┐┬ ┬┬─┐┌─┐
+	//  │ ├┤ │││├─┘├┤ ├┬┘├─┤ │ │ │├┬┘├┤ 
+	//  ┴ └─┘┴ ┴┴  └─┘┴└─┴ ┴ ┴ └─┘┴└─└─┘
+
+	"temperature": {
+		"hwmon-path": "/sys/class/hwmon/hwmon0/temp1_input",
+		"critical-threshold": 80,
+		"format": "<span color=\"#7aa2f7\">\uf4f5     </span>{temperatureC}°C",
+		"format-critical": "<span color=\"#f7768e\"> </span>{temperatureC}°C",
+		"interval": 4,
+	},
+
+	// ┬ ┬┌─┐┬─┐┬┌─┌─┐┌─┐┌─┐┌─┐┌─┐┌─┐
+	// ││││ │├┬┘├┴┐└─┐├─┘├─┤│  ├┤ └─┐
+	// └┴┘└─┘┴└─┴ ┴└─┘┴  ┴ ┴└─┘└─┘└─┘
+
+	"hyprland/workspaces": {
+		"all-outputs": true,
+		"on-click": "activate",
+		"format": "{icon}",
+		"on-scroll-up": "hyprctl dispatch workspace e+1",
+		"on-scroll-down": "hyprctl dispatch workspace e-1",
+		"format-icons": {
+			"1": "I",
+			"2": "II",
+			"3": "III",
+			"4": "IV",
+			"5": "V",
+			"6": "VI",
+			"7": "VII",
+			"8": "VIII",
+			"9": "IX",
+			"10": "X",
+			"11": "XI",
+			"12": "XII",
+			"13": "XIII",
+			"14": "XIV",
+			"15": "XV",
+			"16": "XVI",
+			"17": "XVII",
+			"18": "XVIII",
+			"19": "XIX",
+			"21": "XXI",
+			"22": "XXII",
+			"23": "XXIII",
+			"24": "XXIV",
+			"25": "XXV",
+			"26": "XXVI",
+			"27": "XXVII",
+			"28": "XXVIII",
+			"29": "XXIX",
+			"30": "XXX",
+
+			"urgent": "",
+			"default": ""
+		},
+	},
+
+	// Numbers Style workspace 
+	"hyprland/workspaces#number": {
+		"all-outputs": true,
+		"on-click": "activate",
+		"format": "{icon}",
+		"on-scroll-up": "hyprctl dispatch workspace e+1",
+		"on-scroll-down": "hyprctl dispatch workspace e-1",
+		"persistent-workspaces": {
+			"1": [],
+			"2": [],
+			"3": [],
+			"4": [],
+			"5": [],
+		},
+		"format-icons": {
+			"1": "1",
+			"2": "2",
+			"3": "3",
+			"4": "4",
+			"5": "5",
+			"6": "6",
+			"7": "7",
+			"8": "8",
+			"9": "9",
+			"10": "10",
+
+			"urgent": "",
+			"default": ""
+		},
+	},
+
+
+
+	// PACMAN Style/
+	"hyprland/workspaces#pacman": {
+		"active-only":false,
+		"all-outputs": true,
+		"format": "{icon}",
+		"on-click": "activate",
+		"on-scroll-up": "hyprctl dispatch workspace e+1",
+		"on-scroll-down": "hyprctl dispatch workspace e-1",
+		"show-special": false,
+		"persistent-workspaces":{
+			"1": [],
+			"2": [],
+			"3": [],
+			"4": [],
+			"5": [],
+		},
+		"format": "{icon}",
+		"format-icons": {
+			"active": " 󰮯 ",
+			"default": "󰊠",
+			"persistent":"󰊠",
+			"empty": "",
+		},
+	},
+
+	// KANJI Workspace Style
+
+	 "hyprland/workspaces#kanji": {
+	        "disable-scroll": true,
+	        "format": "{icon}",
+	        "persistent-workspaces": {
+	            "*": 5,
+	        },
+	        "format-icons": {
+	            "1": "一",
+	            "2": "二",
+	            "3": "三",
+	            "4": "四",
+	            "5": "五",
+	            "6": "六",
+	            "7": "七",
+	            "8": "八",
+	            "9": "九",
+	            "10": "十",
+	            "urgent": "",
+	            "focused": "",
+	            "default": ""
+	        },
+	    },
+
+	// ┌┐┌┌─┐┌┬┐┬ ┬┌─┐┬─┐┬┌─
+	// │││├┤  │ ││││ │├┬┘├┴┐
+	// ┘└┘└─┘ ┴ └┴┘└─┘┴└─┴ ┴
+
+	"network": {
+		"format": "{icon}",
+		"format-disabled": "󰖪",
+		"format-disconnected": "󰤯",
+		"format-ethernet": "󰈀",
+		"format-icons": [
+			"󰤠",
+			"󰤟",
+			"󰤢",
+			"󰤥",
+			"󰤨"
+		],
+		"format-linked": "󰖩",
+		"format-wifi": "{icon}",
+		"interval": 30,
+		"on-click": "kitty -e 'nmtui'",
+		"on-click-right": "rfkill toggle wifi",
+		"tooltip": true,
+		"tooltip-format": "interface:\t{ifname}\n\nconnected to {essid} at {signalStrength}% strength",
+		"tooltip-format-disconnected": "interface: {ifname}\nconnected to {essid}\nat {signalStrength}% strength"
+	},
+
+	"network#text": {
+		// "interface": "wlp2*", // (Optional) To force the use of this interface
+		"on-click-right": "kitty -e 'nmtui'",
+		"on-click-middle": "XDG_CURRENT_DESKTOP=GNOME gnome-control-center",
+		"format-wifi": "<span color=\"#7aa2f7\">  </span>{essid} ({signalStrength}%)",
+		"format-ethernet": "<span color=\"#7aa2f7\"> </span>{ifname}",
+		"tooltip-format": "{ifname} via {gwaddr}",
+		"format-linked": "{ifname} (No IP)",
+		"format-disconnected": "<span color=\"#7aa2f7\">⚠ </span>Disconnected",
+		"format-alt": "{ipaddr}"
+	},
+
+
+	// ┬  ┬┌─┐┬  ┬ ┬┌┬┐┌─┐
+	// └┐┌┘│ ││  │ ││││├┤ 
+	//  └┘ └─┘┴─┘└─┘┴ ┴└─┘
+
+	"pulseaudio": {
+		"format": "{icon}",
+		"format-bluetooth": "{icon}",
+		"format-icons": {
+		"default": [
+			"󰕿",
+			"",
+			"󰕾"
+			]
+		},
+		"format-muted": "󰖁",
+		"on-click": "pavucontrol",
+		"on-click-right": "pactl set-sink-mute 0 toggle",
+		"scroll-step": 1,
+		"tooltip-format": "{desc}\t{icon}{volume}%"
+	},
+
+	"pulseaudio/slider": {
+		"max": 100,
+		"min": 0,
+		"orientation": "horizontal"
+	},
+
+	"pulseaudio#icon": {
+	    "format": "<span color=\"#c6a0f6\">{icon}</span> {volume}%",
+	    "format-bluetooth": "{volume}% {icon}",
+	    "format-muted": " ",
+	    "format-icons": {
+	        "headphone": " ",
+	        "hands-free": " ",
+	        "headset": " ",
+	        "phone": " ",
+	        "phone-muted": " ",
+	        "portable": " ",
+	        "car": " ",
+	        "default": [" ", " "]
+	    },
+	    "scroll-step": 1,
+	    "on-click": "pavucontrol",
+	    "ignored-sinks": ["Easy Effects Sink"]
+	},
+
+	// ┌┐ ┌─┐┌─┐┬┌─┬  ┬┌─┐┬ ┬┌┬┐
+	// ├┴┐├─┤│  ├┴┐│  ││ ┬├─┤ │ 
+	// └─┘┴ ┴└─┘┴ ┴┴─┘┴└─┘┴ ┴ ┴ 
+
+	"backlight": {
+		"device": "intel_backlight",
+		"format": "{icon}",
+		"tooltip-format": "{icon}{percent}%",
+		"format-icons": ["󰃞","󰃝","󰃟","󰃠"]
+	},
+
+	"backlight/slider": {
+		"max": 100,
+		"min": 0,
+		"orientation": "horizontal",
+		"device": "intel_backlight"
+	},
+
+	// ┌─┐┬ ┬┌─┐┌┬┐┌─┐┌┬┐
+	// │  │ │└─┐ │ │ ││││
+	// └─┘└─┘└─┘ ┴ └─┘┴ ┴
+
+	"custom/launcher#arch": {
+		"format": "󰣇",
+		"on-click": "",
+	},
+
+	"custom/power-button": {
+		"format": "",
+		"on-click": "wlogout -b 5",
+		"tooltip": false
+	},
+
+	"custom/updates": {
+		"format": "{icon}  {}",
+		"return-type": "json",
+		"format-icons": {
+		   "has-updates": "<span color=\"#a6e3a1\"></span>",
+		   "updated": "<span color=\"\"></span> "
+		},
+		"exec-if": "which waybar-module-pacman-updates",
+		"exec": "waybar-module-pacman-updates",
+		"on-click": "kitty -e ~/.scripts/update.sh",
+	},
+
+	"custom/notification": {
+		"escape": true,
+		"exec": "swaync-client -swb",
+		"exec-if": "which swaync-client",
+		"format": "{icon}",
+		"format-icons": {
+			"dnd-inhibited-none": "󰂚<sup></sup>",
+			"dnd-inhibited-notification": "󰂚<span foreground='#f38ba8'><sup></sup></span>",
+			"dnd-none": "󰂛",
+			"dnd-notification": "󰂛<span foreground='#f38ba8'><sup></sup></span>",
+			"inhibited-none": "󰂚<sup>󰜺</sup>",
+			"inhibited-notification": "󰵙<span foreground='#f38ba8'><sup></sup></span>",
+			"none": "󰂚<span color='#6c7086'><sup></sup></span>",
+			"notification": "󰂚<span foreground='#f38ba8'><sup></sup></span>"
+		},
+		"on-click": "sleep 0.1 && swaync-client -t -sw",
+		"on-click-right": "sleep 0.1 && swaync-client -d -sw",
+		"return-type": "json",
+		"tooltip": false
+	},
+
+	// ┌─┐┬─┐┌─┐┬ ┬┌─┐┌─┐
+	// │ ┬├┬┘│ ││ │├─┘└─┐
+	// └─┘┴└─└─┘└─┘┴  └─┘
+
+	"group/brightness": {
+		"drawer": {
+			"children-class": "brightness",
+			"transition-duration": 500,
+			"transition-left-to-right": true
+		},
+		"modules": [
+			"backlight",
+			"backlight/slider"
+		],
+		"orientation": "horizontal"
+	},
+
+	"group/pownet": {
+		"modules": [
+			"battery",
+			"network"
+		],
+		"orientation": "horizontal"
+	},
+
+	"group/clock": {
+		"modules": [
+			"clock#time"
+		],
+		"orientation": "inherit"
+	},
+
+	"group/sys-info": {
+		"modules": [
+			"network",
+			"bluetooth",
+			"group/volume",
+			"group/brightness"
+		],
+		"orientation": "horizontal"
+	},
+
+	"group/volume": {
+		"drawer": {
+			"children-class": "volume",
+			"transition-duration": 500,
+			"transition-left-to-right": true
+		},
+		"modules": [
+			"pulseaudio",
+			"pulseaudio/slider"
+		],
+		"orientation": "horizontal"
+		},
+		"hyprland/workspaces": {
+			"format": "{icon} <span size='6pt'> <i>{name}</i> </span>",
+			"format-icons": {
+				"active": "",
+				"default": ""
+			},
+			"persistent-workspaces": {
+				"*": 4, // 5 workspaces by default on every monitor
+				"HDMI-A-1": 5 // but only three on HDMI-A-1
+			}
+		},
+	
+
+	
+	"tray": {
+		"icon-size": 11
+	},
+
+	// ┬ ┬┬ ┬┌─┐┬─┐
+	// ├─┤└┬┘├─┘├┬┘
+	// ┴ ┴ ┴ ┴  ┴└─
+
+	"hyprland/window": {
+		"max-length": 40,
+		"seperate-outputs": true,
+  		"on-click": "dunstify \"$(hyprctl activewindow -j | jq -r .title)\""
+	},
+
+	// ┌┬┐┬┌─┐┌─┐
+	// ││││└─┐│  
+	// ┴ ┴┴└─┘└─┘
+
+	"image": {
+		"tooltip": false,
+		"path": "/home/rei/.face.icon",
+		"size": 47
+	},
+
+
+	"custom/three-dots-seperator": {
+		"format": "󰇙",
+	},
+
+	"mpris": {
+		"interval": 10,
+		"format": "<span color=\"#a6da95\">{player_icon} [</span> {title} <span color=\"#a6da95\">]</span>",
+		"format-paused": "<span color=\"#ee99a0\">{status_icon}</span> <i>{title}</i>",
+		"on-click-middle": "playerctl play-pause",
+		"on-click": "playerctl previous",
+		"on-click-right": "playerctl next",
+		"scroll-step": 5.0,
+		"on-scroll-up": "~/.config/hypr/scripts/Volume.sh --inc",
+		"on-scroll-down": "~/.config/hypr/scripts/Volume.sh --dec",
+		"smooth-scrolling-threshold": 1,
+		"player-icons": {
+			"chromium": " ",
+			"default": " ",
+			"firefox": " ",
+			"kdeconnect": " ",
+			"mopidy": " ",
+			"mpv": " ",
+			"spotify": " ",
+			"vlc": "󰕼 ",
+		},
+		"status-icons": {
+			"paused": "󰐎 ",
+			"playing": " ",
+			"stopped": " ",
+		},
+		// "ignored-players": ["firefox"]
+		"max-length": 20,
+	},
+
+	"mpd": {
+	    "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ",
+	    "format-disconnected": "Disconnected ",
+	    "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
+	    "interval": 10,
+	    "consume-icons": {
+	        "on": " " // Icon shows only when "consume" is on
+	    },
+		    "random-icons": {
+	        "off": "<span color=\"#f53c3c\"></span> ", // Icon grayed out when "random" is off
+	        "on": " "
+	    },
+	    "repeat-icons": {
+	        "on": " "
+	    },
+	    "single-icons": {
+	        "on": "1 "
+	    },
+	    "state-icons": {
+	        "paused": "",
+	        "playing": ""
+	    },
+	    "tooltip-format": "MPD (connected)",
+	    "tooltip-format-disconnected": "MPD (disconnected)"
+	},
+ }
+
