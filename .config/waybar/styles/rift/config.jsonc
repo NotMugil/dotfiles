@@ -1,0 +1,25 @@
+{
+
+	"layer": "top",
+	"position": "top",
+	"output": ["HDMI-A-1","eDP-1"],
+	//	 "margin": "10px 10px 0px 10px",
+
+	"include": "~/.config/waybar/modules",
+
+	"modules-left": [
+		"custom/launcher#arch",
+		"hyprland/workspaces#pacman",
+		"custom/spotify",
+		"cava"
+	],
+
+	"modules-center": [
+		"clock"
+	],
+
+	"modules-right": [
+		"clock",
+		"custom/power-button"
+	],
+ }

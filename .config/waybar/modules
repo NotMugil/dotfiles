@@ -520,30 +520,24 @@
 		"orientation": "horizontal"
 	},
 
+	"group/sys-settings": {
+        	"modules": [
+            		"network#icon",
+            		"bluetooth#icon",
+            		"custom/wallpaper",
+                ],
+                "orientation": "horizontal"
+	},
+
 	"group/volume": {
 		"drawer": {
 			"children-class": "volume",
 			"transition-duration": 500,
 			"transition-left-to-right": true
 		},
-		"modules": [
-			"pulseaudio",
-			"pulseaudio/slider"
-		],
+		"modules": ["pulseaudio","pulseaudio/slider"],
 		"orientation": "horizontal"
-		},
-		"hyprland/workspaces": {
-			"format": "{icon} <span size='6pt'> <i>{name}</i> </span>",
-			"format-icons": {
-				"active": "",
-				"default": ""
-			},
-			"persistent-workspaces": {
-				"*": 4, // 5 workspaces by default on every monitor
-				"HDMI-A-1": 5 // but only three on HDMI-A-1
-			}
-		},
-	
+	},
 
 	
 	"tray": {
