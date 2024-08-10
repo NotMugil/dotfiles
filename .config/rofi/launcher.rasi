@@ -11,8 +11,7 @@ configuration {
   me-accept-entry:            [ MousePrimary, MouseSecondary, MouseDPrimary ];
 }
 
-@theme "~/.config/palletes/rofi/macchiato.rasi"
-@import "colors.rasi"
+@theme "~/.config/palletes/rofi/current_theme.rasi"
 @import "fonts.rasi"
 
 // Main Window

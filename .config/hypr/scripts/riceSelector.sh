@@ -67,9 +67,9 @@ if [[ -n "$SELECTED_RICE" ]]; then
 
         # C1reate a new symlink to the selected rice's wallpapers
         echo "Creating symlink from $WALLPAPERS_SRC to $WALLPAPERS_DIR."
-        ln -s "$WALLPAPERS_SRC" "$WALLPAPERS_DIR"
-	ln -s "$RICE_DIR/$SELECTED_RICE/theme.conf" "$HYPR_CONF/theme.conf"	
-	ln -s "$RICE_DIR/$SELECTED_RICE/colors.conf" "$HYPR_CONF/colors.conf"
+        ln -sf "$WALLPAPERS_SRC" "$WALLPAPERS_DIR"
+	ln -sf "$RICE_DIR/$SELECTED_RICE/theme.conf" "$HYPR_CONF/theme.conf"	
+	ln -sf "$RICE_DIR/$SELECTED_RICE/colors.conf" "$HYPR_CONF/colors.conf"
 
         echo "Changing to default wallpaper of selected theme"
         swww img $WALLPAPERS_DIR/01.webp ${SWWW_PARAMS} && notify-send "Wallpaper Changed" -i "$WALLPAPERS_DIR/01.webp" --app-name=Wallpaper
