@@ -11,8 +11,7 @@ configuration {
   me-accept-entry:            [ MousePrimary, MouseSecondary, MouseDPrimary ];
 }
 
-@theme "~/.config/palletes/rofi/macchiato.rasi"
-@import "colors.rasi"
+@theme "~/.config/palletes/rofi/current_theme.rasi"
 @import "fonts.rasi"
 
 // Main Window
@@ -47,43 +46,32 @@ mainbox {
 // Inputbar
 inputbar {
   enabled:                     true;
-  spacing:                     15px;
-  padding: 		       50px 30px;	
+  spacing:                     0px; // Adjust spacing if necessary
+  padding:                     50px 30px;
   margin:                      0px;
-  border-radius: 	       7px;
+  border-radius:               7px;
   background-color:            transparent;
-  background-image:	       url("~/.current_wallpaper", width);
-  children:                    [ "textbox-prompt-colon", "entry" ];
+  background-image:            url("~/.current_wallpaper", width);
+  children:                    [ "textbox-prompt-colon" ]; // Removed "entry"
 }
 
 textbox-prompt-colon {
   enabled:                     true;
-  expand:                      false;
-  padding:                     13px 12px 13px 16px;
+  expand:                      true;
+  padding:                     10px;
   border:                      0px;
   border-radius:               7px;
   border-color:                @border-tb;
   background-color:            @background-tb;
   text-color:                  @foreground;
-  str:                         " ";
+  str:                         "Select a theme style";
+  font-size:                   16px; // Adjust font size as needed
+  text-align:                  center; // Center text
+  vertical-align:              center; // Center vertically
+  horizontal-align:            center; // Center horizontally
+  width:                       100%; // Ensure it takes full width of inputbar
 }
 
-entry {
-  enabled:                     true;
-  padding:                     12px 16px;
-  border:                      0px;
-  border-radius:               7px;
-  border-color:                @border-tb;
-  background-color:            @background-tb;
-  text-color:                  @foreground;
-  cursor:                      text;
-  placeholder:                 "Search...";
-  placeholder-color:           inherit;
-  vertical-align:              0.5;
-  horizontal-align:            0.0;
-}
-
-// Listview
 listview {
   enabled:                     true;
   columns:                     1;
@@ -103,9 +91,9 @@ listview {
 // Elements
 element {
   enabled:                     true;
-  spacing:                     10px;
+  spacing:                     15px;
   margin:                      0px;
-  padding:                     2px;
+  padding:                     5px;
   border:                      0px solid;
   border-radius:               7px;
   background-color:            transparent;
@@ -131,7 +119,7 @@ element selected.active {
 
 element-icon {
   background-color:            transparent;
-  size:                        48px;
+  size:                        30px;
   cursor:                      inherit;
 }
 
