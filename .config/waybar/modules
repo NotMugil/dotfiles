@@ -92,6 +92,7 @@
 		"format-disabled": "off",
 		"format": " {device_alias}",
 		"on-click": "blueberry",
+		"max-length": 10,
 		"on-click-right": "rfkill toggle bluetooth",
 	},
 
@@ -103,6 +104,7 @@
 		"format-on": "",
 		"on-click": "blueberry",
 		"on-click-right": "rfkill toggle bluetooth",
+		"max-length": 10,
 		"tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
 		"tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
 		"tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
