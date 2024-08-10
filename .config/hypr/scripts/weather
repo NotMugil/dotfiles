@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# Save the current line height
+CURRENT_LINE_HEIGHT=$(kitty @ get-line-height)
+
+# Set a custom line height
+kitty @ set-line-height 1.5
+
+# Run the command
+curl -s wttr.in
+
+# Reset the line height to its original value
+kitty @ set-line-height $CURRENT_LINE_HEIGHT
