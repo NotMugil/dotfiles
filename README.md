@@ -117,15 +117,19 @@ Congratulations, you are done installing the configurations! 🎉
 - [x] Rofi and wallpaper select only focuses after mouse movement (fixed by installing rofi-wayland instead of regular rofi)
 
 ### Tasks
-- [ ] Symlink management
-- [ ] Prepare Contrubuting.md
-- [x] Wlogout configuration
+- [ ] 
+- [ ] 
+- [ ] More Hyprlock styles
 - [x] More panel styles && panel selector
 
 ## Star History
 [![Star History Chart](https://api.star-history.com/svg?repos=NotMugil/dotfiles&type=Date)](https://star-history.com/#NotMugil/dotfiles&Date)
 
 # Credits
+
+- [gh0stzk](https://github.com/gh0stzk/dotfiles) 
+- []() 
+
 _Thanks a lot for [r/unixporn](https://www.reddit.com/r/unixporn/) community for inspiring me to do this._
 
 <div align="center">
