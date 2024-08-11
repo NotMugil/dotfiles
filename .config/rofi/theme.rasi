@@ -64,7 +64,7 @@ textbox-prompt-colon {
   border-color:                @border-tb;
   background-color:            @background-tb;
   text-color:                  @foreground;
-  str:                         "Select a theme style";
+  str:                         "Select a Theme / Rice";
   font-size:                   16px; // Adjust font size as needed
   text-align:                  center; // Center text
   vertical-align:              center; // Center vertically
