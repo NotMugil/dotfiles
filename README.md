@@ -109,16 +109,9 @@ Congratulations, you are done installing the configurations! 🎉
 
 
 ## 💻 Development
-
-### Known Issues
-- [ ] Spacing in waybar style: minimal
-- [x] Auto refresh for bluetooth, battery module in waybar
-- [ ] naming wallpapers with whitespaces causes issues with rofi
-- [x] Rofi and wallpaper select only focuses after mouse movement (fixed by installing rofi-wayland instead of regular rofi)
-
 ### Tasks
-- [ ] 
-- [ ] 
+- [ ] Theme Switcher
+- [ ] Add mpris to waybar
 - [ ] More Hyprlock styles
 - [x] More panel styles && panel selector
 
@@ -127,8 +120,8 @@ Congratulations, you are done installing the configurations! 🎉
 
 # Credits
 
-- [gh0stzk](https://github.com/gh0stzk/dotfiles) 
-- []() 
+- [gh0stzk's dotfiles](https://github.com/gh0stzk/dotfiles) 
+- [HyprNova](https://github.com/zDyanTB/HyprNova) 
 
 _Thanks a lot for [r/unixporn](https://www.reddit.com/r/unixporn/) community for inspiring me to do this._
 
