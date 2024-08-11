@@ -54,7 +54,7 @@ To submit a pull request (PR) with your changes:
 
 ## Code of Conduct
 
-This project adheres to a [Code of Conduct](CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code. Please report unacceptable behavior to [mugilsubramani@gmail.com](mailto:mugilsubramani@gmail.com).
+This project adheres to a [Code of Conduct](CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code. Please report unacceptable behavior to [notmugil01@gmail.com](mailto:notmugil01@gmail.com).
 
 ## Resources
 
