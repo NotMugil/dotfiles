@@ -20,4 +20,4 @@ Include any additional information or notes about your pull request here.
 
 ---
 
-By submitting this pull request, I confirm that my contribution is made under the terms of the [MIT License](../LICENSE) for this project.
+By submitting this pull request, I confirm that my contribution is made under the terms of the [GNU General Public License v3.0](../LICENSE) for this project.
