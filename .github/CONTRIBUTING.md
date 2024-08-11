@@ -60,7 +60,7 @@ This project adheres to a [Code of Conduct](CODE_OF_CONDUCT.md). By participatin
 
 - [Issue Tracker](https://github.com/NotMugil/dotfiles/issues)
 - [Commit Message Guidelines](COMMIT_MESSAGE_GUIDELINES.md)
-- [Pull Request Template](.github/PR_TEMPLATE.md)
+- [Pull Request Template](.github/PULL_REQUEST_TEMPLATE.md)
 - [Code of Conduct](CODE_OF_CONDUCT.md)
 
 Thank you for contributing!
