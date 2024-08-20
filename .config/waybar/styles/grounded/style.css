@@ -74,20 +74,22 @@ window > box {
 
 #music {
 	margin: 6px 2px;
+	padding: 0px 20px;
+	border-radius: 100px;
+	background-color: #1e1e2e;
 }
 
 #mpris {
 	background-color: #1e1e2e;
 	border-radius: 100px 0px 0px 100px;
 	color: #cdd6f4;
-	padding: 0px 20px;
+	padding: 0px 20px 0px 0px;
 }
 
 #custom-cava {
 	background-color: #1e1e2e;
 	border-radius: 0px 100px 100px 0px;
 	color: #cba6f7;
-	padding: 0px 20px 0px 0px;
 }
 
 #workspaces {
