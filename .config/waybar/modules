@@ -326,7 +326,7 @@
 	},
 
 	// CIRCLES Style
-	"hyprland/workspaces#pacman": {
+	"hyprland/workspaces#circles": {
 		"active-only":false,
 		"all-outputs": true,
 		"format": "{icon}",
@@ -498,12 +498,14 @@
 		"format": "{icon}  {}",
 		"return-type": "json",
 		"format-icons": {
-		   "has-updates": "<span color=\"#a6e3a1\"></span>",
+		   "has-updates": "<span color=\"#a6e3a1\"> </span>",
 		   "updated": "<span color=\"\"></span> "
 		},
-		"exec-if": "which waybar-module-pacman-updates",
-		"exec": "waybar-module-pacman-updates",
+		"exec": "checkupdates | wc -l",
+		"exec-if": "[[ $(checkupdates | wc -l) ]]",
 		"on-click": "kitty -e ~/.config/hypr/scripts/update.sh",
+		"tooltip": true,
+		"tooltip-format": "Left click to update packages"
 	},
 
 	"custom/notification": {
@@ -615,7 +617,8 @@
 
 	
 	"tray": {
-		"icon-size": 11
+		"icon-size": 14,
+		"spacing": 10
 	},
 
 	// ┬ ┬┬ ┬┌─┐┬─┐

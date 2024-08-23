@@ -10,7 +10,7 @@
        "width": 1300,
        "output": ["HDMI-A-1","eDP-1"],
            "include": "~/.config/waybar/modules",
-       "modules-left": ["hyprland/workspaces#pacman","tray","cava"],
+       "modules-left": ["hyprland/workspaces#circles","tray","cava"],
        "modules-center": ["group/music",],
        "modules-right": ["group/pulseaudio","group/btop","clock",], 
     }
