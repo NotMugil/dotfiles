@@ -121,9 +121,10 @@ Congratulations, you are done installing the configurations! 🎉
 ## 💻 Development
 ### Tasks
 - [ ] Theme Switcher
-- [ ] Add mpris to waybar
+- [ ] Ease the task of changing username/home dir name
+- [ ] Update gallery images
 - [ ] More Hyprlock styles
-- [x] More panel styles && panel selector
+- [x] Add mpris to waybar
 
 ## Star History
 [![Star History Chart](https://api.star-history.com/svg?repos=NotMugil/dotfiles&type=Date)](https://star-history.com/#NotMugil/dotfiles&Date)
