@@ -60,21 +60,21 @@
    ```
 
    ```bash
-    pacman -S ttf-nerd-fonts-symbols ttf-nerd-fonts-symbols-mono ttf-space-mono-nerd \       noto-fonts-cjk noto-fonts-emoji
+    pacman -S ttf-nerd-fonts-symbols ttf-nerd-fonts-symbols-mono ttf-space-mono-nerd \
+    noto-fonts-cjk noto-fonts-emoji
    ```
 
   3. Finally, Installing the dotfiles
      
   > Cloning the repository into your local system.
   ```bash
-    git clone https://github.com/NotMugil/dotfiles.git
-    cd dotfiles
+    git clone --depth=1 https://github.com/NotMugil/dotfiles.git && cd dotfiles
   ```
 
   > Copy the configs to their respective directories. Make sure to backup your previous configs if needed. 
   ```bash
     cp -r .config/* ~/.config/
-    cp -r .scripts/* ~/
+    cp -r .zshenv ~/
   ```
 
 Congratulations, you are done installing the configurations! 🎉 
