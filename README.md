@@ -120,7 +120,11 @@ Congratulations, you are done installing the configurations! 🎉
 
 # Credits
 
-- [gh0stzk's dotfiles](https://github.com/gh0stzk/dotfiles) 
+- [Catppuccin](https://github.com/catppuccin/catppuccin) 
+- [JaaKoolit's dotfiles](https://github.com/Jakoolit/hyprland-dots) 
+- [Matt-ftw's dotfiles](https://github.com/Matt-ftw/dotfiles) 
+- [gh0stzk's dotfiles](https://github.com/gh0stzk/dotfiles)
+- [Hyprdots](https://github.com/prasanthrangan/hyprdots)
 - [HyprNova](https://github.com/zDyanTB/HyprNova) 
 
 _Thanks a lot for [r/unixporn](https://www.reddit.com/r/unixporn/) community for inspiring me to do this._
