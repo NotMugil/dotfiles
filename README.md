@@ -44,13 +44,23 @@
    ```
 
   2. Installing required dependencies     
-    
+
    ```bash
-   yay -Sy kitty nano rofi-wayland swaync waybar playerctl mpv grim slurp jq bc pamixer pavucontrol \
- waybar-cava cava xdg-desktop-portal-hyprland wl-clipboard socat cliphist hyprpicker \
- nm-connection-editor dictd wl-clip-persist-git blueman bluez bluez-utils nwg-look \
- wlogout ttf-space-mono-nerd brightnessctl neovim thunar imv yazi \
- catppuccin-gtk-theme-mocha nm-connection-editor btop nvtop fastfetch neofetch 
+    pacman -S kitty nano rofi-wayland swaync swaync waybar playerctl mpv grim slurp \
+    cliphist wl-clipboard pavucontrol hyprlock nwg-look blueman bluez bluez-utils \
+    dictd pamixer brightnessctl thunar ranger python-ranger-fm python-pillow imv \
+    tumbler webp-pixbuf-loader totem evince ffmpegthumbnailer pacman-contrib btop \
+    nvtop fastfetch neovim nm-connection-editor xdg-desktop-portal-hyprland zsh \
+    unzip zsh swww hypridle 
+   ```
+
+   ```bash
+     yay -Sy cava hyprpicker wl-clip-persist-git wlogout jamesdsp anyrun  \
+     catppuccin-gtk-theme-mocha
+   ```
+
+   ```bash
+    pacman =S ttf-nerd-fonts-symbols ttf-nerd-fonts-symbols-mono ttf-space-mono-nerd \       noto-fonts-cjk noto-fonts-emoji
    ```
 
   3. Finally, Installing the dotfiles
