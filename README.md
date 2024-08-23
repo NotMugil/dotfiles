@@ -60,7 +60,7 @@
    ```
 
    ```bash
-    pacman =S ttf-nerd-fonts-symbols ttf-nerd-fonts-symbols-mono ttf-space-mono-nerd \       noto-fonts-cjk noto-fonts-emoji
+    pacman -S ttf-nerd-fonts-symbols ttf-nerd-fonts-symbols-mono ttf-space-mono-nerd \       noto-fonts-cjk noto-fonts-emoji
    ```
 
   3. Finally, Installing the dotfiles
