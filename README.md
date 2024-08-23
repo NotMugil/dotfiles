@@ -56,7 +56,7 @@
 
    ```bash
      yay -Sy cava hyprpicker wl-clip-persist-git wlogout jamesdsp anyrun  \
-     catppuccin-gtk-theme-mocha
+     catppuccin-gtk-theme-mocha nerd-fonts-sf-mono 
    ```
 
    ```bash
@@ -126,7 +126,7 @@ Congratulations, you are done installing the configurations! 🎉
 - [ ] More Hyprlock styles
 - [x] Add mpris to waybar
 
-## Star History
+## ⭐ Star History
 [![Star History Chart](https://api.star-history.com/svg?repos=NotMugil/dotfiles&type=Date)](https://star-history.com/#NotMugil/dotfiles&Date)
 
 # Credits
