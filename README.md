@@ -15,7 +15,7 @@
 
 ![showcase](.github/assets/showcase.png)
 
-# Information
+## Information
 - Operating System • [Arch Linux](https://archlinux.org)
 - Window Manager/DE • [Hyprland](https://hyprland.org/)
 - Terminal • [kitty](https://github.com/kovidgoyal/kitty)
@@ -29,7 +29,45 @@
 - Text Editor • [neovim](https://neovim.io/)
 - Colorscheme • [catppuccin mocha](https://github.com/catppuccin/catppuccin)
 
-## ⚙️ Setup
+
+## Gallery
+>[!NOTE] 
+> Images included in the gallery may contain some softwares which may not be included in the packages list or the configurations.
+
+|  **Lockscreen**                                          |
+| -------------------------------------------------------- |
+| ![gallery-1](.github/assets/gallery-01.png)              |
+
+| **Wallpaper Selector**                                   |
+| -------------------------------------------------------- |
+| ![gallery-2](.github/assets/gallery-02.png)              |
+
+| **Custom Startpage for firefox**                         |
+| -------------------------------------------------------- |
+| ![gallery-3](.github/assets/gallery-03.png)              |
+
+| **Spotify (Spicetified) & Audio Visualizer**             |
+| -------------------------------------------------------- |
+| ![gallery-4](.github/assets/gallery-04.png)              |
+
+| **Rofi Menu from adi1090x**                              |
+| -------------------------------------------------------- |
+| ![gallery-5](.github/assets/gallery-05.png)              |
+
+| **Notification Center (SwayNC)**                         |
+| -------------------------------------------------------- |
+| ![gallery-6](.github/assets/gallery-06.png)              |
+
+| **Neofetch**                                             |
+| -------------------------------------------------------- |
+| ![gallery-7](.github/assets/gallery-07.png)              |
+
+| **Btop + tty-clock**                                     |
+| -------------------------------------------------------- |
+| ![gallery-8](.github/assets/gallery-08.png)              |
+
+
+## Installation
   > [!WARNING]
   > This is a step by step guide for installing my dotfiles which is designed based on Arch Linux (and other Arch-based distributions). If you are running any other system, install the following packages with your respective OS's package manager.
 
@@ -79,50 +117,14 @@
 
 Congratulations, you are done installing the configurations! 🎉 
 
-
-## 🖼️ Gallery
->[!NOTE] 
-> Images included in the gallery may contain some softwares which may not be included in the packages list or the configurations.
-
-
-|  **Lockscreen**                                          |
-| -------------------------------------------------------- |
-| ![gallery-1](.github/assets/gallery-01.png)              |
-
-| **Wallpaper Selector**                                   |
-| -------------------------------------------------------- |
-| ![gallery-2](.github/assets/gallery-02.png)              |
-
-| **Custom Startpage for firefox**                         |
-| -------------------------------------------------------- |
-| ![gallery-3](.github/assets/gallery-03.png)              |
-
-| **Spotify (Spicetified) & Audio Visualizer**             |
-| -------------------------------------------------------- |
-| ![gallery-4](.github/assets/gallery-04.png)              |
-
-| **Rofi Menu from adi1090x**                              |
-| -------------------------------------------------------- |
-| ![gallery-5](.github/assets/gallery-05.png)              |
-
-| **Notification Center (SwayNC)**                         |
-| -------------------------------------------------------- |
-| ![gallery-6](.github/assets/gallery-06.png)              |
-
-| **Neofetch**                                             |
-| -------------------------------------------------------- |
-| ![gallery-7](.github/assets/gallery-07.png)              |
-
-| **Btop + tty-clock**                                     |
-| -------------------------------------------------------- |
-| ![gallery-8](.github/assets/gallery-08.png)              |
-
 ## Keybinds
+>[!NOTE] 
+> Some of these keybinds might be outdated or updated. I will try my best to keep it up to date. Check the config file for recent/workingPlease note that some of these keybinds may be outdated or have been updated. I will do my best to keep this list current. For the most recent and working keybinds, please check the config file.
 
-| Keybind           		              	| Functionality                                                                   |
+| Keys           		              	| Functionality                                                                   |
 |-----------------------------------------------|---------------------------------------------------------------------------------|
 | <kbd>SUPER</kbd> + <kbd>RETURN</kbd>          | Launch Kitty				                                          |
-| <kbd>SUPER</kbd> + <kbd>D</kbd>		| Launch Rofi drun			    	                                  |
+| <kbd>SUPER</kbd> + <kbd>D</kbd>		| Launch Rofi 				    	                                  |
 | <kbd>SUPER</kbd> + <kbd>E</kbd>      		| Launch Thunar File Manager	 	                                          |
 | <kbd>SUPER</kbd> + <kbd>B</kbd>     	        | Launch Browser                                                                  |
 | <kbd>SUPER</kbd> + <kbd>C</kbd>          	| Launch text editor   		                                                  |
@@ -143,18 +145,21 @@ Congratulations, you are done installing the configurations! 🎉
 | <kbd>Ctrl</kbd> + <kbd>Print</kbd>		| Take screenshot of screen			    	                          |
 | <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Print</kbd>		| Take screenshot of selected area			          |
 
+For a complete list, refer to `~/.config/hypr/configs/binds.conf`.
 
-## Tasks to-do
+## TO-DO
+
 - [ ] Better wallpaper selector theme
 - [ ] Ease the task of changing username/home dir name
 - [ ] Update Readme
 - [ ] Update gallery images
 - [ ] Configure themes for wlogout, nvim, spicetify, firefox
 
-## ⭐ Star History
+## Star History
+
 [![Star History Chart](https://api.star-history.com/svg?repos=NotMugil/dotfiles&type=Date)](https://star-history.com/#NotMugil/dotfiles&Date)
 
-# Credits
+## Credits
 
 - [Catppuccin](https://github.com/catppuccin/catppuccin) 
 - [JaaKoolit's dotfiles](https://github.com/Jakoolit/hyprland-dots) 
@@ -164,12 +169,3 @@ Congratulations, you are done installing the configurations! 🎉
 - [HyprNova](https://github.com/zDyanTB/HyprNova) 
 
 _Thanks a lot for [r/unixporn](https://www.reddit.com/r/unixporn/) community for inspiring me to do this._
-
-<div align="right">
-  <br>
-  <a href="#top"><br><kbd> ^ </kbd><br></a>
-</div>
-
-<div align="center">
-  <img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/footers/gray0_ctp_on_line.svg?sanitize=true"/>
-</div>
