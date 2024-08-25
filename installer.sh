@@ -120,9 +120,9 @@ install_aur_packages() {
 
 # Install pacman packages
 info "Starting installation of pacman packages..."
-install_packages kitty nano rofi-wayland swaync waybar zplayerctl mpv grim slurp \
+install_packages kitty nano rofi-wayland swaync waybar playerctl mpv grim slurp \
     cliphist wl-clipboard pavucontrol hyprlock nwg-look blueman bluez bluez-utils \
-    dictd pamixer brightnessctl thunar ranger python-ranger-fm python-pillow imv \
+    dictd pamixer brightnessctl thunar ranger python-pillow imv \
     tumbler webp-pixbuf-loader totem evince ffmpegthumbnailer pacman-contrib btop \
     nvtop fastfetch neovim nm-connection-editor xdg-desktop-portal-hyprland unzip \
     swww hypridle ttf-nerd-fonts-symbols ttf-nerd-fonts-symbols-mono \
