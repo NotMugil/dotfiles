@@ -117,6 +117,32 @@ Congratulations, you are done installing the configurations! 🎉
 | -------------------------------------------------------- |
 | ![gallery-8](.github/assets/gallery-08.png)              |
 
+## Keybinds
+
+| Keybind           		              	| Functionality                                                                   |
+|-----------------------------------------------|---------------------------------------------------------------------------------|
+| <kbd>SUPER</kbd> + <kbd>RETURN</kbd>          | Launch Kitty				                                          |
+| <kbd>SUPER</kbd> + <kbd>D</kbd>		| Launch Rofi drun			    	                                  |
+| <kbd>SUPER</kbd> + <kbd>E</kbd>      		| Launch Thunar File Manager	 	                                          |
+| <kbd>SUPER</kbd> + <kbd>B</kbd>     	        | Launch Browser                                                                  |
+| <kbd>SUPER</kbd> + <kbd>C</kbd>          	| Launch text editor   		                                                  |
+| <kbd>SUPER</kbd> + <kbd>Q</kbd>         	| Kill active window                                                              |
+| <kbd>SUPER</kbd> + <kbd>/</kbd>          	| Opens keybinds hint		                                                  |
+| <kbd>SUPER</kbd> + <kbd>W</kbd>          	| Opens wallpaper selector                                                        |
+| <kbd>SUPER</kbd> + <kbd>U</kbd>          	| Opens waybar selector                                                           |
+| <kbd>SUPER</kbd> + <kbd>R</kbd>          	| Chooses random wallpaper from dir                                               |
+| <kbd>SUPER</kbd> + <kbd>V</kbd>          	| Toggle floating window  	                                                  |
+| <kbd>SUPER</kbd> + <kbd>L</kbd>          	| Launch Lockscreen                                                     	  |
+| <kbd>SUPER</kbd> + <kbd>M</kbd>          	| Launch wlogout                                        		          |
+| <kbd>SUPER</kbd> + <kbd>Shift</kbd> + <kbd>R</kbd>| Opens sway notification center 	                                          |
+| <kbd>SUPER</kbd> + <kbd>Alt</kbd> + <kbd>T</kbd>| Launch theme selector	 	                                          |
+| <kbd>Alt</kbd> + <kbd>RETURN</kbd>            | Toggle between focused window to fullscreen                                     |
+| <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>T</kbd>| Toggle waybar 		                                                  |
+| <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Delete</kbd>| Kill hyprland 		                                                  |
+| <kbd>Print</kbd>				| Take screenshot of entire area		                                  |
+| <kbd>Ctrl</kbd> + <kbd>Print</kbd>		| Take screenshot of screen			    	                          |
+| <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Print</kbd>		| Take screenshot of selected area			          |
+
 
 ## Tasks to-do
 - [ ] Better wallpaper selector theme
