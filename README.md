@@ -118,13 +118,12 @@ Congratulations, you are done installing the configurations! 🎉
 | ![gallery-8](.github/assets/gallery-08.png)              |
 
 
-## 💻 Development
-### Tasks
+## Tasks to-do
+- [ ] Better wallpaper selector theme
 - [ ] Ease the task of changing username/home dir name
+- [ ] Update Readme
 - [ ] Update gallery images
-- [x] More Hyprlock styles
-- [x] Theme Switcher
-- [x] Add mpris to waybar
+- [ ] Configure themes for wlogout, nvim, spicetify, firefox
 
 ## ⭐ Star History
 [![Star History Chart](https://api.star-history.com/svg?repos=NotMugil/dotfiles&type=Date)](https://star-history.com/#NotMugil/dotfiles&Date)
