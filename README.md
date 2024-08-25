@@ -1,3 +1,17 @@
+<h2 align="center">
+	Hyprland dotfiles
+</h2>
+<br>
+<div align="center">
+  <a href="#installation"><kbd> <br> Installation <br> </kbd></a>&ensp;&ensp;
+  <a href="#gallery"><kbd> <br> Gallery <br> </kbd></a>&ensp;&ensp;
+  <a href="#themes"><kbd> <br> Themes <br> </kbd></a>&ensp;&ensp;
+  <a href="#keybinds"><kbd> <br> Keybinds <br> </kbd></a>&ensp;&ensp;
+  <a href="https://github.com/NotMugil/dotfiles/wiki"><kbd> <br> Wiki <br> </kbd></a>&ensp;&ensp;
+</div><br>
+
+![showcase](.github/assets/showcase.png)
+<br>
 <div align="center">
 <p>
 <a href="https://github.com/NotMugil/dotfiles/stargazers"><img src="https://img.shields.io/github/stars/NotMugil/dotfiles?style=for-the-badge&logo=starship&color=C9CBFF&logoColor=C9CBFF&labelColor=302D41" alt="stars"><a>&nbsp;&nbsp;
@@ -7,20 +21,7 @@
 <a href="https://github.com/NotMugil/dotfiles?tab=GPL-3.0-1-ov-file"><img src="https://img.shields.io/github/license/NotMugil/dotfiles?style=for-the-badge&logo=&color=CBA6F7&logoColor=CBA6F7&labelColor=302D41" alt="LICENSE"></a>&nbsp;&nbsp;
 </p>
 </div>
-<h2 align="center">
-	Hyprland dotfiles
-</h2>
-	
-![showcase](.github/assets/showcase.png)
-<br>
-<div align="center">
-  <a href="#installation"><kbd> <br> Installation <br> </kbd></a>&ensp;&ensp;
-  <a href="#gallery"><kbd> <br> Gallery <br> </kbd></a>&ensp;&ensp;
-  <a href="#themes"><kbd> <br> Themes <br> </kbd></a>&ensp;&ensp;
-  <a href="#keybinds"><kbd> <br> Keybinds <br> </kbd></a>&ensp;&ensp;
-  <a href="https://github.com/NotMugil/dotfiles/wiki"><kbd> <br> Wiki <br> </kbd></a>&ensp;&ensp;
-</div><br>
-	
+
 
 ## Information
 
