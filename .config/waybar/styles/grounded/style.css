@@ -1,11 +1,11 @@
 @import "colors/current-theme.css";
 
 window#waybar {
-	background-color: rgba(0,0,0,0);
+	background-color: transparent;
 }
 
 window > box {
-	background-color: rgb(24, 24, 37);
+	background-color: @backgrounddark;
 	margin: 0px 0px 8px 0px;
 	padding: 0px 2px;
 }
@@ -34,41 +34,27 @@ window > box {
 #network.linked,
 #network.ethernet,
 #network.wifi{
-	background-color: #1e1e2e;
+	background-color: @background;
 }
 
 #custom-launcher {
 	margin: 6px 2px;
 	font-size: 16px;
-	color: #74c7ec;
+	color: @color11;
 	padding: 0px 5px 0px 10px;
-}
-
-#custom-three-dots-seperator {
-	color: #bac2de;
-	margin: 6px 2px;
-	padding: 0px 5px;
 }
 
 #btop {
 	border-radius: 100px;
 	padding: 0px 10px;
 	margin: 6px 2px;
-	background-color: #1e1e2e;
+	background-color: @backgrounddark;
 }
 
-#cpu {
-	color: #cdd6f4;
-	padding: 0px 6px;
-}
-
-#memory {
-	color: #cdd6f4;
-	padding: 0px 6px;
-}
-
+#cpu,
+#memory,
 #disk {
-	color: #cdd6f4;
+	color: @text;
 	padding: 0px 6px;
 }
 
@@ -76,20 +62,20 @@ window > box {
 	margin: 6px 2px;
 	padding: 0px 20px;
 	border-radius: 100px;
-	background-color: #1e1e2e;
+	background-color: @background;
 }
 
 #mpris {
-	background-color: #1e1e2e;
+	background-color: @background;
 	border-radius: 100px 0px 0px 100px;
-	color: #cdd6f4;
+	color: @text;
 	padding: 0px 20px 0px 0px;
 }
 
 #custom-cava {
-	background-color: #1e1e2e;
+	background-color: @background;
 	border-radius: 0px 100px 100px 0px;
-	color: #cba6f7;
+	color: @text;
 }
 
 #workspaces {
@@ -99,30 +85,29 @@ window > box {
 }
 
 #workspaces button {
-	color: #89b4fa;
+	color: @color8;
 	padding: 0px 2px;
 }
 
 #workspaces button.urgent {
-	color: #f38ba8;
+	color: @color5;
 }
 
 #workspaces button.empty {
-	color: #bac2de;
+	color: @textlight;
 }
 
 #workspaces button.active {
-	color: #ef9f76;
+	color: @color4;
 }
 
 #workspaces button:hover {
 	border-radius: 100px;
-	color: @theme_selected_bg_color;
-	background-color: @base;
+	background-color: @background;
 }
 
 #pownet {
-	color: #cdd6f4;
+	color: @text;
 	border-radius: 100px;
 	padding: 0px 10px;
 	margin: 6px 2px;
@@ -135,14 +120,14 @@ window > box {
 
 #network {
 	font-size: 11px;
-	color: #ffffff;
+	color: @text;
 	margin-right: 5px;
 }
 
 #bluetooth { 
 	margin-right: 6px;
 	font-size: 10px;
-	color: #7dc4e4;
+	color: @color12;
 }
 
 @keyframes blink {
@@ -160,28 +145,28 @@ window > box {
 }
 
 #pulseaudio {
-	color: #cdd6f4;
+	color: @text;
 	border-radius: 100px;
 	padding: 0px 10px;
 	margin: 6px 2px;
 }
 
 #custom-updates {
-	color: #cdd6f4;
+	color: @text;
 	border-radius: 100px;
 	padding: 0px 10px;
 	margin: 6px 2px;
 }
 
 #clock {
-	color: #cdd6f4;
+	color: @text;
 	border-radius: 100px;
 	padding: 0px 10px;
 	margin: 6px 2px;
 }
 
 #custom-power-button {
-	color: #f38ba8;
+	color: @color14;
 	padding: 0px 10px;
 	margin: 6px 2px;
 }
@@ -193,14 +178,13 @@ window > box {
 
 tooltip {
     padding: 25px;
-    background-color: @base;
-    color: @overlay0;
-    font-family: CartographCF Nerd Font;
+    background-color: @background;
+    color: @text;
 }
 
 tooltip label {
     padding: 15px;
-    color: @foreground;
+    color: @textlight;
 }
 
 label:focus {
@@ -219,7 +203,7 @@ label:focus {
 #pulseaudio-slider slider {
     min-width: 40px; 
     min-height: 20px; 
-    color: #e78284;
+    color: @color12;
     background: transparent;
     box-shadow: none;
     padding: 0px;
@@ -228,5 +212,5 @@ label:focus {
 #pulseaudio-slider trough {
     min-width: 70px; 
     border-radius: 4px;
-    background-color: #414559;
+    background-color: @foreground;
 }

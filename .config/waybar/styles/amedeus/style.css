@@ -6,19 +6,20 @@
     feather;
   font-weight: 500;
   font-size: 8pt;
-  color: @text;
+  color: @textlight;
 }
 
 /* main waybar */
 window#waybar {
   padding: 0;
   margin: 0;
-  background: @theme_base_color;
+  background: @background;
 }
 
 /* when hovering over modules */
 tooltip {
-  background: #1e1e2e;
+  background: @background;
+  padding: 15px;
   border-radius: 5%;
 }
 
@@ -28,7 +29,7 @@ tooltip {
 
 /* Sets active workspace to have a solid line on the bottom */
 #workspaces button.active {
-  border-bottom: 2px solid #7aa2f7;
+  border-bottom: 2px solid @color12;
   border-radius: 0;
   margin-top: 2px;
   transition: all 0.5s ease-in-out;
@@ -36,16 +37,16 @@ tooltip {
 
 /* More workspace stuff for highlighting on hover */
 #workspaces button.focused {
-  color: #a6adc8;
+  color: @color8;
 }
 
 #workspaces button.urgent {
-  color: #f7768e;
+  color: @color5;
 }
 
 #workspaces button:hover {
-  background: alpha(#7aa2f7,0.2);
-  color: @overlay0;
+  background: alpha(@color12,0.1);
+  color: @color12;
 }
 
 /* Sets background, padding, margins, and borders for (all) modules */
@@ -59,10 +60,10 @@ tooltip {
 #wireplumber,
 #tray,
 #battery {
-  background: rgba(26, 27, 38, 0);
+  background: @background;
   padding: 0 10px;
   border: 0;
-  color: @subtext0;
+  color: @textdark;
 }
 
 #workspaces {
@@ -78,7 +79,7 @@ window#waybar.empty #window {
 
 /* Set up rounding to make these modules look like separate pills */
 #tray {
-  color: #7aa2f7;
+  color: @foregrounddark;
   border-radius: 12px;
   margin-right: 4px;
 }
@@ -98,7 +99,7 @@ window#waybar.empty #window {
 }
 
 #custom-notification {
-	color: @subtext1;
+	color: @textlight;
 	margin-left: 2px;
 	margin-right:12px;
 	padding: 2px;

@@ -1,7 +1,7 @@
 @import "colors/current-theme.css";
 
 window#waybar {
-	background-color: rgba(0,0,0,0);
+	background-color: transparent;
 }
 
 window > box {
@@ -20,8 +20,6 @@ window > box {
 .modules-left, .modules-center, .modules-right {
 	
 }
-
-
 
 #custom-launcher,
 #workspaces,
@@ -49,22 +47,22 @@ box#sys-tray{
 }
 
 #workspaces button {
-	color: @subtext1;
+	color: @textlight;
 	padding: 0px 5px
 }
 
 #workspaces button.active {
-	color: @base;
+	color: @background;
 	background-color: @theme_selected_bg_color;
 }
 
 #workspaces button.urgent {
-	color: @maroon;
+	color: @color6;
 }
 
 #workspaces button:hover {
 	color: @theme_selected_bg_color;
-	background-color: @base;
+	background-color: @background;
 }
 
 box#sys-tray {
@@ -72,17 +70,17 @@ box#sys-tray {
 }
 
 #backlight{
-    color: @subtext1;
+    color: @textlight;
 }
 #pulseaudio{
-    color: @subtext1;
+    color: @textlight;
 }
 #battery{
-    color: @subtext1;
+    color: @textlight;
 }
 
 .pulseaudio-grp{
-	color: @subtext1;
+	color: @textlight;
 }
 
 #battery.text{
@@ -106,7 +104,7 @@ box#sys-tray {
 #bluetooth,
 #bluetooth.off,
 #bluetooth.on {
-	color: @subtext1;
+	color: @textlight;
 	padding: 2px 4px 2px 10px;
 	margin: 2px;
 	background-color: @theme_base_color;
@@ -115,7 +113,7 @@ box#sys-tray {
 #network,
 #network.disconnected,
 #network.disabled {
-	color: @subtext1;
+	color: @textlight;
 	padding: 2px 8px;
 }
 
@@ -131,7 +129,7 @@ box#sys-tray {
 
 tooltip {
     padding: 25px;
-    background-color: @base;
+    background-color: @background;
     color: @overlay0;
     font-family: CartographCF Nerd Font;
 }
