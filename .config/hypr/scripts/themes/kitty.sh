@@ -12,6 +12,9 @@ case "$theme" in
     "Gruvbox-Dark")
         kitten themes --reload-in=all "Gruvbox Dark"
         ;;
+    "Starlit")
+        kitten themes --reload-in=all "Starlit"
+        ;;
     # Add more themes as needed
     *)
         echo "Unknown theme for Kitty: $theme"

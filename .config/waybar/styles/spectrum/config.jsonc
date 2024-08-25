@@ -4,7 +4,6 @@
 	"layer": "top",
 	"position": "top",
 	"height": 40,
-	"width": 1240,
 	"output": ["HDMI-A-1","eDP-1"],
         "include": "~/.config/waybar/modules",
 	"modules-left": ["custom/launcher#arch","custom/three-dots-seperator","cpu#icon","memory#icon","disk#icon","mpris#text",],

@@ -1,0 +1,248 @@
+/* Global styles */
+* {
+  font-family: "JetBrainsMonoNerdFont";
+  transition: 100ms;
+  box-shadow: unset;
+}
+
+/* Notification styles */
+.notification-background .notification {
+  margin-bottom: unset;
+  border: unset;
+  border-radius: 10px;
+  -gtk-outline-radius: 12px;
+}
+
+.notification-background .notification .notification-content {
+  padding: 0.818rem;
+  background-color: #1D1D22;
+}
+
+.notification-background .notification.low .notification-content label,
+.notification-background .notification.normal .notification-content label {
+  color: #c7c5d0;
+}
+
+.notification-background .notification.low .notification-content image,
+.notification-background .notification.normal .notification-content image {
+  color: #e2e0f9;
+}
+
+.notification-background .notification.low .notification-content .body,
+.notification-background .notification.normal .notification-content .body {
+  color: #92919a;
+}
+
+.notification-background .notification.critical .notification-content {
+  background-color: #ffb4a9;
+}
+
+.notification-background .notification.critical .notification-content image {
+  color: #ffb4a9;
+}
+
+.notification-background .notification.critical .notification-content label {
+  color: #680003;
+}
+
+.notification-background .notification .notification-content .summary {
+  font-family: 'JetBrainsMonoNerdFont';
+  font-size: 10px;
+  font-weight: 500;
+}
+
+.notification-background .notification .notification-content .time {
+  font-family: "JetBrainsMonoNerdFont";
+  font-size: 10px;
+  font-weight: 500;
+  margin-right: 1rem;
+}
+
+.notification-background .notification .notification-content .body {
+  font-family: "JetBrainsMonoNerdFont";
+  font-size: 10px;
+  font-weight: 400;
+  margin-top: 0.310rem;
+}
+
+/* Close button styles */
+.close-button {
+  background-color: unset;
+  border-radius: 100%;
+  border: none;
+  box-shadow: none;
+  margin-right: 13px;
+  margin-top: 6px;
+  padding: unset;
+  min-height: 20px;
+  min-width: 20px;
+  text-shadow: none;
+}
+
+.close-button:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Control center styles */
+.control-center {
+  border-radius: 12px;
+  -gtk-outline-radius: 12px;
+  box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.45);
+  margin: 7px;
+  background-color: #14141B;
+  padding: 1.023rem;
+}
+
+.control-center trough {
+  background-color: transparent;  
+}
+
+.control-center slider {
+  background-color: rgba(199, 197, 208, 0.31);
+}
+
+.control-center slider:hover {
+  background-color: rgba(199, 197, 208, 0.448);
+}
+
+.control-center slider:active {
+  background-color: #77767e;
+}
+
+/* Widget title styles */
+.widget-title {
+  padding: 0.341rem;
+}
+
+.widget-title label {
+  font-family: 'JetBrainsMonoNerd';
+  font-weight: bold;
+  font-size: 14px;
+  color: #e4e1e6;
+  margin-left: 0.941rem;
+}
+
+.widget-title button {
+  border: unset;
+  background-color: unset;
+  border-radius: 10px;
+  -gtk-outline-radius: 10px;
+  padding: 0.141rem 0.141rem;
+  margin-left: 2rem;
+}
+
+.widget-title button label {
+  font-family: 'Gabarito', sans-serif;
+  font-size: 11px;
+  color: #e4e1e6;
+  margin-right: 0.841rem;
+}
+
+.widget-title button:hover {
+  background-color: rgba(128, 128, 128, 0.3);
+}
+
+.widget-title button:active {
+  background-color: rgba(128, 128, 128, 0.7);
+}
+
+/* Widget buttons styles */
+.widget-buttons-grid {
+  border-radius: 1.159rem;
+  -gtk-outline-radius: 1.159rem;
+  background-color: rgba(28, 28, 34, 0.35);
+}
+
+.widget-buttons-grid>flowbox>flowboxchild>button {
+  border:none;
+  background-color: unset;
+  border-radius: 9999px;
+  min-width: 4.522rem;
+  min-height: 2.927rem;
+  padding: unset;
+  margin: unset;
+}
+
+.widget-buttons-grid>flowbox>flowboxchild>button label {
+  font-family: "Materials Symbol Rounded";
+  font-size: 12px;
+  color: #e4e1e6;
+}
+
+.widget-buttons-grid>flowbox>flowboxchild>button:hover {
+  background-color: rgba(128, 128, 128, 0.3);
+}
+
+.widget-buttons-grid>flowbox>flowboxchild>button:checked {
+  background-color: #F075AA;
+  color: #14141B;
+}
+
+/* Widget volume styles */
+.widget-volume {
+  background-color: rgba(28, 28, 34, 0.35);
+  padding: 8px;
+  margin: 8px;
+  border-radius: 1.159rem;
+}
+
+.widget-volume trough {
+  background-color: rgba(128, 128, 128, 0.4);
+}
+
+.widget-volume trough slider {
+  background-color: #F075AA;
+  border-radius: 100%;
+  min-height: 1.25rem;
+}
+
+/* Widget mpris styles */
+.widget-mpris {
+  background-color: rgba(28, 28, 34, 0.35);
+  padding: 8px;
+  margin: 8px;  
+  border-radius: 1.159rem;
+}
+
+.widget-mpris-player {
+  padding: 8px;
+  margin: 8px;
+  color: #D2649A;
+}
+
+.widget-mpris-title {
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.widget-mpris-subtitle {
+  font-size: 12px;
+}
+
+/* Widget dnd styles */
+.widget-dnd label {
+  font-family: 'JetBrainsMonoNerd';
+  font-weight: bold;
+  font-size: 97%;
+  color: #e4e1e6;
+  margin-left: 0.941rem;
+}
+
+.widget-dnd > switch {
+  font-size: initial;
+  border-radius: 12px;
+  background: @noti-bg;
+  border: 1px solid @noti-border-color;
+  box-shadow: none;
+  margin-right: 0.941rem;
+}
+
+.widget-dnd > switch:checked {
+  background: #F075AA;
+}
+
+.widget-dnd > switch slider {
+  background: @noti-bg-hover;
+  border-radius: 12px;
+}
+

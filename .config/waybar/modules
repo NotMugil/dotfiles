@@ -113,8 +113,8 @@
 
 	"bluetooth": {
 		"format-disabled": "off",
-		"format": " {device_alias}",
-		"on-click": "blueberry",
+		"format": " ",
+		"on-click": "blueman-manager",
 		"max-length": 10,
 		"on-click-right": "rfkill toggle bluetooth",
 	},

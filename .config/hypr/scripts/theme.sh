@@ -2,6 +2,7 @@
 
 THEME_DIR="$HOME/.config/hypr/rices"
 WALLPAPER_DIR="$HOME/.wallpapers"
+HYPR_DIR="$HOME/.config/hypr"
 SCRIPT_DIR="$HOME/.config/hypr/scripts/themes"
 CURRENT_THEME_FILE="$HOME/.config/hypr/.rice"
 ROFI_THEME="$HOME/.config/rofi/theme.rasi"
@@ -40,7 +41,6 @@ switch_theme() {
     "$SCRIPT_DIR/rofi.sh" "$theme"
     "$SCRIPT_DIR/swaync.sh" "$theme"
     "$SCRIPT_DIR/hyprlock.sh" "$theme"
-
     
     # Change wallpapers
     change_wallpapers "$theme"
@@ -69,7 +69,8 @@ change_wallpapers() {
     cp -r "$theme_wallpaper_dir"/* "$WALLPAPER_DIR/"
     
     # Optionally, set a wallpaper using swww or swaybg
-    # swww img "$WALLPAPER_DIR/your_default_wallpaper.jpg"
+    $HYPR_DIR/scripts/random_wallpaper.sh
+    
 }
 
 # Main script

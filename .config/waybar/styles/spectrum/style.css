@@ -6,8 +6,8 @@ window#waybar {
 
 window > box {
 	background-color: rgb(24, 24, 37);
-	margin: 8px 8px 0px 8px;
 	padding: 0px 5px;
+ 	margin: 5px 100px 0px 100px;
 }
 
 * {
@@ -130,6 +130,7 @@ window > box {
 #bluetooth { 
 	font-size: 12px;
 	color: #7dc4e4;
+	padding: 2px 6px;
 }
 
 @keyframes blink {

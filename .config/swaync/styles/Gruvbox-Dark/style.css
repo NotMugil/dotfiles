@@ -1,0 +1,248 @@
+/* Global styles */
+* {
+  font-family: "JetBrainsMonoNerdFont";
+  transition: 100ms;
+  box-shadow: unset;
+}
+
+/* Notification styles */
+.notification-background .notification {
+  margin-bottom: unset;
+  border: unset;
+  border-radius: 0.790rem; /* 1.159rem * 0.682 */
+  -gtk-outline-radius: 0.790rem;
+}
+
+.notification-background .notification .notification-content {
+  padding: 0.558rem; /* 0.818rem * 0.682 */
+  background-color: #1D1D22;
+}
+
+.notification-background .notification.low .notification-content label,
+.notification-background .notification.normal .notification-content label {
+  color: #c7c5d0;
+}
+
+.notification-background .notification.low .notification-content image,
+.notification-background .notification.normal .notification-content image {
+  color: #e2e0f9;
+}
+
+.notification-background .notification.low .notification-content .body,
+.notification-background .notification.normal .notification-content .body {
+  color: #92919a;
+}
+
+.notification-background .notification.critical .notification-content {
+  background-color: #ffb4a9;
+}
+
+.notification-background .notification.critical .notification-content image {
+  color: #ffb4a9;
+}
+
+.notification-background .notification.critical .notification-content label {
+  color: #680003;
+}
+
+.notification-background .notification .notification-content .summary {
+  font-family: 'JetBrainsMonoNerdFont';
+  font-size: 0.676rem; /* 0.9909rem * 0.682 */
+  font-weight: 500;
+}
+
+.notification-background .notification .notification-content .time {
+  font-family: "JetBrainsMonoNerdFont";
+  font-size: 0.566rem; /* 0.8291rem * 0.682 */
+  font-weight: 500;
+  margin-right: 0.682rem; /* 1rem * 0.682 */
+}
+
+.notification-background .notification .notification-content .body {
+  font-family: "JetBrainsMonoNerdFont";
+  font-size: 0.606rem; /* 0.8891rem * 0.682 */
+  font-weight: 400;
+  margin-top: 0.211rem; /* 0.310rem * 0.682 */
+}
+
+/* Close button styles */
+.close-button {
+  background-color: unset;
+  border-radius: 100%;
+  border: none;
+  box-shadow: none;
+  margin-right: 8.9px; /* 13px * 0.682 */
+  margin-top: 4px; /* 6px * 0.682 */
+  padding: unset;
+  min-height: 13.6px; /* 20px * 0.682 */
+  min-width: 13.6px; /* 20px * 0.682 */
+  text-shadow: none;
+}
+
+.close-button:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Control center styles */
+.control-center {
+  border-radius: 1.162rem; /* 1.705rem * 0.682 */
+  -gtk-outline-radius: 1.162rem;
+  box-shadow: 0px 1.4px 2px rgba(0, 0, 0, 0.45); /* 2px * 0.682 */
+  margin: 4.8px; /* 7px * 0.682 */
+  background-color: #14141B;
+  padding: 0.698rem; /* 1.023rem * 0.682 */
+}
+
+.control-center trough {
+  background-color: transparent;  
+}
+
+.control-center slider {
+  background-color: rgba(199, 197, 208, 0.31);
+}
+
+.control-center slider:hover {
+  background-color: rgba(199, 197, 208, 0.448);
+}
+
+.control-center slider:active {
+  background-color: #77767e;
+}
+
+/* Widget title styles */
+.widget-title {
+  padding: 0.233rem; /* 0.341rem * 0.682 */
+}
+
+.widget-title label {
+  font-family: 'JetBrainsMonoNerd';
+  font-weight: bold;
+  font-size: 0.930rem; /* 1.364rem * 0.682 */
+  color: #e4e1e6;
+  margin-left: 0.641rem; /* 0.941rem * 0.682 */
+}
+
+.widget-title button {
+  border: unset;
+  background-color: unset;
+  border-radius: 0.790rem; /* 1.159rem * 0.682 */
+  -gtk-outline-radius: 0.790rem;
+  padding: 0.096rem 0.096rem; /* 0.141rem * 0.682 */
+  margin-left: 1.364rem; /* 2rem * 0.682 */
+}
+
+.widget-title button label {
+  font-family: 'Gabarito', sans-serif;
+  font-size: 0.710rem; /* 1.0409rem * 0.682 */
+  color: #e4e1e6;
+  margin-right: 0.574rem; /* 0.841rem * 0.682 */
+}
+
+.widget-title button:hover {
+  background-color: rgba(128, 128, 128, 0.3);
+}
+
+.widget-title button:active {
+  background-color: rgba(128, 128, 128, 0.7);
+}
+
+/* Widget buttons styles */
+.widget-buttons-grid {
+  border-radius: 0.790rem; /* 1.159rem * 0.682 */
+  -gtk-outline-radius: 0.790rem;
+  background-color: rgba(28, 28, 34, 0.35);
+}
+
+.widget-buttons-grid>flowbox>flowboxchild>button {
+  border:none;
+  background-color: unset;
+  border-radius: 9999px;
+  min-width: 3.08rem; /* 4.522rem * 0.682 */
+  min-height: 1.995rem; /* 2.927rem * 0.682 */
+  padding: unset;
+  margin: unset;
+}
+
+.widget-buttons-grid>flowbox>flowboxchild>button label {
+  font-family: "Materials Symbol Rounded";
+  font-size: 0.888rem; /* 1.3027rem * 0.682 */
+  color: #e4e1e6;
+}
+
+.widget-buttons-grid>flowbox>flowboxchild>button:hover {
+  background-color: rgba(128, 128, 128, 0.3);
+}
+
+.widget-buttons-grid>flowbox>flowboxchild>button:checked {
+  background-color: #F075AA;
+  color: #14141B;
+}
+
+/* Widget volume styles */
+.widget-volume {
+  background-color: rgba(28, 28, 34, 0.35);
+  padding: 5.5px; /* 8px * 0.682 */
+  margin: 5.5px; /* 8px * 0.682 */
+  border-radius: 0.790rem; /* 1.159rem * 0.682 */
+}
+
+.widget-volume trough {
+  background-color: rgba(128, 128, 128, 0.4);
+}
+
+.widget-volume trough slider {
+  background-color: #F075AA;
+  border-radius: 100%;
+  min-height: 0.85rem; /* 1.25rem * 0.682 */
+}
+
+/* Widget mpris styles */
+.widget-mpris {
+  background-color: rgba(28, 28, 34, 0.35);
+  padding: 5.5px; /* 8px * 0.682 */
+  margin: 5.5px; /* 8px * 0.682 */
+  border-radius: 0.790rem; /* 1.159rem * 0.682 */
+}
+
+.widget-mpris-player {
+  padding: 5.5px; /* 8px * 0.682 */
+  margin: 5.5px; /* 8px * 0.682 */
+  color: #D2649A;
+}
+
+.widget-mpris-title {
+  font-weight: bold;
+  font-size: 0.85rem; /* 1.25rem * 0.682 */
+}
+
+.widget-mpris-subtitle {
+  font-size: 0.75rem; /* 1.1rem * 0.682 */
+}
+
+/* Widget dnd styles */
+.widget-dnd label {
+  font-family: 'JetBrainsMonoNerd';
+  font-weight: bold;
+  font-size: 0.97rem; /* 97% * 0.682 */
+  color: #e4e1e6;
+  margin-left: 0.641rem; /* 0.941rem * 0.682 */
+}
+
+.widget-dnd > switch {
+  font-size: initial;
+  border-radius: 8px; /* 12px * 0.682 */
+  background: @noti-bg;
+  border: 1px solid @noti-border-color;
+  box-shadow: none;
+  margin-right: 0.641rem; /* 0.941rem * 0.682 */
+}
+
+.widget-dnd > switch:checked {
+  background: #F075AA;
+}
+
+.widget-dnd > switch slider {
+  background: @noti-bg-hover;
+  border-radius: 8px; /* 12px * 0.682 */
+}
+ 
