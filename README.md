@@ -120,10 +120,10 @@ Congratulations, you are done installing the configurations! 🎉
 
 ## 💻 Development
 ### Tasks
-- [ ] Theme Switcher
 - [ ] Ease the task of changing username/home dir name
 - [ ] Update gallery images
-- [ ] More Hyprlock styles
+- [x] More Hyprlock styles
+- [x] Theme Switcher
 - [x] Add mpris to waybar
 
 ## ⭐ Star History
