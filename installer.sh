@@ -120,7 +120,7 @@ install_aur_packages() {
 
 # Install pacman packages
 info "Starting installation of pacman packages..."
-install_packages kitty nano rofi-wayland swaync waybar playerctl mpv grim slurp \
+install_packages kitty nano git rofi-wayland swaync waybar playerctl mpv grim slurp \
     cliphist wl-clipboard pavucontrol hyprlock nwg-look blueman bluez bluez-utils \
     dictd pamixer brightnessctl thunar ranger python-pillow imv \
     tumbler webp-pixbuf-loader totem evince ffmpegthumbnailer pacman-contrib btop \
