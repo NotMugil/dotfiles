@@ -1,150 +1,89 @@
 #!/bin/bash
 
-ROFI_DIR="$HOME/.config/rofi"
-THEMES_DIR="/usr/share/themes"
-gtk4="$HOME/.config/gtk-4.0"
-xsettings="$HOME/.config/xsettingsd/xsettingsd.conf"
+THEME_DIR="$HOME/.config/hypr/rices"
+WALLPAPER_DIR="$HOME/.wallpapers"
+SCRIPT_DIR="$HOME/.config/hypr/scripts/themes"
+CURRENT_THEME_FILE="$HOME/.config/hypr/.rice"
+ROFI_THEME="$HOME/.config/rofi/theme.rasi"
 
-# Function to apply Latte theme with selected color
-apply_latte_theme() {
-	local color="$1"
-	echo "Applying $color Latte theme"
-
-	# Commands to apply GTK Theme
-	gsettings set org.gnome.desktop.interface gtk-theme catppuccin-latte-$color-standard+default
-        ln -sf /usr/share/themes/catppuccin-latte-$color-standard+default/gtk-4.0 ~/.config
-	sed -i "s/Net\/ThemeName \".*\"/Net\/ThemeName \"catppuccin-latte-$color-standard+default\"/g" ~/.config/xsettingsd/xsettingsd.conf
-	pkill xsettingsd
-      	xsettingsd &
-
-	# Commands to apply waybar theme	
-	ln -sf ~/.config/waybar/colors/catppuccin-latte.css ~/.config/waybar/colors/current-theme.css
-	pkill waybar
-	waybar &
-
- 	# Kitty
-	kitten themes --reload-in=all Catppuccin-Latte
-
-	# Commands to apply spicetify color
-	spicetify config color_scheme CatppuccinLatte
-	spicetify apply
-
+# List available themes
+list_themes() {
+    ls "$THEME_DIR"
 }
 
-# Function to apply Frappe theme with selected color
-apply_frappe_theme() {
-	local color="$1"
-	echo "Applying $color Frappe theme"
-
-	# Commands to apply GTK Theme
-	gsettings set org.gnome.desktop.interface gtk-theme catppuccin-frappe-$color-standard+default
-        ln -sf /usr/share/themes/catppuccin-frappe-$color-standard+default/gtk-4.0 ~/.config	
-	sed -i "s/Net\/ThemeName \".*\"/Net\/ThemeName \"catppuccin-frappe-$color-standard+default\"/g" ~/.config/xsettingsd/xsettingsd.conf
-	pkill xsettingsd
-      	xsettingsd &
-
-	# Kitty
-	kitten themes --reload-in=all Catppuccin-Frappe
-
-	# Commands to apply waybar theme
-	ln -sf ~/.config/waybar/colors/catppuccin-frappe.css ~/.config/waybar/colors/current-theme.css
-	pkill waybar
-	waybar &
-
-	# Commands to apply spicetify color
-	spicetify config color_scheme CatppuccinLatte
-	spicetify apply
-
+# Store current theme name
+store_current_theme() {
+    echo "$1" > "$CURRENT_THEME_FILE"
 }
 
-# Functicaon to apply Macchiato theme with selected color
-apply_macchiato_theme() {
-	local color="$1"
-	echo "Applying $color Macchiato theme"
-
-	
-	# Commands to apply GTK Theme
-	gsettings set org.gnome.desktop.interface gtk-theme catppuccin-macchiato-$color-standard+default
-        ln -sf /usr/share/themes/catppuccin-macchiato-$color-standard+default/gtk-4.0 ~/.config
-	sed -i "s/Net\/ThemeName \".*\"/Net\/ThemeName \"catppuccin-macchiato-$color-standard+default\"/g" ~/.config/xsettingsd/xsettingsd.conf
-	pkill xsettingsd
-      	xsettingsd &
-
-	# Commands to apply waybar theme
-	ln -sf ~/.config/waybar/colors/catppuccin-macchiato.css ~/.config/waybar/colors/current-theme.css
-	pkill waybar
-	waybar &
-	
-	# Kitty
-	kitten themes --reload-in=all Catppuccin-Macchiato
-
-	# Commands to apply spicetify color
-	spicetify config color_scheme CatppuccinMacchiato
-	spicetify apply
+# Get current theme
+get_current_theme() {
+    if [ -f "$CURRENT_THEME_FILE" ]; then
+        cat "$CURRENT_THEME_FILE"
+    else
+        echo "default"
+    fi
 }
 
-# Function to apply Mocha theme with selected color
-apply_mocha_theme() {
-	local color="$1"
-	echo "Applying $color Mocha theme"
-
-	
-	# Commands to apply GTK Theme
-	gsettings set org.gnome.desktop.interface gtk-theme catppuccin-mocha-$color-standard+default
-        ln -sf /usr/share/themes/catppuccin-mocha-$color-standard+default/gtk-4.0 ~/.config
-	sed -i "s/Net\/ThemeName \".*\"/Net\/ThemeName \"catppuccin-mocha-$color-standard+default\"/g" ~/.config/xsettingsd/xsettingsd.conf
-	pkill xsettingsd
-      	xsettingsd &
-
-	# Kitty
-	kitten themes --reload-in=all Catppuccin-Mocha
-
-	# Commands to apply waybar theme
-	ln -sf ~/.config/waybar/colors/catppuccin-mocha.css ~/.config/waybar/colors/current-theme.css
-	pkill waybar
-	waybar &
-
-	# Commands to apply spicetify color
-	spicetify config color_scheme CatppuccinMocha
-	spicetify apply
-
+# Send notification
+notify() {
+    notify-send "Theme Changed" "Current theme: $1"
 }
 
-# Array of color options
-colors=("blue" "flamingo" "green" "lavender" "maroon" "mauve" "peach" "pink" "red" "rosewater" "sapphire" "sky" "teal" "yellow")
+# Function to switch theme
+switch_theme() {
+    theme=$1
+    
+    # Run individual application theme scripts
+    "$SCRIPT_DIR/waybar.sh" "$theme"
+    "$SCRIPT_DIR/kitty.sh" "$theme"
+    "$SCRIPT_DIR/rofi.sh" "$theme"
+    "$SCRIPT_DIR/swaync.sh" "$theme"
+    "$SCRIPT_DIR/hyprlock.sh" "$theme"
 
-# Array of theme options
-themes=("latte" "frappe" "macchiato" "mocha")
+    
+    # Change wallpapers
+    change_wallpapers "$theme"
+    
+    # Store current theme
+    store_current_theme "$theme"
+    
+    # Send notification
+    notify "$theme"
+    
+    # Additional theme-specific actions can be added here
+}
 
-# Use Rofi to select theme
-selected_theme=$(printf '%s\n' "${themes[@]}" | rofi -dmenu -theme $ROFI_DIR/theme.rasi -p "Select a theme:")
+# Change wallpapers
+change_wallpapers() {
+    theme=$1
+    theme_wallpaper_dir="$THEME_DIR/$theme/wallpapers"
 
-# Use Rofi to select color
-selected_color=$(printf '%s\n' "${colors[@]}" | rofi -dmenu -theme $ROFI_DIR/theme.rasi -p "Select a color for $selected_theme theme:")
+    # Create wallpaper dir, if it doesn't exist
+    mkdir $WALLPAPER_DIR
+    
+    # Remove existing wallpapers 
+    rm -rf $WALLPAPER_DIR/*
 
-# If no color is selected, set default color to "blue"
-if [[ -z "$selected_color" ]]; then
-    selected_color="blue"
+    # Symlink new wallpapers
+    cp -r "$theme_wallpaper_dir"/* "$WALLPAPER_DIR/"
+    
+    # Optionally, set a wallpaper using swww or swaybg
+    # swww img "$WALLPAPER_DIR/your_default_wallpaper.jpg"
+}
+
+# Main script
+current_theme=$(get_current_theme)
+selected_theme=$(list_themes | rofi -dmenu -p "Select a theme (current: $current_theme):" -theme "$ROFI_THEME")
+
+if [ -n "$selected_theme" ]; then
+    if [ "$selected_theme" != "$current_theme" ]; then
+        switch_theme "$selected_theme"
+        echo "Theme switched to $selected_theme"
+    else
+        echo "Selected theme is already active"
+        notify-send "Theme Switch" "Selected theme ($selected_theme) is already active"
+    fi
+else
+    echo "No theme selected"
 fi
-
-# Determine which theme function to call based on user selection
-case $selected_theme in
-    "latte")
-        apply_latte_theme "$selected_color"
-        ;;
-    "frappe")
-        apply_frappe_theme "$selected_color"
-        ;;
-    "macchiato")
-        apply_macchiato_theme "$selected_color"
-        ;;
-    "mocha")
-        apply_mocha_theme "$selected_color"
-        ;;
-    *)
-        echo "Invalid selection or no theme chosen."
-        exit 1
-        ;;
-esac
-
-# Add more commands/functions as needed to apply the theme with selected color across different applications.
