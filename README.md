@@ -10,6 +10,7 @@
 <h2 align="center">
 	Hyprland dotfiles
 </h2>
+	
 ![showcase](.github/assets/showcase.png)
 <br>
 <div align="center">
