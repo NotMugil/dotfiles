@@ -33,6 +33,6 @@ include current_theme.conf
 
 
 # BEGIN_KITTY_THEME
-# Tokyo Night Moon
+# Gruvbox Dark
 include current-theme.conf
 # END_KITTY_THEME
