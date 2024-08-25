@@ -92,7 +92,7 @@
   2. Installing required dependencies     
 
    ```bash
-    pacman -S kitty nano rofi-wayland swaync swaync waybar playerctl mpv grim slurp \
+    pacman -S kitty nano git rofi-wayland swaync swaync waybar playerctl mpv grim slurp \
     cliphist wl-clipboard pavucontrol hyprlock nwg-look blueman bluez bluez-utils \
     dictd pamixer brightnessctl thunar ranger python-ranger-fm python-pillow imv \
     tumbler webp-pixbuf-loader totem evince ffmpegthumbnailer pacman-contrib btop \
