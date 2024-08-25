@@ -1,7 +1,7 @@
-@import url("colors/catppuccin-mocha.css");
+@import url("colors/current-theme.css");
 
 #waybar {
-    background-color: @base;
+    background-color: @background;
     color: @text;
     font-family: "SpaceMonoNerdFont", "JetBrainsMono Nerd Font", monospace;
     font-size: 10px;
@@ -37,9 +37,8 @@
 #bluetooth.off,
 #pulseaudio.muted,
 #pulseaudio.source-muted {
-    color: alpha(@subtext0, 0.7);
+    color: alpha(@textdark, 0.7);
 }
-
 
 /* Widget Groups Styling */
 #workspaces,
@@ -48,7 +47,7 @@ box.modules-right > box.horizontal,
 #custom-notification,
 #sys-info,
 #custom-power-button {
-    background-color: @mantle;
+    background-color: @backgrounddark;
     border-radius: 3px; /* Reduced from 4px */
     margin: 7px 3px; /* Reduced from 10px 5px */
     padding: 3px 8px; /* Reduced from 5px 10px */
@@ -65,10 +64,9 @@ box.modules-right > box.horizontal,
 #backlight-slider {
     all: unset;
 }
-#workspaces {
-    
-    color: @blue;
-    background-color: @mantle;
+#workspaces {    
+    color: @color12;
+    background-color: @backgrounddark;
     margin: 7px 3px; /* Reduced from 10px 5px */
     padding: 0px 0px; /* Reduced from 0px 20px */
     border-radius: 3px; /* Reduced from 4px */
@@ -80,17 +78,17 @@ box.modules-right > box.horizontal,
     border-radius: 3px;
 }
 #workspaces > button.empty {
-    color: @blue;
+    color: @color12;
 }
 #workspaces > button.visible {
-    color: @overlay0;
+    color: @foregroundlight;
 }
 #workspaces > button.active {
-    color: @blue;
-    background: alpha(@blue, 0.1);
+    color: @color12;
+    background: alpha(@color12, 0.1);
 }
 #workspaces > button:hover {
-    background: alpha(@blue, 0.2);
+    background: alpha(@color12, 0.2);
     color: @text;
 }
 
@@ -143,7 +141,7 @@ box.modules-right > box.horizontal,
 #backlight-slider trough {
     min-width: 70px; /* Reduced from 80px */
     border-radius: 4px; /* Adjusted from 5px */
-    background-color: @surface0;
+    background-color: @foregrounddark;
 }
 #pulseaudio-slider highlight,
 #backlight-slider highlight {
@@ -167,8 +165,8 @@ box.modules-right > box.horizontal,
 /* Styling tooltips */
 tooltip {
     padding: 12px; /* Reduced from 15px */
-    background-color: @base;
-    color: @overlay0;
+    background-color: @background;
+    color: @foregroundlight;
     font-family: "Space Mono Nerd Font";
     font-size: 10px; /* Reduced from 12px */
 }
@@ -180,6 +178,6 @@ tooltip label {
 
 /* Custom Window Styling */
 #custom-window {
-    color: @blue;
+    color: @color12;
     padding: 0px 8px; /* Reduced from 0px 10px */
 }

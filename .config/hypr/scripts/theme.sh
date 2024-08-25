@@ -41,6 +41,7 @@ switch_theme() {
     "$SCRIPT_DIR/rofi.sh" "$theme"
     "$SCRIPT_DIR/swaync.sh" "$theme"
     "$SCRIPT_DIR/hyprlock.sh" "$theme"
+    "$SCRIPT_DIR/waybar.sh" "$theme"
     
     # Change wallpapers
     change_wallpapers "$theme"
