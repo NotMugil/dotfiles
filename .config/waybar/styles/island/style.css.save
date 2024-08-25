@@ -1,4 +1,4 @@
-@import "colors/current-theme.css";
+a9b1d6@import "colors/current-theme.css";
 
 window#waybar {
 	background-color: transparent;
