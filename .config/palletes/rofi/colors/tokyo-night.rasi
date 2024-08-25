@@ -7,7 +7,7 @@
 
   background:       #24273ACC;
   foreground:       #CAD3F5FF;
-  accent:           #B7BDF869;
+  accent:           #7dcfffFF;
   background-tb:    #494D64FF;
   border-tb:        #363A4FFF;
   selected:         linear-gradient(to right, #363A4FFF, #B7BDF869);

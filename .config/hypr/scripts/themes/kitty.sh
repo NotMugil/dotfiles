@@ -7,7 +7,7 @@ case "$theme" in
         kitten themes --reload-in=all "Catppuccin-Mocha"
         ;;
     "Tokyo-Night")
-        kitten themes --reload-in=all "Tokyo Night"
+        kitten themes --reload-in=all "Tokyo Night Moon"
         ;;
     "Gruvbox-Dark")
         kitten themes --reload-in=all "Gruvbox Dark"
