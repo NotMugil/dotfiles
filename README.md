@@ -21,9 +21,7 @@
 <a href="https://github.com/NotMugil/dotfiles?tab=GPL-3.0-1-ov-file"><img src="https://img.shields.io/github/license/NotMugil/dotfiles?style=for-the-badge&logo=&color=CBA6F7&logoColor=CBA6F7&labelColor=302D41" alt="LICENSE"></a>&nbsp;&nbsp;
 </p>
 </div>
-
-![hypr](.github/assets/hypr.png)
-
+	
 ## Information
 
 - Operating System • [Arch Linux](https://archlinux.org)
