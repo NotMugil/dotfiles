@@ -36,7 +36,8 @@ wl-paste --watch cliphist store &
 # xwaylandvideobridge & # Off when using Vesktop instead of Discord
 
 # Audio
-easyeffects --gapplication-service &
+#easyeffects --gapplication-service &
+jamesdsp --tray &
 
 # Systemd services
 systemctl --user start protonmail-bridge &

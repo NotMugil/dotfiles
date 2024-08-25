@@ -7,7 +7,7 @@
 	"width": 1240,
 	"output": ["HDMI-A-1","eDP-1"],
         "include": "~/.config/waybar/modules",
-	"modules-left": ["custom/launcher#arch","custom/three-dots-seperator","cpu#icon","memory#icon","disk#icon","mpris",],
+	"modules-left": ["custom/launcher#arch","custom/three-dots-seperator","cpu#icon","memory#icon","disk#icon","mpris#text",],
 	"modules-center": ["hyprland/workspaces#pacman",],
 	"modules-right": ["bluetooth","group/pownet","pulseaudio#icon","custom/updates","clock","tray","custom/power-button"], 
  }
