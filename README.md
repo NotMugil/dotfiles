@@ -22,6 +22,7 @@
 </p>
 </div>
 
+![hypr](.github/assets/hypr.png)
 
 ## Information
 
