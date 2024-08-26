@@ -1,21 +1,18 @@
 #!/bin/bash
 
-# Function to print error messages and log them
+set -e  # Exit immediately if a command exits with a non-zero status.
+
+# Function to print error messages
 error() {
-    echo "Error: $1" | tee -a InstallationLog.txt
     echo "Error: $1" >&2
+    echo "$(date '+%Y-%m-%d %H:%M:%S') - Error: $1" >> "$LOG_FILE"
 }
 
-# Function to print info messages and log them
+# Function to print info messages
 info() {
-    echo "Info: $1" | tee -a InstallationLog.txt
+    echo "Info: $1"
+    echo "$(date '+%Y-%m-%d %H:%M:%S') - Info: $1" >> "$LOG_FILE"
 }
-
-# Check if script is run with sudo
-if [ "$EUID" -eq 0 ]; then
-    error "This script should not be run with sudo. Please run as a regular user."
-    exit 1
-fi
 
 # Function to get user input
 get_input() {
@@ -27,43 +24,9 @@ get_input() {
     echo "${reply:-$default}"
 }
 
-# Display ASCII logo
-cat << "EOF"
-
-　　　　__..,,__　　　,.｡='`1
-　　　　 .,,..;~`''''　　　　`''''＜``彡　}
-　 _...:=,`'　　 　︵　 т　︵　　X彡-J
-＜`　彡 /　　ミ　　,_人_.　＊彡　`~
-　 `~=::　　　 　　　　　　 　　　Y
-　　 　i.　　　　　　　　　　　　 .:
-　　　.\　　　　　　　,｡---.,,　　./
-　　　　ヽ　／ﾞ''```\;.{　　　 ＼／
-　　　　　Y　　　`J💕r_.彳　 　|
-　　　　　{　　　``　　`　　　i
-　　　　　\　　　　　　　　　＼　　　..︵︵.
-　　　　　`＼　　　　　　　　　``ゞ.,/` oQ o`)
-　　　　　　`i,　　　　　　　　　　Y　 ω　/
-　　　　 　　`i,　　　 　　.　　　　"　　　/
-　　　　　　`iミ　　　　　　　　　　　,,ノ
-　　　　 　 ︵Y..︵.,,　　　　　,,+..__ノ``
-　　　　　(,`, З о　　　　,.ノ川彡ゞ彡　
-	
-Welcome to NotMugil's Dotfiles Installation Script (For Arch Linux systems)
-
-NOTE: You will be prompted with some questions during the installation process
-
-NOTE: If you are running on VM, enable 3D Acceleration else Hyprland won't start.
-EOF
-
-echo
-
-# Check if running on Arch Linux
-info "Checking if the system is Arch Linux..."
-[ -f /etc/arch-release ] || { error "This script is intended for Arch Linux systems only."; exit 1; }
-info "Confirmed: Running on Arch Linux."
-
-# Ask about AUR helper preference
-aur_helper=$(get_input "Which AUR helper do you prefer? (yay/paru)" "yay")
+# Initialize log file
+LOG_FILE="$HOME/dotfiles_installation.log"
+echo "Dotfiles Installation Log - $(date '+%Y-%m-%d %H:%M:%S')" > "$LOG_FILE"
 
 # Function to check if a package is installed
 is_installed() {
@@ -73,6 +36,7 @@ is_installed() {
 # Function to install packages with pacman
 install_packages() {
     local packages_to_install=()
+    local failed_packages=()
     for pkg in "$@"; do
         if is_installed "$pkg"; then
             info "Package $pkg is already installed. Skipping."
@@ -82,7 +46,19 @@ install_packages() {
     done
     if [ ${#packages_to_install[@]} -ne 0 ]; then
         info "Installing pacman packages: ${packages_to_install[*]}"
-        sudo pacman -S --needed --noconfirm "${packages_to_install[@]}" || error "Failed to install some pacman packages"
+        for pkg in "${packages_to_install[@]}"; do
+            if sudo pacman -S --needed --noconfirm "$pkg"; then
+                info "Successfully installed $pkg"
+            else
+                error "Failed to install $pkg"
+                failed_packages+=("$pkg")
+            fi
+        done
+        if [ ${#failed_packages[@]} -ne 0 ]; then
+            error "Failed to install the following packages: ${failed_packages[*]}"
+            echo "Failed packages: ${failed_packages[*]}" >> "$LOG_FILE"
+        fi
+        info "Pacman packages installation complete."
     else
         info "All pacman packages are already installed."
     fi
@@ -93,6 +69,7 @@ install_aur_packages() {
     local aur_cmd="$1"
     shift
     local packages_to_install=()
+    local failed_packages=()
     for pkg in "$@"; do
         if is_installed "$pkg"; then
             info "Package $pkg is already installed. Skipping."
@@ -102,132 +79,254 @@ install_aur_packages() {
     done
     if [ ${#packages_to_install[@]} -ne 0 ]; then
         info "Installing AUR packages using $aur_cmd: ${packages_to_install[*]}"
-        $aur_cmd -S --needed --noconfirm --nocleanafter "${packages_to_install[@]}" || error "Failed to install some AUR packages"
+        for pkg in "${packages_to_install[@]}"; do
+            if $aur_cmd -S --needed --noconfirm "$pkg"; then
+                info "Successfully installed $pkg"
+            else
+                error "Failed to install $pkg"
+                failed_packages+=("$pkg")
+            fi
+        done
+        if [ ${#failed_packages[@]} -ne 0 ]; then
+            error "Failed to install the following AUR packages: ${failed_packages[*]}"
+            echo "Failed AUR packages: ${failed_packages[*]}" >> "$LOG_FILE"
+        fi
+        info "AUR packages installation complete."
     else
         info "All AUR packages are already installed."
     fi
 }
 
-# Install pacman packages
-info "Starting installation of pacman packages..."
-install_packages kitty nano git rofi-wayland swaync waybar playerctl mpv grim slurp \
-    cliphist wl-clipboard pavucontrol hyprlock nwg-look blueman bluez bluez-utils \
-    dictd pamixer brightnessctl thunar ranger python-pillow imv \
-    tumbler webp-pixbuf-loader totem evince ffmpegthumbnailer pacman-contrib btop \
-    nvtop fastfetch neovim nm-connection-editor xdg-desktop-portal-hyprland unzip \
-    swww hypridle ttf-nerd-fonts-symbols ttf-nerd-fonts-symbols-mono \
-    ttf-space-mono-nerd noto-fonts-cjk noto-fonts-emoji eza zsh
-
-# Check for AUR helper
-info "Checking for AUR helper..."
-if ! command -v "$aur_helper" &> /dev/null; then
-    info "$aur_helper not found. Installing $aur_helper..."
-    mkdir -p ~/bin
-    cd ~/bin
-    if [ "$aur_helper" = "yay" ]; then
-        git clone https://aur.archlinux.org/yay.git || error "Failed to clone yay repository"
-        cd yay
-        makepkg -si --noconfirm || error "Failed to install yay"
-        cd ..
-    elif [ "$aur_helper" = "paru" ]; then
-        sudo pacman -S --needed base-devel
-        git clone https://aur.archlinux.org/paru.git || error "Failed to clone paru repository"
-        cd paru
-        makepkg -si --noconfirm || error "Failed to install paru"
-        cd ..
-    else
-        error "Unsupported AUR helper: $aur_helper"
-    fi
-    info "$aur_helper installation complete."
-else
-    info "$aur_helper is already installed."
-fi
-
-# Install AUR packages
-info "Starting installation of AUR packages..."
-install_aur_packages "$aur_helper" cava hyprpicker wl-clip-persist-git wlogout jamesdsp anyrun \
-    catppuccin-gtk-theme-mocha nerd-fonts-sf-mono
-
-# Clone dotfiles repository
-info "Cloning dotfiles repository..."
-git clone https://github.com/NotMugil/dotfiles.git || error "Failed to clone dotfiles repository"
-info "Dotfiles repository cloned successfully."
-
-# Copy dotfiles
-info "Copying dotfiles to home directory..."
-# First, ensure rsync is installed
-if ! command -v rsync &> /dev/null; then
-    info "rsync not found. Installing rsync..."
-    sudo pacman -S --needed --noconfirm rsync || error "Failed to install rsync"
-fi
-
-# Use rsync to copy files, creating directories if they don't exist
-rsync -avh --backup --backup-dir="$HOME/.config/dotfiles_backup_$(date +%Y%m%d_%H%M%S)" \
-    dotfiles/.config/ "$HOME/.config/" || error "Failed to copy dotfiles"
-info "Dotfiles copied successfully. Any existing files were backed up."
-
-# Setup Zsh
-setup_zsh() {
-    info "Setting up Zsh..."
-
-    # Set Zsh as default shell
-    if [[ $SHELL != */zsh ]]; then
-        info "Setting Zsh as the default shell..."
-        chsh -s $(which zsh) || error "Failed to set Zsh as default shell"
-        info "Zsh set as default shell. Changes will take effect on next login."
-    else
-        info "Zsh is already the default shell."
-    fi
-
-    # Setup Zsh configuration files
-    info "Setting up Zsh configuration files..."
+# Function to setup PipeWire
+setup_pipewire() {
+    info "Setting up PipeWire..."
+    install_packages pipewire pipewire-pulse pipewire-alsa pipewire-jack wireplumber
     
-    # Setup .zshenv
-    if [[ -f dotfiles/.zshenv ]]; then
-        cp dotfiles/.zshenv ~/.zshenv || error "Failed to copy .zshenv"
-        info ".zshenv setup complete."
-    else
-        error ".zshenv not found in dotfiles"
-    fi
-
-    # Setup all files in .config/zsh
-    if [[ -d dotfiles/.config/zsh ]]; then
-        # Ensure the destination directory exists
-        mkdir -p ~/.config/zsh
-
-        # Use rsync to copy all files and subdirectories
-        rsync -avh --backup --backup-dir="$HOME/.config/zsh_backup_$(date +%Y%m%d_%H%M%S)" \
-            dotfiles/.config/zsh/ ~/.config/zsh/ || error "Failed to copy Zsh configuration files"
-        info "All Zsh configuration files in .config/zsh copied successfully."
-    else
-        error ".config/zsh directory not found in dotfiles"
-    fi
-
-    # Install Zsh plugins
-    info "Installing Zsh plugins..."
-    curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
-    curl -sL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh | sh
-
-    info "Zsh setup complete."
+    # Enable PipeWire service
+    systemctl --user enable pipewire.service
+    systemctl --user enable pipewire-pulse.service
+    
+    info "PipeWire setup complete."
 }
 
-# Run Zsh setup
-setup_zsh
+# Function to setup SDDM
+setup_sddm() {
+    info "Setting up SDDM..."
+    install_packages sddm
+    
+    # Enable SDDM service
+    sudo systemctl enable sddm.service
+    
+    info "SDDM setup complete."
+}
 
-info "Installation process complete!"
+# Function to setup Bluetooth
+setup_bluetooth() {
+    info "Setting up Bluetooth..."
+    install_packages bluez bluez-utils
+    
+    # Enable Bluetooth service
+    sudo systemctl enable bluetooth.service
+    
+    info "Bluetooth setup complete."
+}
 
-cat << "EOF"
-.. ♥
-. .((
-. . .)
-. ( (
-██████╗
-██████║
-██████╝ 𝘩𝑎𝑣𝑒 𝑎 𝑔𝑜𝑜𝑑 𝑑𝑎𝑦!
+# Function to setup NVIDIA ( !!! WIP !!! )
+setup_nvidia() {
+    local install_nvidia=$(get_input "Do you have an NVIDIA GPU? (yes/no)" "no")
+    if [[ "$install_nvidia" == "yes" ]]; then
+        info "Setting up NVIDIA drivers..."
+        install_packages nvidia-dkms nvidia-settings nvidia-utils libva libva-nvidia-driver-git
+        
+        # Add NVIDIA modules to mkinitcpio
+        sudo sed -i 's/MODULES=(/MODULES=(nvidia nvidia_modeset nvidia_uvm nvidia_drm /' /etc/mkinitcpio.conf
+        sudo mkinitcpio -P
+        
+        info "NVIDIA setup complete."
+    else
+        info "Skipping NVIDIA setup."
+    fi
+}
 
-EOF
+# Function for full installation
+full_installation() {
+    info "Starting full installation..."
+    
+    # Install pacman packages
+    install_packages kitty nano git rofi-wayland swaync waybar playerctl mpv grim slurp \
+        cliphist wl-clipboard pavucontrol hyprlock nwg-look blueman bluez bluez-utils \
+        dictd pamixer brightnessctl thunar ranger python-pillow imv \
+        tumbler webp-pixbuf-loader totem evince ffmpegthumbnailer pacman-contrib btop \
+        nvtop fastfetch neovim nm-connection-editor xdg-desktop-portal-hyprland unzip \
+        swww hypridle ttf-nerd-fonts-symbols ttf-nerd-fonts-symbols-mono \
+        ttf-space-mono-nerd noto-fonts-cjk noto-fonts-emoji
 
-echo
+    # Install AUR packages
+    install_aur_packages "$aur_helper" cava hyprpicker wl-clip-persist-git wlogout jamesdsp anyrun \
+        catppuccin-gtk-theme-mocha nerd-fonts-sf-mono
 
-info "Please restart your system or log out and log back in to apply all changes."
-info "Check InstallationLog.txt for a complete log of the installation process."
+    # Setup additional components
+    setup_pipewire
+    setup_sddm
+    setup_bluetooth
+    #setup_nvidia
+
+    # Copy dotfiles
+    copy_dotfiles
+
+    # Enable system services
+    enable_services
+
+    info "Full installation complete."
+}
+
+# Function for base installation
+base_installation() {
+    info "Starting base installation..."
+    
+    # Install pacman packages (excluding configuration-specific packages)
+    install_packages kitty nano git rofi-wayland waybar playerctl mpv grim slurp \
+        cliphist wl-clipboard pavucontrol blueman bluez bluez-utils \
+        dictd pamixer brightnessctl thunar ranger python-pillow imv \
+        tumbler webp-pixbuf-loader totem evince ffmpegthumbnailer pacman-contrib btop \
+        nvtop fastfetch neovim nm-connection-editor xdg-desktop-portal-hyprland unzip \
+        ttf-nerd-fonts-symbols ttf-nerd-fonts-symbols-mono \
+        ttf-space-mono-nerd noto-fonts-cjk noto-fonts-emoji
+
+    # Install AUR packages (excluding configuration-specific packages)
+    install_aur_packages "$aur_helper" cava wl-clip-persist-git jamesdsp \
+        catppuccin-gtk-theme-mocha nerd-fonts-sf-mono
+
+    # Setup additional components
+    setup_pipewire
+    setup_sddm
+    setup_bluetooth
+    #setup_nvidia
+
+    # Enable system services
+    enable_services
+
+    info "Base installation complete."
+}
+
+# Function to copy dotfiles
+copy_dotfiles() {
+    info "Copying dotfiles to home directory..."
+    # First, ensure rsync is installed
+    if ! command -v rsync &> /dev/null; then
+        info "rsync not found. Installing rsync..."
+        sudo pacman -S --needed --noconfirm rsync || error "Failed to install rsync"
+    fi
+
+    # Use rsync to copy files, creating directories if they don't exist
+    rsync -avh --backup --backup-dir="$HOME/.config/dotfiles_backup_$(date +%Y%m%d_%H%M%S)" \
+        dotfiles/.config/ "$HOME/.config/" || error "Failed to copy dotfiles"
+    info "Dotfiles copied successfully. Any existing files were backed up."
+}
+
+# Function to enable system services
+enable_services() {
+    info "Enabling system services..."
+    
+    services=(
+        "bluetooth.service"
+        "NetworkManager.service"
+        "sddm.service"
+        # Add other services as needed
+    )
+
+    for service in "${services[@]}"; do
+        if sudo systemctl is-enabled --quiet "$service"; then
+            info "$service is already enabled."
+        else
+            if sudo systemctl enable --now "$service"; then
+                info "Successfully enabled $service"
+            else
+                error "Failed to enable $service"
+            fi
+        fi
+    done
+
+    info "System services setup complete."
+}
+
+display_help() {
+    echo "Usage: ./install.sh [OPTION]"
+    echo "Install and configure the system."
+    echo
+    echo "Options:"
+    echo "  -h, --help     Display this help message and exit"
+    echo "  -b, --base     Perform a base installation"
+    echo "  -c, --config   Copy dotfiles to home directory"
+    echo "  -s, --services Enable system services"
+    echo
+    echo "If no option is provided, a full installation will be performed."
+}
+
+# Main execution
+main() {
+    # Display ASCII logo
+	cat << "EOF"
+
+	　　　　__..,,__　　　,.｡='`1
+	　　　　 .,,..;~`''''　　　　`''''＜``彡　}
+	　 _...:=,`'　　 　︵　 т　︵　　X彡-J
+	＜`　彡 /　　ミ　　,_人_.　＊彡　`~
+	　 `~=::　　　 　　　　　　 　　　Y
+	　　 　i.　　　　　　　　　　　　 .:
+	　　　.\　　　　　　　,｡---.,,　　./
+	　　　　ヽ　／ﾞ''```\;.{　　　 ＼／
+	　　　　　Y　　　`J💕r_.彳　 　|
+	　　　　　{　　　``　　`　　　i
+	　　　　　\　　　　　　　　　＼　　　..︵︵.
+	　　　　　`＼　　　　　　　　　``ゞ.,/` oQ o`)
+	　　　　　　`i,　　　　　　　　　　Y　 ω　/
+	　　　　 　　`i,　　　 　　.　　　　"　　　/
+	　　　　　　`iミ　　　　　　　　　　　,,ノ
+	　　　　 　 ︵Y..︵.,,　　　　　,,+..__ノ``
+	　　　　　(,`, З о　　　　,.ノ川彡ゞ彡　
+		
+	Welcome to NotMugil's Dotfiles Installation Script (For Arch Linux systems)
+
+	NOTE: You will be prompted with some questions during the installation process
+
+	NOTE: If you are running on VM, enable 3D Acceleration else Hyprland won't start.
+	EOF
+
+	echo
+
+    # Parse command-line arguments
+    case "$1" in
+        -h|--help)
+            display_help
+            exit 0
+            ;;
+        -f|--full)
+            full_installation
+            ;;
+        -b|--base)
+            base_installation
+            ;;
+        -c|--config)
+            copy_dotfiles
+            ;;
+        -s|--services)
+            enable_services
+            ;;
+        "")
+            full_installation
+            ;;
+        *)
+            echo "Error: Unknown option '$1'" >&2
+            echo "Try './install.sh --help' for more information." >&2
+            exit 1
+            ;;
+    esac
+
+    info "Installation process complete!"
+    info "Please check the log file at $LOG_FILE for any issues."
+    info "Please restart your system or log out and log back in to apply all changes."
+}
+
+# Run the main function
+main "$@"
