@@ -14,6 +14,61 @@ info() {
     echo "$(date '+%Y-%m-%d %H:%M:%S') - Info: $1" >> "$LOG_FILE"
 }
 
+display_logo() {
+    # Define colors
+    local RED="\033[31m"
+    local GREEN="\033[32m"
+    local YELLOW="\033[33m"
+    local BLUE="\033[34m"
+    local MAGENTA="\033[35m"
+    local CYAN="\033[36m"
+    local RESET="\033[0m"
+
+    cat << "EOF"
+                     __..,,__　　　,.｡='`1
+         .,,..;~`''''　　　　`''''＜``彡　}
+     _...:=,`'　　 　︵　 т　︵　　X彡-J
+    ＜`　彡 /　　ミ　　,_人_.　＊彡　`~
+     `~=::　　　 　　　　　　 　　　Y
+        i.　　　　　　　　　　　　 .:
+        .\　　　　　　　,｡---.,,　　./
+        　　ヽ　／ﾞ''```\;.{　　　 ＼／
+         　　Y　　　`J💕r_.彳　 　|
+          　{　　　``　　`　　　i
+          　\　　　　　　　　　＼　　　..︵︵.
+          　`＼　　　　　　　　　``ゞ.,/` oQ o`)
+           　`i,　　　　　　　　　　Y　 ω　/
+              `i,　　　 　　.　　　　"　　　/
+              `iミ　　　　　　　　　　　,,ノ
+               ︵Y..︵.,,　　　　　,,+..__ノ``
+              (,`, З о　　　　,.ノ川彡ゞ彡
+EOF
+
+echo
+
+
+    printf "\n"
+    printf "${YELLOW}Welcome to NotMugil's Dotfiles Installation Script (For Arch Linux systems)${RESET}\n"
+    printf "\n"
+    printf "${MAGENTA}NOTE: You will be prompted with some questions during the installation process${RESET}\n"
+    printf "\n"
+    printf "${MAGENTA}NOTE: If you are running on VM, enable 3D Acceleration else Hyprland won't start.${RESET}\n"
+    printf "\n"
+}
+
+# Function to confirm with the user before proceeding
+confirm_proceed() {
+    local prompt="$1"
+    local default="$2"
+    local reply
+
+    read -p "$prompt [$default]: " reply
+    if [[ "${reply:-$default}" != "yes" ]]; then
+        info "Installation aborted by user."
+        exit 0
+    fi
+}
+
 # Function to get user input
 get_input() {
     local prompt="$1"
@@ -150,6 +205,10 @@ setup_nvidia() {
 
 # Function for full installation
 full_installation() {
+
+    display_logo
+    confirm_proceed "Running this will install necessary packages and dependencies together with my dotfiles. Do you want to proceed with the full installation? (yes/no)" "yes"
+    
     info "Starting full installation..."
     
     # Install pacman packages
@@ -182,6 +241,10 @@ full_installation() {
 
 # Function for base installation
 base_installation() {
+    
+    display_logo
+    confirm_proceed "Running this will install only the necessary packages and dependencies without my configs. Do you want to proceed with the base installation?" "yes"
+      
     info "Starting base installation..."
     
     # Install pacman packages (excluding configuration-specific packages)
@@ -256,7 +319,8 @@ display_help() {
     echo
     echo "Options:"
     echo "  -h, --help     Display this help message and exit"
-    echo "  -b, --base     Perform a base installation"
+    echo "  -f, --full     Perform a full installation with configs."
+    echo "  -b, --base     Perform a base installation without configs"
     echo "  -c, --config   Copy dotfiles to home directory"
     echo "  -s, --services Enable system services"
     echo
@@ -265,36 +329,7 @@ display_help() {
 
 # Main execution
 main() {
-    # Display ASCII logo
-	cat << "EOF"
-
-	　　　　__..,,__　　　,.｡='`1
-	　　　　 .,,..;~`''''　　　　`''''＜``彡　}
-	　 _...:=,`'　　 　︵　 т　︵　　X彡-J
-	＜`　彡 /　　ミ　　,_人_.　＊彡　`~
-	　 `~=::　　　 　　　　　　 　　　Y
-	　　 　i.　　　　　　　　　　　　 .:
-	　　　.\　　　　　　　,｡---.,,　　./
-	　　　　ヽ　／ﾞ''```\;.{　　　 ＼／
-	　　　　　Y　　　`J💕r_.彳　 　|
-	　　　　　{　　　``　　`　　　i
-	　　　　　\　　　　　　　　　＼　　　..︵︵.
-	　　　　　`＼　　　　　　　　　``ゞ.,/` oQ o`)
-	　　　　　　`i,　　　　　　　　　　Y　 ω　/
-	　　　　 　　`i,　　　 　　.　　　　"　　　/
-	　　　　　　`iミ　　　　　　　　　　　,,ノ
-	　　　　 　 ︵Y..︵.,,　　　　　,,+..__ノ``
-	　　　　　(,`, З о　　　　,.ノ川彡ゞ彡　
-		
-	Welcome to NotMugil's Dotfiles Installation Script (For Arch Linux systems)
-
-	NOTE: You will be prompted with some questions during the installation process
-
-	NOTE: If you are running on VM, enable 3D Acceleration else Hyprland won't start.
-	EOF
-
-	echo
-
+    
     # Parse command-line arguments
     case "$1" in
         -h|--help)
