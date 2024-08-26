@@ -155,14 +155,6 @@ Congratulations, you are done installing the configurations! 🎉
 
 For a complete list, refer to `~/.config/hypr/configs/binds.conf`.
 
-## TO-DO
-
-- [ ] Better wallpaper selector theme
-- [ ] Ease the task of changing username/home dir name
-- [ ] Update Readme
-- [ ] Update gallery images
-- [ ] Configure themes for wlogout, nvim, spicetify, firefox
-
 ## Star History
 
 [![Star History Chart](https://api.star-history.com/svg?repos=NotMugil/dotfiles&type=Date)](https://star-history.com/#NotMugil/dotfiles&Date)
@@ -177,3 +169,11 @@ For a complete list, refer to `~/.config/hypr/configs/binds.conf`.
 - [HyprNova](https://github.com/zDyanTB/HyprNova) 
 
 _Thanks a lot for [r/unixporn](https://www.reddit.com/r/unixporn/) community for inspiring me to do this._
+
+## To-do
+
+- [ ] Better wallpaper selector theme
+- [ ] Ease the task of changing username/home dir name
+- [ ] Update Readme
+- [ ] Update gallery images
+- [ ] Configure themes for wlogout, nvim, spicetify, firefox
