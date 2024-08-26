@@ -127,7 +127,7 @@ Congratulations, you are done installing the configurations! 🎉
 
 ## Keybinds
 >[!NOTE] 
-> Some of these keybinds might be outdated or updated. I will try my best to keep it up to date. Check the config file for recent/workingPlease note that some of these keybinds may be outdated or have been updated. I will do my best to keep this list current. For the most recent and working keybinds, please check the config file.
+> Please note that some of these keybinds may be outdated or have been updated. I will do my best to keep this list current. For the most recent and working keybinds, please check the config file.
 
 | Keys           		              	| Functionality                                                                   |
 |-----------------------------------------------|---------------------------------------------------------------------------------|
