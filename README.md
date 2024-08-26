@@ -157,7 +157,7 @@ For a complete list, refer to `~/.config/hypr/configs/binds.conf`.
 
 ## Star History
 
-<a href="https://star-history.com/#NotMugil/dotfiles&Date">
+<a href="https://github.com/NotMugil/dotfiles/stargazers">
  <picture>
    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=NotMugil/dotfiles&type=Date&theme=dark" />
    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=NotMugil/dotfiles&type=Date" />
