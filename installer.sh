@@ -1,17 +1,21 @@
 #!/bin/bash
 
-set -e  # Exit immediately if a command exits with a non-zero status.
-
-# Function to print error messages
+# Function to print error messages and log them
 error() {
+    echo "Error: $1" | tee -a InstallationLog.txt
     echo "Error: $1" >&2
-    exit 1
 }
 
-# Function to print info messages
+# Function to print info messages and log them
 info() {
-    echo "Info: $1"
+    echo "Info: $1" | tee -a InstallationLog.txt
 }
+
+# Check if script is run with sudo
+if [ "$EUID" -eq 0 ]; then
+    error "This script should not be run with sudo. Please run as a regular user."
+    exit 1
+fi
 
 # Function to get user input
 get_input() {
@@ -26,49 +30,37 @@ get_input() {
 # Display ASCII logo
 cat << "EOF"
 
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣀⣤⣤⣤⣤⣄⣀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣤⠶⣻⠝⠋⠠⠔⠛⠁⡀⠀⠈⢉⡙⠓⠶⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠞⢋⣴⡮⠓⠋⠀⠀⢄⠀⠀⠉⠢⣄⠀⠈⠁⠀⡀⠙⢶⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠞⢁⣔⠟⠁⠀⠀⠀⠀⠀⠈⡆⠀⠀⠀⠈⢦⡀⠀⠀⠘⢯⢢⠙⢦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡼⠃⠀⣿⠃⠀⠀⠀⠀⠀⠀⠀⠀⠸⠀⠀⠀⠀⠀⢳⣦⡀⠀⠀⢯⠀⠈⣷⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣾⠆⡄⢠⢧⠀⣸⠀⠀⠀⠀⠀⠀⠀⢰⠀⣄⠀⠀⠀⠀⢳⡈⢶⡦⣿⣷⣿⢉⣷⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣿⣯⣿⣁⡟⠈⠣⡇⠀⠀⢸⠀⠀⠀⠀⢸⡄⠘⡄⠀⠀⠀⠈⢿⢾⣿⣾⢾⠙⠻⣾⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣿⡿⣮⠇⢙⠷⢄⣸⡗⡆⠀⢘⠀⠀⠀⠀⢸⠧⠀⢣⠀⠀⠀⡀⡸⣿⣿⠘⡎⢆⠈⢳⣽⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⢠⡟⢻⢷⣄⠀⠀⠀⠀⠀⠀⣾⣳⡿⡸⢀⣿⠀⠀⢸⠙⠁⠀⠼⠀⠀⠀⠀⢸⣇⠠⡼⡤⠴⢋⣽⣱⢿⣧⠀⢳⠈⢧⠀⢻⣿⣧⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⢀⡿⣠⡣⠃⣿⠃⠀⠀⠀⠀⣸⣳⣿⠇⣇⢸⣿⢸⣠⠼⠀⠀⠀⡇⠀⡀⠉⠒⣾⢾⣆⢟⣳⡶⠓⠶⠿⢼⣿⣇⠈⡇⠘⢆⠈⢿⡘⣷⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠈⢷⣍⣤⡶⣿⡄⠀⠀⠀⢠⣿⠃⣿⠀⡏⢸⣿⣿⠀⢸⠀⠀⢠⡗⢀⠇⠀⢠⡟⠀⠻⣾⣿⠀⠀⠀⠀⡏⣿⣿⡀⢹⡀⠈⢦⠈⢷⣿⡆⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢁⣤⣄⠁⠀⠀⠀⣼⡏⢰⣟⠀⣇⠘⣿⣿⣾⣾⣆⢀⣾⠃⣼⢠⣶⣿⣭⣷⣶⣾⣿⣤⠀⠀⠀⡇⡯⣍⣧⠀⣷⠄⠈⢳⡀⢻⡁⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠺⣿⡿⠀⠀⠀⠀⡿⢀⣾⣧⠀⡗⡄⢿⣿⡙⣽⣿⣟⠛⠚⠛⠙⠉⢹⣿⣿⣦⠀⢸⡿⠀⠀⠀⢰⡯⣌⢻⡀⢸⢠⢰⡄⠹⡷⣿⣦⣤⠤⣶⡇⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠀⠀⠀⣇⣾⣿⢸⢠⣧⢧⠘⣿⡇⠸⣿⢿⡆⠀⠀⠀⠀⠘⣯⠇⣿⠂⣸⢰⠀⠀⢀⣸⡧⣊⣼⡇⢸⣼⣸⣷⢣⢻⣄⠉⠙⠛⠉⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣳⣤⣴⣿⣏⣿⣾⢸⣿⡘⣧⣘⢿⣀⡙⣞⠁⠀⠀⠀⠀⢀⡬⢀⣉⢠⣧⡏⠀⠀⡎⣿⣿⣿⣿⠃⣸⡏⣿⣿⡎⢿⡘⡆⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠉⣠⣼⣿⣿⣿⣼⣿⣧⢿⣿⣿⣯⡻⠟⠀⠀⠀⠀⠀⠐⢯⠣⡽⢟⣽⠀⠀⢘⡇⣿⣿⣿⡟⣴⣿⣷⣿⣿⣧⣿⣷⡽⠀⠀⠀⠀⠀⠀⠀
-⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣼⣹⣿⣇⣸⣿⣿⣿⣻⣚⣿⡿⣿⣿⣦⣤⣀⡉⠃⠀⢀⣀⣤⡶⠛⡏⠀⢀⣼⢸⣿⣿⣿⣿⣿⣿⣿⢋⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀
-⣿⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠒⠒⠒⢭⢻⣽⣿⣿⣿⣿⣿⣿⢿⠿⣿⡏⠀⡼⠁⣀⣾⣿⣿⣿⣿⡿⣿⣿⣟⡻⣿⣿⡿⠣⠟⠀⠀⠀⠀⠀⠀⠀⠀
-⠸⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢧⢿⣯⡽⠿⠛⠋⣵⢟⣋⣿⣶⣞⣤⣾⣿⣿⡟⢉⡿⢋⠻⢯⡉⢻⡟⢿⡅⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⢻⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⡞⣿⣆⡀⠀⡼⡏⠉⠚⠭⢉⣠⠬⠛⠛⢁⡴⣫⠖⠁⠀⠀⣩⠟⠁⣸⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠈⢷⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⣽⣿⣿⣾⠳⡙⣦⡤⠜⠊⠁⠀⣀⡴⠯⠾⠗⠒⠒⠛⠛⠛⠛⠛⠓⠿⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠘⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠰⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢷⣻⣿⣿⠔⢪⠓⠬⢍⠉⣩⣽⢻⣤⣶⣦⠀⠀⠀⢀⣀⣤⣴⣾⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠹⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⣾⡏⢦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⣯⣿⣿⠀⠀⣇⠀⣠⠎⠁⢹⡎⡟⡏⣷⣶⠿⠛⡟⠛⠛⣫⠟⠉⢿⣿⡿⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⢻⡄⠀⠀⠀⠀⠀⠀⠀⠀⠹⣿⣷⠈⢷⡤⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⣾⣷⡀⣀⣀⣷⡅⠀⠀⠈⣷⢳⡇⣿⠀⠀⣸⠁⢠⡾⣟⣛⣻⣟⡿⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⢷⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢯⢻⣏⡵⠿⠿⢤⣄⠀⢀⣿⢸⣹⣿⣀⣴⣿⣴⣿⣛⠋⠉⠉⡉⠛⣿⣧⡀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠘⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⡎⣿⣥⣶⠖⢉⣿⡿⣿⣿⡿⣿⣟⠿⠿⣿⣿⣿⡯⠻⣿⣿⣿⣷⡽⣿⡗⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠸⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⡘⣿⣩⠶⣛⣋⡽⠿⣷⢬⣙⣻⣿⣿⣿⣯⣛⠳⣤⣬⡻⣿⣿⣿⣿⣧⠀⠀⠀⠀⠀⠀⠀
-⠀⣿⣛⣻⣿⡿⠿⠟⠗⠶⠶⠶⠶⠤⠤⢤⠤⡤⢤⣤⣤⣤⣤⣄⣀⣀⣀⣀⣀⣀⣀⣀⣣⢹⣷⣶⣿⣿⣦⣴⣟⣛⣯⣤⣿⣿⣿⣿⣿⣷⣌⣿⣿⣿⣿⣿⣿⣿⣤⣤⣤⣤⣤⣤⣄
-⠀⠉⠙⠛⠛⠛⠛⠛⠻⠿⠿⠿⠷⠶⠶⢶⣶⣶⣶⣶⣤⣤⣤⣤⣤⣥⣬⣭⣭⣉⣩⣍⣙⣏⣉⣏⣽⣶⣶⣶⣤⣤⣬⣤⣤⣾⣿⠶⠾⠿⠿⠿⠿⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠃
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠉⠉⠉⠉⠉⠛⠛⠛⠛⠛⠛⠋⠉⠉⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+　　　　__..,,__　　　,.｡='`1
+　　　　 .,,..;~`''''　　　　`''''＜``彡　}
+　 _...:=,`'　　 　︵　 т　︵　　X彡-J
+＜`　彡 /　　ミ　　,_人_.　＊彡　`~
+　 `~=::　　　 　　　　　　 　　　Y
+　　 　i.　　　　　　　　　　　　 .:
+　　　.\　　　　　　　,｡---.,,　　./
+　　　　ヽ　／ﾞ''```\;.{　　　 ＼／
+　　　　　Y　　　`J💕r_.彳　 　|
+　　　　　{　　　``　　`　　　i
+　　　　　\　　　　　　　　　＼　　　..︵︵.
+　　　　　`＼　　　　　　　　　``ゞ.,/` oQ o`)
+　　　　　　`i,　　　　　　　　　　Y　 ω　/
+　　　　 　　`i,　　　 　　.　　　　"　　　/
+　　　　　　`iミ　　　　　　　　　　　,,ノ
+　　　　 　 ︵Y..︵.,,　　　　　,,+..__ノ``
+　　　　　(,`, З о　　　　,.ノ川彡ゞ彡　
+	
+Welcome to NotMugil's Dotfiles Installation Script (For Arch Linux systems)
 
-       Dotfiles Installation Script
+NOTE: You will be prompted with some questions during the installation process
+
+NOTE: If you are running on VM, enable 3D Acceleration else Hyprland won't start.
 EOF
 
 echo
 
 # Check if running on Arch Linux
 info "Checking if the system is Arch Linux..."
-[ -f /etc/arch-release ] || error "This script is intended for Arch Linux systems only."
+[ -f /etc/arch-release ] || { error "This script is intended for Arch Linux systems only."; exit 1; }
 info "Confirmed: Running on Arch Linux."
-
-# Ask about Zsh installation
-install_zsh=$(get_input "Do you already have Zsh installed? (yes/no)" "no")
 
 # Ask about AUR helper preference
 aur_helper=$(get_input "Which AUR helper do you prefer? (yay/paru)" "yay")
@@ -90,8 +82,7 @@ install_packages() {
     done
     if [ ${#packages_to_install[@]} -ne 0 ]; then
         info "Installing pacman packages: ${packages_to_install[*]}"
-        sudo pacman -S --needed --noconfirm "${packages_to_install[@]}" || error "Failed to install pacman packages"
-        info "Pacman packages installation complete."
+        sudo pacman -S --needed --noconfirm "${packages_to_install[@]}" || error "Failed to install some pacman packages"
     else
         info "All pacman packages are already installed."
     fi
@@ -111,8 +102,7 @@ install_aur_packages() {
     done
     if [ ${#packages_to_install[@]} -ne 0 ]; then
         info "Installing AUR packages using $aur_cmd: ${packages_to_install[*]}"
-        $aur_cmd -S --needed --noconfirm "${packages_to_install[@]}" || error "Failed to install AUR packages"
-        info "AUR packages installation complete."
+        $aur_cmd -S --needed --noconfirm --nocleanafter "${packages_to_install[@]}" || error "Failed to install some AUR packages"
     else
         info "All AUR packages are already installed."
     fi
@@ -126,25 +116,25 @@ install_packages kitty nano git rofi-wayland swaync waybar playerctl mpv grim sl
     tumbler webp-pixbuf-loader totem evince ffmpegthumbnailer pacman-contrib btop \
     nvtop fastfetch neovim nm-connection-editor xdg-desktop-portal-hyprland unzip \
     swww hypridle ttf-nerd-fonts-symbols ttf-nerd-fonts-symbols-mono \
-    ttf-space-mono-nerd noto-fonts-cjk noto-fonts-emoji
+    ttf-space-mono-nerd noto-fonts-cjk noto-fonts-emoji eza zsh
 
 # Check for AUR helper
 info "Checking for AUR helper..."
 if ! command -v "$aur_helper" &> /dev/null; then
     info "$aur_helper not found. Installing $aur_helper..."
+    mkdir -p ~/bin
+    cd ~/bin
     if [ "$aur_helper" = "yay" ]; then
         git clone https://aur.archlinux.org/yay.git || error "Failed to clone yay repository"
         cd yay
         makepkg -si --noconfirm || error "Failed to install yay"
         cd ..
-        rm -rf yay
     elif [ "$aur_helper" = "paru" ]; then
         sudo pacman -S --needed base-devel
         git clone https://aur.archlinux.org/paru.git || error "Failed to clone paru repository"
         cd paru
         makepkg -si --noconfirm || error "Failed to install paru"
         cd ..
-        rm -rf paru
     else
         error "Unsupported AUR helper: $aur_helper"
     fi
@@ -180,25 +170,13 @@ info "Dotfiles copied successfully. Any existing files were backed up."
 setup_zsh() {
     info "Setting up Zsh..."
 
-    if [[ "$install_zsh" != "yes" ]]; then
-        # Install Zsh if not already installed
-        if ! command -v zsh &> /dev/null; then
-            info "Zsh not found. Installing Zsh..."
-            sudo pacman -S --needed --noconfirm zsh || error "Failed to install Zsh"
-        else
-            info "Zsh is already installed."
-        fi
-
-        # Set Zsh as default shell
-        if [[ $SHELL != */zsh ]]; then
-            info "Setting Zsh as the default shell..."
-            chsh -s $(which zsh) || error "Failed to set Zsh as default shell"
-            info "Zsh set as default shell. Changes will take effect on next login."
-        else
-            info "Zsh is already the default shell."
-        fi
+    # Set Zsh as default shell
+    if [[ $SHELL != */zsh ]]; then
+        info "Setting Zsh as the default shell..."
+        chsh -s $(which zsh) || error "Failed to set Zsh as default shell"
+        info "Zsh set as default shell. Changes will take effect on next login."
     else
-        info "Skipping Zsh installation as per user input."
+        info "Zsh is already the default shell."
     fi
 
     # Setup Zsh configuration files
@@ -225,14 +203,31 @@ setup_zsh() {
         error ".config/zsh directory not found in dotfiles"
     fi
 
+    # Install Zsh plugins
+    info "Installing Zsh plugins..."
+    curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
+    curl -sL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh | sh
+
     info "Zsh setup complete."
 }
 
 # Run Zsh setup
 setup_zsh
 
-# Additional setup steps
-# ... (add any other setup steps here)
-
 info "Installation process complete!"
+
+cat << "EOF"
+.. ♥
+. .((
+. . .)
+. ( (
+██████╗
+██████║
+██████╝ 𝘩𝑎𝑣𝑒 𝑎 𝑔𝑜𝑜𝑑 𝑑𝑎𝑦!
+
+EOF
+
+echo
+
 info "Please restart your system or log out and log back in to apply all changes."
+info "Check InstallationLog.txt for a complete log of the installation process."
