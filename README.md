@@ -76,6 +76,54 @@
 
 
 ## Installation
+
+### Automated installation
+Download the install.sh script using `curl` or `wget`, and ensure that you have write and execute permissions for the script.
+
+```shell
+curl -O install.sh https://raw.githubusercontent.com/NotMugil/dotfiles/main/install.sh
+```
+```shell
+wget install.sh https://raw.githubusercontent.com/NotMugil/dotfiles/main/install.sh
+```
+<br>
+
+Once you have downloaded the installation script and set execution permission, you can execute it with the following command: 
+
+```shell 
+chmod +x install.sh
+```
+
+<br>
+
+> [!CAUTION]
+> Do not run the script as sudo or root user
+
+<br>
+
+Now the install script can be executed in different modes,
+
+- for full installation of hyprland with configs
+```shell
+./install.sh
+```
+
+- for base installation without configs
+```shell
+./install.sh -b
+```
+
+- for just restoring config files
+```shell
+./install.sh -c
+```
+
+- for enabling system services (will be done in both full installation and base installation)
+```shell
+./install.sh -s
+```
+<br>
+
   > [!WARNING]
   > This is a step by step guide for installing my dotfiles which is designed based on Arch Linux (and other Arch-based distributions). If you are running any other system, install the following packages with your respective OS's package manager.
 
