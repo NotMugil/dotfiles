@@ -55,6 +55,9 @@ window > box {
     margin: 6px 2px;
 }
 
+#pownet.battery {
+	padding: 0px;
+}
 
 #workspaces {
     border-radius: 100px;
@@ -118,8 +121,6 @@ tooltip label {
 
 #network {
     font-size: 11px;
-    color: @color8;
-    margin-right: 5px;
 }
 
 #battery {
