@@ -59,7 +59,7 @@
 				"<span color=\"#7aa2f7\"> </span>",
 				"<span color=\"#7aa2f7\"> </span>",
 			],
-			"charging": [ " "," "," "," ",],
+			"charging": [ " ",],
 		},
 		"format-charging": "<span color=\"#7aa2f7\">{icon}</span> {capacity}%",
 	},
@@ -401,16 +401,35 @@
 		"tooltip-format-disconnected": "interface: {ifname}\nconnected to {essid}\nat {signalStrength}% strength"
 	},
 
-	"network#text": {
+	"network#icon": {
+		"format": "{icon}",
+		"format-disabled": "󰖪",
+		"format-disconnected": "<span color=\"#7aa2f7\">⚠ </span>",
+		"format-ethernet": "<span color=\"#7aa2f7\"> </span>",
+		"format-icons": [
+			"<span color=\"#a6e3a1\"> </span>"
+		],
+		"format-linked": "<span color=\"#a6e3a1\"> </span>",
+		"format-wifi": "{icon}",
+		"interval": 30,
+		"on-click": "kitty -e 'nmtui'",
+		"on-click-right": "rfkill toggle wifi",
+		"tooltip": true,
+		"tooltip-format": "interface:\t{ifname}\n\nconnected to {essid} at {signalStrength}% strength",
+		"tooltip-format-disconnected": "interface: {ifname}\nconnected to {essid}\nat {signalStrength}% strength"
+	},
+
+
+	"network#name": {
 		// "interface": "wlp2*", // (Optional) To force the use of this interface
 		"on-click-right": "kitty -e 'nmtui'",
 		"on-click-middle": "XDG_CURRENT_DESKTOP=GNOME gnome-control-center",
-		"format-wifi": "<span color=\"#7aa2f7\">  </span>{essid} ({signalStrength}%)",
-		"format-ethernet": "<span color=\"#7aa2f7\"> </span>{ifname}",
-		"tooltip-format": "{ifname} via {gwaddr}",
-		"format-linked": "{ifname} (No IP)",
-		"format-disconnected": "<span color=\"#7aa2f7\">⚠ </span>Disconnected",
-		"format-alt": "{ipaddr}"
+		"format-wifi": " {essid} ({signalStrength}%)",
+		"format-ethernet": " {ifname}",
+		"tooltip-format": " {ifname} via {gwaddr}",
+		"format-linked": " {ifname} (No IP)",
+		"format-disconnected": " Disconnected",
+		"format-alt": " {ipaddr}"
 	},
 
 
@@ -566,7 +585,7 @@
 	"group/pownet": {
 		"modules": [
 			"battery",
-			"network"
+			"group/network-drawer",
 		],
 		"orientation": "horizontal"
 	},
@@ -592,6 +611,20 @@
 			"bluetooth",
 			"group/volume",
 			"group/brightness"
+		],
+		"orientation": "horizontal"
+	},
+
+
+	"group/network-drawer": {
+		"drawer": {
+			"children-class": "network-drawer",
+			"transition-duration": 500,
+			"transition-left-to-right": true
+		},
+		"modules": [
+			"network#icon",
+			"network#name"
 		],
 		"orientation": "horizontal"
 	},
