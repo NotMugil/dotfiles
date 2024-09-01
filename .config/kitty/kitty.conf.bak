@@ -33,6 +33,6 @@ include current_theme.conf
 
 
 # BEGIN_KITTY_THEME
-# Catppuccin-Mocha
+# Tokyo Night Moon
 include current-theme.conf
 # END_KITTY_THEME
