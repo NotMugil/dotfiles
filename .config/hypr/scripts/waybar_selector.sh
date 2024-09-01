@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Define directories
-styles_dir="$HOME/.config/waybar/styles"
+styles_dir="$HOME/.config/waybar/bars"
 waybar_config_dir="$HOME/.config/waybar"
 config_file="config.jsonc"
 style_file="style.css"

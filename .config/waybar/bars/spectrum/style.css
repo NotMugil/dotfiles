@@ -26,7 +26,7 @@ window > box {
 #pulseaudio,
 #workspaces,
 #clock,
-#pownet,
+#sys-settings,
 #custom-spotify,
 #network,
 #network.linked,
@@ -35,7 +35,7 @@ window > box {
     background-color: @background;
 }
 
-#custom-launcher {
+#custom-arch {
     margin: 6px 2px;
     font-size: 16px;
     color: @color12;
@@ -48,14 +48,14 @@ window > box {
     padding: 0px 5px;
 }
 
-#cpu, #memory, #disk, #mpris, #pownet, #pulseaudio, #custom-updates, #clock {
+#cpu, #memory, #disk, #mpris, #sys-settings, #pulseaudio, #custom-updates, #clock {
     color: @text;
     border-radius: 100px;
     padding: 0px 10px;
     margin: 6px 2px;
 }
 
-#pownet.battery {
+#sys-settings.battery {
 	padding: 0px;
 }
 
