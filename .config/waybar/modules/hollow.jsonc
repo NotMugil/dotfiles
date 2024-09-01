@@ -1,0 +1,220 @@
+{
+    "battery": {
+        "bat": "BAT0",
+        "format": "{icon}<span size='14pt'><b>{capacity}</b></span>",
+        "format-critical": "<span font_family='JetBrainsMono Nerd Font' color='#f38ba8'>{icon}</span><small><b>{capacity}</b></small>",
+        "format-charging": "<span font_family='JetBrainsMono Nerd Font' color='#eed49f'>{icon}</span><small><b>{capacity}</b></small>",
+        "format-good": "<span font_family='JetBrainsMono Nerd Font' color='#a6e3a1'>{icon}</span><b>{capacity}</b>",
+        "format-icons": [
+            "󰛞 󱢠 󱢠 󱢠 󱢠 ",
+            "󰣐 󱢠 󱢠 󱢠 󱢠 ",
+            "󰣐 󰛞 󱢠 󱢠 󱢠 ",
+            "󰣐 󰣐 󱢠 󱢠 󱢠 ",
+            "󰣐 󰣐 󰛞 󱢠 󱢠 ",
+            "󰣐 󰣐 󰣐 󱢠 󱢠 ",
+            "󰣐 󰣐 󰣐 󰛞 󱢠 ",
+            "󰣐 󰣐 󰣐 󰣐 󱢠 ",
+            "󰣐 󰣐 󰣐 󰣐 󰛞 ",
+            "󰣐 󰣐 󰣐 󰣐 󰣐 "
+        ],
+        "format-time": "{H}hr & {m}min",
+        "format-warning": "<span font_family='JetBrainsMono Nerd Font' color='#f9e2af'>{icon}</span><small><b>{capacity}</b></small>",
+        "interval": 60,
+        "max-length": 25,
+        "states": {
+            "critical": 15,
+            "good": 100,
+            "warning": 30
+        },
+        "tooltip-format": "{time} (󰚥 plugged), at {capacity}%",
+        "tooltip-format-charging": "{time} (󰢟 charging), at {capacity}%",
+        "tooltip-format-discharging": "{time} (󱧦 discharging), at {capacity}%"
+    },
+    "bluetooth": {
+        "format": "",
+        "format-connected": "",
+        "format-disabled": "󰂲",
+        "format-off": "󰂲",
+        "format-on": "",
+        "on-click": "blueberry",
+        "on-click-right": "rfkill toggle bluetooth",
+        "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+        "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t󰥉{device_battery_percentage}%"
+    },
+    "clock#date": {
+        "actions": {
+            "on-scroll-down": "shift_down",
+            "on-scroll-up": "shift_up"
+        },
+        "calendar": {
+            "format": {
+                "days": "<span weight='normal'>{}</span>",
+                "months": "<span color='#cdd6f4'><b>{}</b></span>",
+                "today": "<span color='#f38ba8'><u>{}</u></span>",
+                "weekdays": "<span color='#f9e2af'><b>{}</b></span>",
+                "weeks": "<span color='#a6e3a1'><b>W{}</b></span>"
+            },
+            "mode": "month",
+            "mode-mon-col": 1,
+            "on-scroll": 1,
+            "weeks-pos": "right"
+        },
+        "format": "{:%A, %b %e}",
+        "interval": 43200,
+        "tooltip-format": "<span color='#cdd6f4' font='SpaceMonoNerdFont 9'><small>{calendar}</small></span>"
+    },
+    "clock#time": {
+        "format": "{:%OI:%OM %p}",
+        "format-alt": "{:%A, %b %e}",
+        "interval": 60
+    },
+    "custom/notification": {
+        "escape": true,
+        "exec": "swaync-client -swb",
+        "exec-if": "which swaync-client",
+        "format": "{icon}",
+        "format-icons": {
+            "dnd-inhibited-none": "󰂚<sup></sup>",
+            "dnd-inhibited-notification": "󰂚<span foreground='#f38ba8'><sup></sup></span>",
+            "dnd-none": "󰂛",
+            "dnd-notification": "󰂛<span foreground='#f38ba8'><sup></sup></span>",
+            "inhibited-none": "󰂚<sup>󰜺</sup>",
+            "inhibited-notification": "󰵙<span foreground='#f38ba8'><sup></sup></span>",
+            "none": "󰂚<span color='#6c7086'><sup></sup></span>",
+            "notification": "󰂚<span foreground='#f38ba8'><sup></sup></span>"
+        },
+        "on-click": "sleep 0.1 && swaync-client -t -sw",
+        "on-click-right": "sleep 0.1 && swaync-client -d -sw",
+        "return-type": "json",
+        "tooltip": false
+    },
+    "group/brightness": {
+        "drawer": {
+            "children-class": "brightness",
+            "transition-duration": 500,
+            "transition-left-to-right": true
+        },
+        "modules": [
+            "backlight",
+            "backlight/slider"
+        ],
+        "orientation": "horizontal"
+    },
+    "group/clock": {
+        "modules": [
+            "clock#time"
+        ],
+        "orientation": "inherit"
+    },
+    "group/sys-info": {
+        "modules": [
+            "network",
+            "bluetooth",
+            "group/volume",
+            "group/brightness"
+        ],
+        "orientation": "horizontal"
+    },
+    "group/volume": {
+        "drawer": {
+            "children-class": "volume",
+            "transition-duration": 500,
+            "transition-left-to-right": true
+        },
+        "modules": [
+            "pulseaudio",
+            "pulseaudio/slider"
+        ],
+        "orientation": "horizontal"
+    },
+    "hyprland/workspaces": {
+        "format": "{icon} <span size='6pt'> <i>{name}</i> </span>",
+        "format-icons": {
+            "active": "",
+            "default": ""
+        },
+        "persistent-workspaces": {
+            "*": 4, // 5 workspaces by default on every monitor
+            "HDMI-A-1": 5 // but only three on HDMI-A-1
+        }
+    },
+    "network": {
+        "format": "{icon}",
+        "format-disabled": "󰖪",
+        "format-disconnected": "󰤯",
+        "format-ethernet": "󰈀",
+        "format-icons": [
+            "󰤠",
+            "󰤟",
+            "󰤢",
+            "󰤥",
+            "󰤨"
+        ],
+        "format-linked": "󰖩",
+        "format-wifi": "{icon}",
+        "interval": 30,
+        "on-click": "kitty -e 'nmtui'",
+        "on-click-right": "rfkill toggle wifi",
+        "tooltip": true,
+        "tooltip-format": "interface:\t{ifname}\n\nconnected to {essid} at {signalStrength}% strength",
+        "tooltip-format-disconnected": "interface: {ifname}\nconnected to {essid}\nat {signalStrength}% strength"
+    },
+    "pulseaudio": {
+        "format": "{icon}",
+        "format-bluetooth": "{icon}",
+        "format-icons": {
+            "default": [
+                "󰕿",
+                "",
+                "󰕾"
+            ]
+        },
+        "format-muted": "󰖁",
+        "on-click": "pavucontrol",
+        "on-click-right": "pactl set-sink-mute 0 toggle",
+        "scroll-step": 1,
+        "tooltip-format": "{desc}\t{icon}{volume}%"
+    },
+    "pulseaudio/slider": {
+        "max": 100,
+        "min": 0,
+        "orientation": "horizontal"
+    },
+    "tray": {
+        "icon-size": 12
+    },
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "{icon}",
+        "tooltip-format": "{icon}{percent}%",
+        "format-icons": [
+            "󰃞",
+            "󰃝",
+            "󰃟",
+            "󰃠"
+        ]
+    },
+    "backlight/slider": {
+        "max": 100,
+        "min": 0,
+        "orientation": "horizontal",
+        "device": "intel_backlight"
+    },
+    "custom/power-button": {
+        "format": "",
+        "on-click": "wlogout -b 5",
+        "tooltip": false
+    },
+    "hyprland/window": {
+        "max-length": 40,
+        "seperate-outputs": true,
+        "on-click": "dunstify \"$(hyprctl activewindow -j | jq -r .title)\""
+    },
+    "image": {
+        "tooltip": false,
+        "path": "/home/rei/.face.icon",
+        "size": 47
+    },
+}

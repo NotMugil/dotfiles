@@ -1,0 +1,31 @@
+[
+	{
+		"layer": "top",
+		"position": "top",
+		"height": 40,
+		"output": [
+			"HDMI-A-1",
+			"eDP-1"
+		],
+		"include": "~/.config/waybar/modules/spectrum.jsonc",
+		"modules-left": [
+			"custom/arch",
+			"custom/three-dots-seperator",
+			"cpu",
+			"memory",
+			"disk",
+			"mpris",
+		],
+		"modules-center": [
+			"hyprland/workspaces#pacman",
+		],
+		"modules-right": [
+			"tray",
+			"group/sys-settings",
+			"pulseaudio",
+			"custom/updates",
+			"clock",
+			"custom/power-button"
+		],
+	}
+]
