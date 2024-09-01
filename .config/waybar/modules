@@ -462,10 +462,10 @@
 
 	"pulseaudio#icon": {
 	    "format": "<span color=\"#c6a0f6\">{icon}</span> {volume}%",
-	    "format-bluetooth": "<span color=\"#c6a0f6\"> </span>{volume}%",
-	    "format-muted": " ",
+	    "format-bluetooth": "<span color=\"#c6a0f6\">󰂰 </span>{volume}%",
+	    "format-muted": " ",
 	    "format-icons": {
-		"bluetooth": "",
+		"bluetooth": "󰥰 ",
 	        "headphone": " ",
 	        "hands-free": " ",
 	        "headset": " ",
