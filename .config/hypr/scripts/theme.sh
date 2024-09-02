@@ -43,6 +43,7 @@ switch_theme() {
     "$SCRIPT_DIR/hyprlock.sh" "$theme"
     "$SCRIPT_DIR/waybar.sh" "$theme"
     "$SCRIPT_DIR/gtk.sh" "$theme"
+    "$SCRIPT_DIR/wlogout.sh" "$theme"
 
     
     # Change wallpapers

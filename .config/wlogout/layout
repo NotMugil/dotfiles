@@ -1,8 +1,8 @@
 {
-    "label" : "lock",
-    "action" : "~/.config/hypr/scripts/lock.sh",
-    "text" : "Lock",
-    "keybind" : "l"
+    "label" : "shutdown",
+    "action" : "systemctl poweroff",
+    "text" : "Shutdown",
+    "keybind" : "s"
 }
 {
     "label" : "reboot",
@@ -11,20 +11,20 @@
     "keybind" : "r"
 }
 {
-    "label" : "shutdown",
-    "action" : "systemctl poweroff",
-    "text" : "Shutdown",
-    "keybind" : "s"
-}
-{
     "label" : "logout",
-    "action" : "hyprctl dispatch exit 0",
+    "action" : "loginctl kill-session $XDG_SESSION_ID",
     "text" : "Logout",
     "keybind" : "e"
 }
 {
-    "label" : "suspend",
-    "action" : "systemctl suspend",
-    "text" : "Suspend",
-    "keybind" : "u"
+    "label" : "hibernate",
+    "action" : "hyprlock -c $HOME/.config/hypr/hyprlock/hyprlock.conf -f && systemctl hibernate",
+    "text" : "Hibernate",
+    "keybind" : "h"
+}
+{
+    "label" : "lock",
+    "action" : "hyprlock",
+    "text" : "Lock",
+    "keybind" : "l"
 }
