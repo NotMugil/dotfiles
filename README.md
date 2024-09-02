@@ -21,6 +21,25 @@
 <a href="https://github.com/NotMugil/dotfiles?tab=GPL-3.0-1-ov-file"><img src="https://img.shields.io/github/license/NotMugil/dotfiles?style=for-the-badge&logo=&color=CBA6F7&logoColor=CBA6F7&labelColor=302D41" alt="LICENSE"></a>&nbsp;&nbsp;
 </p>
 </div>
+
+## Installation
+
+To install, execute the following commands:
+```shell
+curl -O install.sh https://raw.githubusercontent.com/NotMugil/dotfiles/main/install.sh
+chmod +x install.sh
+./install.sh
+```
+
+> [!TIP]
+> You can use the installation script in different ways depending on your needs:
+
+```
+./install.sh -f, --full     : Installs Hyprland along with my custom configurations.
+./install.sh -b, --base     : Installs only Hyprland without any custom configurations.
+./install.sh -c, --config    : Copies my dotfiles to your home directory without installing anything else.
+./install.sh -s, --services : Activates essential system services.
+```
 	
 ## Information
 
@@ -73,105 +92,6 @@
 | **Btop + tty-clock**                                     |
 | -------------------------------------------------------- |
 | ![gallery-8](.github/assets/gallery-08.png)              |
-
-
-## Installation
-
-### Automated installation
-Download the install.sh script using `curl` or `wget`, and ensure that you have write and execute permissions for the script.
-
-```shell
-curl -O install.sh https://raw.githubusercontent.com/NotMugil/dotfiles/main/install.sh
-```
-```shell
-wget install.sh https://raw.githubusercontent.com/NotMugil/dotfiles/main/install.sh
-```
-<br>
-
-Once you have downloaded the installation script and set execution permission, you can execute it with the following command: 
-
-```shell 
-chmod +x install.sh
-```
-
-<br>
-
-> [!CAUTION]
-> Do not run the script as sudo or root user
-
-<br>
-
-Now the install script can be executed in different modes,
-
-- for full installation of hyprland with configs
-```shell
-./install.sh
-```
-
-- for base installation without configs
-```shell
-./install.sh -b
-```
-
-- for just restoring config files
-```shell
-./install.sh -c
-```
-
-- for enabling system services (will be done in both full installation and base installation)
-```shell
-./install.sh -s
-```
-<br>
-
-  > [!WARNING]
-  > This is a step by step guide for installing my dotfiles which is designed based on Arch Linux (and other Arch-based distributions). If you are running any other system, install the following packages with your respective OS's package manager.
-
-### Manual Installation
-  > [!NOTE]
-  > Assuming that your AUR helper is [yay.](https://github.com/Jguer/yay)
-  > To install yay on your arch based system, follow the instructions mentioned [here.](https://github.com/Jguer/yay?tab=readme-ov-file#installation) 
-  1. Installing git version of Hyprland
-     
-   ```bash
-   yay -Sy hyprland-git
-   ```
-
-  2. Installing required dependencies     
-
-   ```bash
-    pacman -S kitty nano git rofi-wayland swaync swaync waybar playerctl mpv grim slurp \
-    cliphist wl-clipboard pavucontrol hyprlock nwg-look blueman bluez bluez-utils \
-    dictd pamixer brightnessctl thunar ranger python-ranger-fm python-pillow imv \
-    tumbler webp-pixbuf-loader totem evince ffmpegthumbnailer pacman-contrib btop \
-    nvtop fastfetch neovim nm-connection-editor xdg-desktop-portal-hyprland zsh \
-    unzip zsh swww hypridle 
-   ```
-
-   ```bash
-     yay -Sy cava hyprpicker wl-clip-persist-git wlogout jamesdsp anyrun  \
-     catppuccin-gtk-theme-mocha nerd-fonts-sf-mono 
-   ```
-
-   ```bash
-    pacman -S ttf-nerd-fonts-symbols ttf-nerd-fonts-symbols-mono ttf-space-mono-nerd \
-    noto-fonts-cjk noto-fonts-emoji
-   ```
-
-  3. Finally, Installing the dotfiles
-     
-  > Cloning the repository into your local system.
-  ```bash
-    git clone --depth=1 https://github.com/NotMugil/dotfiles.git && cd dotfiles
-  ```
-
-  > Copy the configs to their respective directories. Make sure to backup your previous configs if needed. 
-  ```bash
-    cp -r .config/* ~/.config/
-    cp -r .zshenv ~/
-  ```
-
-Congratulations, you are done installing the configurations! 🎉 
 
 ## Keybinds
 >[!NOTE] 
