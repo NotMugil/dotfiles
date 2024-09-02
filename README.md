@@ -46,13 +46,9 @@
 | -------------------------------------------------------- |
 | ![gallery-1](.github/assets/hyprlock.gif)                |
 
-| **Wallpaper Selector**                                   |
+| **Neofetch & Thunar**                                    |
 | -------------------------------------------------------- |
-| ![gallery-2](.github/assets/gallery-02.png)              |
-
-| **Custom Startpage for firefox**                         |
-| -------------------------------------------------------- |
-| ![gallery-3](.github/assets/gallery-03.png)              |
+| ![gallery-7](.github/assets/filemanager.gif)             |
 
 | **Wlogout logout menu**   			           |
 | -------------------------------------------------------- |
@@ -62,13 +58,17 @@
 | -------------------------------------------------------- |
 | ![gallery-5](.github/assets/rofi.gif)                    |
 
+| **Wallpaper Selector**                                   |
+| -------------------------------------------------------- |
+| ![gallery-2](.github/assets/wallselect.gif)              |
+
 | **Notification Center (SwayNC)**                         |
 | -------------------------------------------------------- |
 | ![gallery-6](.github/assets/gallery-06.png)              |
 
-| **Neofetch & Thunar**                                    |
+| **Custom Startpage for firefox**                         |
 | -------------------------------------------------------- |
-| ![gallery-7](.github/assets/filemanager.gif)             |
+| ![gallery-3](.github/assets/gallery-03.png)              |
 
 | **Btop + tty-clock**                                     |
 | -------------------------------------------------------- |
