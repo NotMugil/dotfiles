@@ -15,6 +15,9 @@ waybar &
 # Notification Daemon
 swaync &
 
+# Bluetooth Manager
+blueman-manager
+
 # OSD Window
 swayosd-server &
 
