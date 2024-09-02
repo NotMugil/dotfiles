@@ -54,9 +54,9 @@
 | -------------------------------------------------------- |
 | ![gallery-3](.github/assets/gallery-03.png)              |
 
-| **Spotify (Spicetified) & Audio Visualizer**             |
+| **Wlogout logout menu**   			           |
 | -------------------------------------------------------- |
-| ![gallery-4](.github/assets/gallery-04.png)              |
+| ![gallery-4](.github/assets/wlogout.gif)                 |
 
 | **Rofi Application Launcher**                            |
 | -------------------------------------------------------- |
