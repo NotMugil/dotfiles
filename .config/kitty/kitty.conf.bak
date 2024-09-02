@@ -33,6 +33,6 @@ include current_theme.conf
 
 
 # BEGIN_KITTY_THEME
-# Gruvbox Dark
+# Starlit
 include current-theme.conf
 # END_KITTY_THEME
