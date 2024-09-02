@@ -1,0 +1,69 @@
+window {
+    font-family: SpaceMonoNerdFont;
+    font-size: 14pt;
+    color: #cdd6f4; /* text */
+    background-color: rgba(30, 30, 46, 0.6);
+}
+
+button {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 25%;
+    border: none;
+    background-color: rgba(30, 30, 46, 0);
+    transition: box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+button:hover {
+    background-color: rgba(49, 50, 68, 0.1);
+}
+
+button:focus {
+    background-color: #4c4f69;
+    color: #1e1e2e;
+}
+
+#lock {
+    background-image: image(url("./icons/lock.png"));
+    padding: 35px;
+}
+#lock:focus {
+    background-image: image(url("./icons/lock-hover.png"));
+    padding: 35px;
+}
+
+#logout {
+    background-image: image(url("./icons/logout.png"));
+    padding: 30px;
+}
+#logout:focus {
+    background-image: image(url("./icons/logout-hover.png"));
+    padding: 30px;
+}
+
+#hibernate {
+    background-image: image(url("./icons/sleep.png"));
+    padding: 30px;
+}
+#hibernate:focus {
+    background-image: image(url("./icons/sleep-hover.png"));
+    padding: 30px;
+}
+
+#shutdown {
+    background-image: image(url("./icons/power.png"));
+    padding: 30px;
+}
+#shutdown:focus {
+    background-image: image(url("./icons/power-hover.png"));
+    padding: 30px;
+}
+
+#reboot {
+    background-image: image(url("./icons/restart.png"));
+    padding: 30px;
+}
+#reboot:focus {
+    background-image: image(url("./icons/restart-hover.png"));
+    padding: 30px;
+}
