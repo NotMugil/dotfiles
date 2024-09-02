@@ -58,17 +58,17 @@
 | -------------------------------------------------------- |
 | ![gallery-4](.github/assets/gallery-04.png)              |
 
-| **Rofi Menu from adi1090x**                              |
+| **Rofi Application Launcher**                            |
 | -------------------------------------------------------- |
-| ![gallery-5](.github/assets/gallery-05.png)              |
+| ![gallery-5](.github/assets/rofi.gif)                    |
 
 | **Notification Center (SwayNC)**                         |
 | -------------------------------------------------------- |
 | ![gallery-6](.github/assets/gallery-06.png)              |
 
-| **Neofetch**                                             |
+| **Neofetch & Thunar**                                    |
 | -------------------------------------------------------- |
-| ![gallery-7](.github/assets/gallery-07.png)              |
+| ![gallery-7](.github/assets/filemanager.gif)             |
 
 | **Btop + tty-clock**                                     |
 | -------------------------------------------------------- |
