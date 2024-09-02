@@ -40,22 +40,6 @@ chmod +x install.sh
 ./install.sh -c, --config    : Copies my dotfiles to your home directory without installing anything else.
 ./install.sh -s, --services : Activates essential system services.
 ```
-	
-## Information
-
-- Operating System • [Arch Linux](https://archlinux.org)
-- Window Manager/DE • [Hyprland](https://hyprland.org/)
-- Terminal • [kitty](https://github.com/kovidgoyal/kitty)
-- Shell • zsh
-- Aur Helper • [yay](https://github.com/Jguer/yay)
-- Panel • [waybar](https://github.com/Alexays/Waybar)
-- Launcher • [rofi](https://github.com/davatorium/rofi)
-- File Manager • [thunar](https://wiki.archlinux.org/title/thunar)/[yazi](https://github.com/sxyazi/yazi)
-- Notification Daemon • [swaync](https://github.com/ErikReider/SwayNotificationCenter)
-- Wallpaper Daemon • [swww](https://github.com/LGFae/swww)
-- Text Editor • [neovim](https://neovim.io/)
-- Colorscheme • [catppuccin mocha](https://github.com/catppuccin/catppuccin)
-
 
 ## Gallery
 >[!NOTE] 
@@ -84,14 +68,6 @@ chmod +x install.sh
 | **Notification Center (SwayNC)**                         |
 | -------------------------------------------------------- |
 | ![gallery-6](.github/assets/gallery-06.png)              |
-
-| **Custom Startpage for firefox**                         |
-| -------------------------------------------------------- |
-| ![gallery-3](.github/assets/gallery-03.png)              |
-
-| **Btop + tty-clock**                                     |
-| -------------------------------------------------------- |
-| ![gallery-8](.github/assets/gallery-08.png)              |
 
 ## Keybinds
 >[!NOTE] 
