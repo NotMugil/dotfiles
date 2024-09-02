@@ -44,7 +44,7 @@
 
 |  **Lockscreen**                                          |
 | -------------------------------------------------------- |
-| ![gallery-1](.github/assets/gallery-01.png)              |
+| ![gallery-1](.github/assets/hyprlock.gif)                |
 
 | **Wallpaper Selector**                                   |
 | -------------------------------------------------------- |
