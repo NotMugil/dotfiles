@@ -95,8 +95,7 @@
         "max-length": 20,
     },
     "custom/cava": {
-        "exec": "~/.config/hypr/scripts/waybarCava.sh",
-        "exec-if": "~/.config/hypr/scripts/checkPlayer.sh",
+        "exec": "~/.config/hypr/scripts/waybar_cava.sh",
         "format": "<span color=\"#a6da95\">{}</span>",
     },
     "group/pulseaudio": {
