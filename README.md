@@ -97,7 +97,7 @@ chmod +x install.sh
 | <kbd>Ctrl</kbd> + <kbd>Print</kbd>		| Take screenshot of screen			    	                          |
 | <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Print</kbd>		| Take screenshot of selected area			          |
 
-For a complete list, refer to `~/.config/hypr/configs/binds.conf`.
+For a complete list, checkout [wiki](https://github.com/NotMugil/dotfiles/wiki/Keybindings) or refer to `~/.config/hypr/configs/binds.conf`.
 
 ## Star History
 
@@ -124,6 +124,6 @@ _Thanks a lot for [r/unixporn](https://www.reddit.com/r/unixporn/) community for
 
 - [ ] Better wallpaper selector theme
 - [ ] Ease the task of changing username/home dir name
-- [ ] Update Readme
-- [ ] Update gallery images
-- [ ] Configure themes for wlogout, nvim, spicetify, firefox
+- [x] ~~Update Readme~~
+- [x] ~~Update gallery images~~
+- [ ] Configure themes for ~~wlogout~~, nvim, spicetify, firefox
