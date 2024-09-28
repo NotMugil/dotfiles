@@ -55,7 +55,7 @@ chmod +x install.sh
 
 | **Wlogout logout menu**   			           |
 | -------------------------------------------------------- |
-| ![gallery-4](.github/assets/gallery-014png)              |
+| ![gallery-4](.github/assets/gallery-04png)               |
 
 | **Rofi Application Launcher**                            |
 | -------------------------------------------------------- |
