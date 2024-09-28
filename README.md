@@ -47,23 +47,23 @@ chmod +x install.sh
 
 |  **Lockscreen**                                          |
 | -------------------------------------------------------- |
-| ![gallery-1](.github/assets/gallery-01.png)              |
+| ![gallery-1](.github/assets/hyprlock.gif)                |
 
 | **Neofetch & Thunar**                                    |
 | -------------------------------------------------------- |
-| ![gallery-7](.github/assets/gallery-07.png)              |
+| ![gallery-7](.github/assets/filemanager.gif)             |
 
 | **Wlogout logout menu**   			           |
 | -------------------------------------------------------- |
-| ![gallery-4](.github/assets/gallery-04png)               |
+| ![gallery-4](.github/assets/wlogout.gif)                 |
 
 | **Rofi Application Launcher**                            |
 | -------------------------------------------------------- |
-| ![gallery-5](.github/assets/gallery-05.png)              |
+| ![gallery-5](.github/assets/rofi.gif)                    |
 
 | **Wallpaper Selector**                                   |
 | -------------------------------------------------------- |
-| ![gallery-2](.github/assets/gallery-02.png)              |
+| ![gallery-2](.github/assets/wallselect.gif)              |
 
 | **Notification Center (SwayNC)**                         |
 | -------------------------------------------------------- |
