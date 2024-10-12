@@ -13,31 +13,19 @@
 <a href="https://github.com/NotMugil/dotfiles?tab=GPL-3.0-1-ov-file"><img src="https://img.shields.io/github/license/NotMugil/dotfiles?style=for-the-badge&logo=&color=CBA6F7&logoColor=CBA6F7&labelColor=302D41" alt="LICENSE"></a>
 </p>
 </div>
+
+
+> [!CAUTION]
+> This repository's **main** branch is experimental and will have frequent commits that may introduce breaking changes.
+>
+> If you prefer a stable version, please check out the **stable** branch.
+
+
+<details open>
+<summary>
 	
-
-#### Installation
-
-To install, execute the following commands:
-```shell
-curl -O install.sh https://raw.githubusercontent.com/NotMugil/dotfiles/main/install.sh
-chmod +x install.sh
-./install.sh
-```
-
-> [!TIP]
-> You can use the installation script in different ways depending on your needs:
-
-```
-./install.sh -f, --full     : Installs Hyprland along with my custom configurations.
-./install.sh -b, --base     : Installs only Hyprland without any custom configurations.
-./install.sh -c, --config    : Copies my dotfiles to your home directory without installing anything else.
-./install.sh -s, --services : Activates essential system services.
-```
-
-#### Gallery
-
->[!NOTE] 
-> Images included in the gallery may contain some softwares which may not be included in the packages list or the configurations.
+#### more previews
+</summary>
 
 |  **Lockscreen**                                          |
 | -------------------------------------------------------- |
@@ -63,8 +51,41 @@ chmod +x install.sh
 | -------------------------------------------------------- |
 | ![gallery-6](.github/assets/gallery-06.png)              |
 
+</details>
 
-<details>
+#### Installation
+##### Arch Linux
+I have a really messy installation script made for my own use. I wouldn’t recommend others use this script. 
+
+**Recommended Approach:** Please manually install the configurations and dependencies.
+
+> [!Important]
+> Install it only if you have a basic understanding of what you are doing. Don't blame me if things go wrong!
+
+
+To install using the script, execute the following commands:
+```shell
+curl -O install.sh https://raw.githubusercontent.com/NotMugil/dotfiles/main/install.sh
+chmod +x install.sh
+./install.sh
+```
+
+> [!TIP]
+> You can use the installation script in different ways depending on your needs:
+> 
+* `install.sh -f`, `--full`  
+  Installs Hyprland along with your custom configurations.
+
+* `install.sh -b`, `--base`  
+  Installs only Hyprland without any custom configurations.
+
+* `install.sh -c`, `--config`  
+  Copies your dotfiles to your home directory without installing anything else.
+
+* `install.sh -s`, `--services`  
+  Activates essential system services.
+
+<details open>
 <summary>
 	
 #### Shortcuts
@@ -89,24 +110,17 @@ chmod +x install.sh
 
 </details>
 
-> [!TIP]
-> The keybinds mentioned here might vary, check the [config](https://github.com/NotMugil/dotfiles/blob/main/.config/hypr/configs/binds.conf) file for up to date keybinds.
-
-#### Star History
-
-<a href="https://github.com/NotMugil/dotfiles/stargazers">
- <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=NotMugil/dotfiles&type=Date&theme=dark" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=NotMugil/dotfiles&type=Date" />
-   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=NotMugil/dotfiles&type=Date" />
- </picture>
-</a>
-
 #### Inspiration
+some of the cool people i took inspiration from for making my dotfiles. without them, this repo wouldn't exist.
 - [matt-ftw/dotfiles](https://github.com/Matt-ftw/dotfiles) 
 - [gh0stzk/dotfiles](https://github.com/gh0stzk/dotfiles)
 - [zakar98k/hyprland-catppuccin-dotz](https://github.com/Zakar98k/hyprland-catppuccin-dotz)
 - [deathemonic/cat-dots](https://github.com/Deathemonic/Cat-Dots)
 - [zdyantb/hyprnova](https://github.com/zDyanTB/HyprNova)
 
-_Thanks a lot for [r/unixporn](https://www.reddit.com/r/unixporn/) community for inspiring me to do this._
+#### Resources
+dropping some informative stuff and resources that helped me here.
+- [catppuccin](https://github.com/catppuccin)
+- [r/unixporn](https://www.reddit.com/r/unixporn/)
+- [nam's ricing guide](https://namishh.me/blog/ricing)
+- [hyprland wiki](https://wiki.hyprland.org)
