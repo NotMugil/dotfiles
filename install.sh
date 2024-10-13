@@ -283,7 +283,7 @@ copy_dotfiles() {
 
     # Use rsync to copy files, creating directories if they don't exist
     rsync -avh --backup --backup-dir="$HOME/.config/dotfiles_backup_$(date +%Y%m%d_%H%M%S)" \
-        dotfiles/.config/ "$HOME/.config/" || error "Failed to copy dotfiles"
+        dotfiles/dots/.config/ "$HOME/.config/" || error "Failed to copy dotfiles"
     info "Dotfiles copied successfully. Any existing files were backed up."
 }
 

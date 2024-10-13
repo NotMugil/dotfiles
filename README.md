@@ -3,7 +3,7 @@
 </h1>
 
 
-![showcase](.github/assets/showcase.png)
+![showcase](screenshots/showcase.png)
 <br>
 <div align="center">
 <p>
@@ -30,27 +30,27 @@
 
 |  **Lockscreen**                                          |
 | -------------------------------------------------------- |
-| ![gallery-1](.github/assets/hyprlock.gif)                |
+| ![gallery-1](screenshots/hyprlock.gif)                |
 
 | **Neofetch & Thunar**                                    |
 | -------------------------------------------------------- |
-| ![gallery-7](.github/assets/filemanager.gif)             |
+| ![gallery-7](screenshots/filemanager.gif)             |
 
 | **Wlogout logout menu**   			           |
 | -------------------------------------------------------- |
-| ![gallery-4](.github/assets/wlogout.gif)                 |
+| ![gallery-4](screenshots/wlogout.gif)                 |
 
 | **Rofi Application Launcher**                            |
 | -------------------------------------------------------- |
-| ![gallery-5](.github/assets/rofi.gif)                    |
+| ![gallery-5](screenshots/rofi.gif)                    |
 
 | **Wallpaper Selector**                                   |
 | -------------------------------------------------------- |
-| ![gallery-2](.github/assets/wallselect.gif)              |
+| ![gallery-2](screenshots/wallselect.gif)              |
 
 | **Notification Center (SwayNC)**                         |
 | -------------------------------------------------------- |
-| ![gallery-6](.github/assets/gallery-06.png)              |
+| ![gallery-6](screenshots/gallery-06.png)              |
 
 </details>
 
