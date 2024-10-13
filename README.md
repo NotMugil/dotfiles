@@ -1,6 +1,7 @@
-<h1 align="center">
-	hyprland dotfiles
-</h1>
+
+![logo](.github/assets/dotfiles.png)
+
+------
 
 ![showcase](.github/assets/showcase.png)
 <br>
