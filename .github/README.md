@@ -92,7 +92,7 @@
 
 | **Notification Center (SwayNC)**                         |
 | -------------------------------------------------------- |
-| ![gallery-6](../screenshots/gallery-06.png)              |
+| ![gallery-6](../screenshots/gallery-21.png)              |
 
 </details>
 
