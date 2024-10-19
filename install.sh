@@ -1,367 +1,208 @@
 #!/bin/bash
 
-set -e  # Exit immediately if a command exits with a non-zero status.
+# Color codes for output
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+BLUE='\033[0;34m'
+NC='\033[0m' # No Color
 
-# Function to print error messages
-error() {
-    echo "Error: $1" >&2
-    echo "$(date '+%Y-%m-%d %H:%M:%S') - Error: $1" >> "$LOG_FILE"
-}
+# Warning message
+echo -e "${YELLOW}WARNING: This installation script is designed for Arch Linux systems${NC}"
+echo -e "${YELLOW}The configurations are optimized for 1366x768 displays${NC}"
+echo -e "${YELLOW}Font sizes and icon sizes may vary on different resolutions${NC}"
+echo "Press Enter to continue or Ctrl+C to abort..."
+read
 
-# Function to print info messages
-info() {
-    echo "Info: $1"
-    echo "$(date '+%Y-%m-%d %H:%M:%S') - Info: $1" >> "$LOG_FILE"
-}
+# Repository URL - Change this to your repository URL
+DOTFILES_REPO="https://github.com/NotMugil/dotfiles.git"
+DOTFILES_DIR="$HOME/.dotfiles"
 
-display_logo() {
-    # Define colors
-    local RED="\033[31m"
-    local GREEN="\033[32m"
-    local YELLOW="\033[33m"
-    local BLUE="\033[34m"
-    local MAGENTA="\033[35m"
-    local CYAN="\033[36m"
-    local RESET="\033[0m"
-
-    cat << "EOF"
-                     __..,,__　　　,.｡='`1
-         .,,..;~`''''　　　　`''''＜``彡　}
-     _...:=,`'　　 　︵　 т　︵　　X彡-J
-    ＜`　彡 /　　ミ　　,_人_.　＊彡　`~
-     `~=::　　　 　　　　　　 　　　Y
-        i.　　　　　　　　　　　　 .:
-        .\　　　　　　　,｡---.,,　　./
-        　　ヽ　／ﾞ''```\;.{　　　 ＼／
-         　　Y　　　`J💕r_.彳　 　|
-          　{　　　``　　`　　　i
-          　\　　　　　　　　　＼　　　..︵︵.
-          　`＼　　　　　　　　　``ゞ.,/` oQ o`)
-           　`i,　　　　　　　　　　Y　 ω　/
-              `i,　　　 　　.　　　　"　　　/
-              `iミ　　　　　　　　　　　,,ノ
-               ︵Y..︵.,,　　　　　,,+..__ノ``
-              (,`, З о　　　　,.ノ川彡ゞ彡
-EOF
-
-echo
-
-
-    printf "\n"
-    printf "${YELLOW}Welcome to NotMugil's Dotfiles Installation Script (For Arch Linux systems)${RESET}\n"
-    printf "\n"
-    printf "${MAGENTA}NOTE: You will be prompted with some questions during the installation process${RESET}\n"
-    printf "\n"
-    printf "${MAGENTA}NOTE: If you are running on VM, enable 3D Acceleration else Hyprland won't start.${RESET}\n"
-    printf "\n"
-}
-
-# Function to confirm with the user before proceeding
-confirm_proceed() {
-    local prompt="$1"
-    local default="$2"
-    local reply
-
-    read -p "$prompt [$default]: " reply
-    if [[ "${reply:-$default}" != "yes" ]]; then
-        info "Installation aborted by user."
-        exit 0
+# Clone dotfiles repository
+clone_dotfiles() {
+    echo -e "${BLUE}Cloning dotfiles repository...${NC}"
+    if [ -d "$DOTFILES_DIR" ]; then
+        echo -e "${YELLOW}Dotfiles directory already exists. Removing old version...${NC}"
+        mv "$DOTFILES_DIR" ".existing.dotfiles.bkp"
+    fi
+    git clone "$DOTFILES_REPO" "$DOTFILES_DIR"
+    if [ $? -ne 0 ]; then
+        echo -e "${RED}Failed to clone dotfiles repository. Exiting...${NC}"
+        exit 1
     fi
 }
 
-# Function to get user input
-get_input() {
-    local prompt="$1"
-    local default="$2"
-    local reply
-
-    read -p "$prompt [$default]: " reply
-    echo "${reply:-$default}"
+# Function to create backup of existing configs
+backup_configs() {
+    backup_dir="$HOME/.config_backup_$(date +%Y%m%d_%H%M%S)"
+    echo -e "${BLUE}Checking for existing configurations to backup...${NC}"
+    
+    # Find all directories in the dotfiles .config directory
+    # These are the configs that will be installed
+    local configs_to_check=($(find "$DOTFILES_DIR/.config" -maxdepth 1 -mindepth 1 -type d -printf "%f\n"))
+    local backup_needed=false
+    
+    for config in "${configs_to_check[@]}"; do
+        if [ -d "$HOME/.config/$config" ]; then
+            if [ "$backup_needed" = false ]; then
+                echo "Creating backup directory: $backup_dir"
+                mkdir -p "$backup_dir"
+                backup_needed=true
+            fi
+            echo "Backing up existing config: $config"
+            cp -r "$HOME/.config/$config" "$backup_dir/"
+        fi
+    done
+    
+    if [ "$backup_needed" = true ]; then
+        echo -e "${GREEN}Backup completed in: $backup_dir${NC}"
+    else
+        echo -e "${BLUE}No existing configurations found that need backup${NC}"
+    fi
 }
 
-# Initialize log file
-LOG_FILE="$HOME/dotfiles_installation.log"
-echo "Dotfiles Installation Log - $(date '+%Y-%m-%d %H:%M:%S')" > "$LOG_FILE"
-
-# Function to check if a package is installed
-is_installed() {
-    pacman -Qi "$1" &> /dev/null
+# Function to create required directories
+create_directories() {
+    echo -e "${BLUE}Creating required directories...${NC}"
+    directories=(
+        "$HOME/.wallpapers"
+        "$HOME/.themes"
+        "$HOME/.fonts"
+        "$HOME/.config"
+        # Add more directories as needed
+    )
+    
+    for dir in "${directories[@]}"; do
+        if [ ! -d "$dir" ]; then
+            mkdir -p "$dir"
+            echo -e "${GREEN}Created directory: $dir${NC}"
+        else
+            echo -e "${YELLOW}Directory already exists, skipping: $dir${NC}"
+        fi
+    done
 }
 
-# Function to install packages with pacman
+# Function to install packages
 install_packages() {
-    local packages_to_install=()
-    local failed_packages=()
-    for pkg in "$@"; do
-        if is_installed "$pkg"; then
-            info "Package $pkg is already installed. Skipping."
-        else
-            packages_to_install+=("$pkg")
-        fi
-    done
-    if [ ${#packages_to_install[@]} -ne 0 ]; then
-        info "Installing pacman packages: ${packages_to_install[*]}"
-        for pkg in "${packages_to_install[@]}"; do
-            if sudo pacman -S --needed --noconfirm "$pkg"; then
-                info "Successfully installed $pkg"
+    local package_type=$1
+    local log_file="$DOTFILES_DIR/installation_log.txt"
+    
+    # Read the package list from the dotfiles repository
+    local package_file="$DOTFILES_DIR/package_list.txt"
+    
+    if [ ! -f "$package_file" ]; then
+        echo -e "${RED}Package list file not found: $package_file${NC}"
+        return 1
+    }
+    
+    echo -e "${BLUE}Installing $package_type packages...${NC}"
+    
+    while IFS= read -r line; do
+        # Skip empty lines and comments
+        [[ -z "$line" || "$line" =~ ^# ]] && continue
+        
+        # Split line into type and package name
+        local pkg_type=$(echo "$line" | awk '{print $1}')
+        local package=$(echo "$line" | awk '{print $2}')
+        
+        # Only process lines matching the requested package type
+        if [ "$pkg_type" = "$package_type" ]; then
+            if [ "$package_type" = "aur" ]; then
+                yay -S --noconfirm "$package" &>/dev/null
             else
-                error "Failed to install $pkg"
-                failed_packages+=("$pkg")
+                sudo pacman -S --noconfirm "$package" &>/dev/null
             fi
-        done
-        if [ ${#failed_packages[@]} -ne 0 ]; then
-            error "Failed to install the following packages: ${failed_packages[*]}"
-            echo "Failed packages: ${failed_packages[*]}" >> "$LOG_FILE"
+            
+            if [ $? -eq 0 ]; then
+                echo -e "${GREEN}✓ $package installed successfully${NC}"
+            else
+                echo -e "${RED}ERROR: $package failed to install${NC}"
+                echo "$(date): Failed to install $package" >> "$log_file"
+            fi
         fi
-        info "Pacman packages installation complete."
-    else
-        info "All pacman packages are already installed."
-    fi
+    done < "$package_file"
 }
 
-# Function to install AUR packages
-install_aur_packages() {
-    local aur_cmd="$1"
-    shift
-    local packages_to_install=()
-    local failed_packages=()
-    for pkg in "$@"; do
-        if is_installed "$pkg"; then
-            info "Package $pkg is already installed. Skipping."
-        else
-            packages_to_install+=("$pkg")
-        fi
-    done
-    if [ ${#packages_to_install[@]} -ne 0 ]; then
-        info "Installing AUR packages using $aur_cmd: ${packages_to_install[*]}"
-        for pkg in "${packages_to_install[@]}"; do
-            if $aur_cmd -S --needed --noconfirm "$pkg"; then
-                info "Successfully installed $pkg"
-            else
-                error "Failed to install $pkg"
-                failed_packages+=("$pkg")
-            fi
-        done
-        if [ ${#failed_packages[@]} -ne 0 ]; then
-            error "Failed to install the following AUR packages: ${failed_packages[*]}"
-            echo "Failed AUR packages: ${failed_packages[*]}" >> "$LOG_FILE"
-        fi
-        info "AUR packages installation complete."
-    else
-        info "All AUR packages are already installed."
-    fi
-}
+# Function to handle wallpapers
+setup_wallpapers() {
+    echo -n "Do you want to install wallpapers? (y/N): "
+    read -r install_walls
+    
+    if [[ "$install_walls" =~ ^[Yy]$ ]]; then
+        echo "Cloning wallpapers repository..."
+        git clone https://github.com/NotMugil/walls.git temp_walls
+        cp -r temp_walls/* "$HOME/.wallpapers/"
+        rm -rf temp_walls
+        echo -e "${GREEN}Wallpapers installed successfully${NC}"
 
-# Function to setup PipeWire
-setup_pipewire() {
-    info "Setting up PipeWire..."
-    install_packages pipewire pipewire-pulse pipewire-alsa pipewire-jack wireplumber
-    
-    # Enable PipeWire service
-    systemctl --user enable pipewire.service
-    systemctl --user enable pipewire-pulse.service
-    
-    info "PipeWire setup complete."
+     else
+            echo -e "${RED}Failed to install the wallpapers, Install it manually${NC}"
+    fi
 }
 
 # Function to setup SDDM
 setup_sddm() {
-    info "Setting up SDDM..."
-    install_packages sddm
+    echo -n "Do you want to configure SDDM? (y/N): "
+    read -r configure_sddm
     
-    # Enable SDDM service
-    sudo systemctl enable sddm.service
-    
-    info "SDDM setup complete."
-}
-
-# Function to setup Bluetooth
-setup_bluetooth() {
-    info "Setting up Bluetooth..."
-    install_packages bluez bluez-utils
-    
-    # Enable Bluetooth service
-    sudo systemctl enable bluetooth.service
-    
-    info "Bluetooth setup complete."
-}
-
-# Function to setup NVIDIA ( !!! WIP !!! )
-setup_nvidia() {
-    local install_nvidia=$(get_input "Do you have an NVIDIA GPU? (yes/no)" "no")
-    if [[ "$install_nvidia" == "yes" ]]; then
-        info "Setting up NVIDIA drivers..."
-        install_packages nvidia-dkms nvidia-settings nvidia-utils libva libva-nvidia-driver-git
-        
-        # Add NVIDIA modules to mkinitcpio
-        sudo sed -i 's/MODULES=(/MODULES=(nvidia nvidia_modeset nvidia_uvm nvidia_drm /' /etc/mkinitcpio.conf
-        sudo mkinitcpio -P
-        
-        info "NVIDIA setup complete."
-    else
-        info "Skipping NVIDIA setup."
-    fi
-}
-
-# Function for full installation
-full_installation() {
-
-    display_logo
-    confirm_proceed "Running this will install necessary packages and dependencies together with my dotfiles. Do you want to proceed with the full installation? (yes/no)" "yes"
-    
-    info "Starting full installation..."
-    
-    # Install pacman packages
-    install_packages kitty nano git rofi-wayland swaync waybar playerctl mpv grim slurp \
-        cliphist wl-clipboard pavucontrol hyprlock nwg-look blueman bluez bluez-utils \
-        dictd pamixer brightnessctl thunar ranger python-pillow imv \
-        tumbler webp-pixbuf-loader totem evince ffmpegthumbnailer pacman-contrib btop \
-        nvtop fastfetch neovim nm-connection-editor xdg-desktop-portal-hyprland unzip \
-        swww hypridle ttf-nerd-fonts-symbols ttf-nerd-fonts-symbols-mono \
-        ttf-space-mono-nerd noto-fonts-cjk noto-fonts-emoji
-
-    # Install AUR packages
-    install_aur_packages "$aur_helper" cava hyprpicker wl-clip-persist-git wlogout jamesdsp anyrun \
-        catppuccin-gtk-theme-mocha nerd-fonts-sf-mono
-
-    # Setup additional components
-    setup_pipewire
-    setup_sddm
-    setup_bluetooth
-    #setup_nvidia
-
-    # Copy dotfiles
-    copy_dotfiles
-
-    # Enable system services
-    enable_services
-
-    info "Full installation complete."
-}
-
-# Function for base installation
-base_installation() {
-    
-    display_logo
-    confirm_proceed "Running this will install only the necessary packages and dependencies without my configs. Do you want to proceed with the base installation?" "yes"
-      
-    info "Starting base installation..."
-    
-    # Install pacman packages (excluding configuration-specific packages)
-    install_packages kitty nano git rofi-wayland waybar playerctl mpv grim slurp \
-        cliphist wl-clipboard pavucontrol blueman bluez bluez-utils \
-        dictd pamixer brightnessctl thunar ranger python-pillow imv \
-        tumbler webp-pixbuf-loader totem evince ffmpegthumbnailer pacman-contrib btop \
-        nvtop fastfetch neovim nm-connection-editor xdg-desktop-portal-hyprland unzip \
-        ttf-nerd-fonts-symbols ttf-nerd-fonts-symbols-mono \
-        ttf-space-mono-nerd noto-fonts-cjk noto-fonts-emoji
-
-    # Install AUR packages (excluding configuration-specific packages)
-    install_aur_packages "$aur_helper" cava wl-clip-persist-git jamesdsp \
-        catppuccin-gtk-theme-mocha nerd-fonts-sf-mono
-
-    # Setup additional components
-    setup_pipewire
-    setup_sddm
-    setup_bluetooth
-    #setup_nvidia
-
-    # Enable system services
-    enable_services
-
-    info "Base installation complete."
-}
-
-# Function to copy dotfiles
-copy_dotfiles() {
-    info "Copying dotfiles to home directory..."
-    # First, ensure rsync is installed
-    if ! command -v rsync &> /dev/null; then
-        info "rsync not found. Installing rsync..."
-        sudo pacman -S --needed --noconfirm rsync || error "Failed to install rsync"
-    fi
-
-    # Use rsync to copy files, creating directories if they don't exist
-    rsync -avh --backup --backup-dir="$HOME/.config/dotfiles_backup_$(date +%Y%m%d_%H%M%S)" \
-        dotfiles/dots/.config/ "$HOME/.config/" || error "Failed to copy dotfiles"
-    info "Dotfiles copied successfully. Any existing files were backed up."
-}
-
-# Function to enable system services
-enable_services() {
-    info "Enabling system services..."
-    
-    services=(
-        "bluetooth.service"
-        "NetworkManager.service"
-        "sddm.service"
-        # Add other services as needed
-    )
-
-    for service in "${services[@]}"; do
-        if sudo systemctl is-enabled --quiet "$service"; then
-            info "$service is already enabled."
-        else
-            if sudo systemctl enable --now "$service"; then
-                info "Successfully enabled $service"
-            else
-                error "Failed to enable $service"
-            fi
+    if [[ "$configure_sddm" =~ ^[Yy]$ ]]; then
+        echo -e "${BLUE}Installing and configuring SDDM...${NC}"
+        sudo pacman -S --noconfirm sddm
+        if [ -d "$DOTFILES_DIR/misc/sddm/sddm-theme" ]; then
+            sudo cp -r "$DOTFILES_DIR/misc/sddm/sddm-theme" /usr/share/sddm/themes/
+            sudo cp -r "$DOTFILES_DIR/misc/sddm/sddm.conf" /etc/sddm.conf
         fi
-    done
-
-    info "System services setup complete."
+        sudo systemctl enable sddm.service
+        echo -e "${GREEN}SDDM configured successfully${NC}"
+    fi
 }
 
-display_help() {
-    echo "Usage: ./install.sh [OPTION]"
-    echo "Install and configure the system."
-    echo
-    echo "Options:"
-    echo "  -h, --help     Display this help message and exit"
-    echo "  -f, --full     Perform a full installation with configs."
-    echo "  -b, --base     Perform a base installation without configs"
-    echo "  -c, --config   Copy dotfiles to home directory"
-    echo "  -s, --services Enable system services"
-    echo
-    echo "If no option is provided, a full installation will be performed."
-}
-
-# Main execution
+# Main installation process
 main() {
+    # First clone the dotfiles repository
+    clone_dotfiles
     
-    # Parse command-line arguments
-    case "$1" in
-        -h|--help)
-            display_help
-            exit 0
-            ;;
-        -f|--full)
-            full_installation
-            ;;
-        -b|--base)
-            base_installation
-            ;;
-        -c|--config)
-            copy_dotfiles
-            ;;
-        -s|--services)
-            enable_services
-            ;;
-        "")
-            full_installation
-            ;;
-        *)
-            echo "Error: Unknown option '$1'" >&2
-            echo "Try './install.sh --help' for more information." >&2
-            exit 1
-            ;;
-    esac
-
-    info "Installation process complete!"
-    info "Please check the log file at $LOG_FILE for any issues."
-    info "Please restart your system or log out and log back in to apply all changes."
+    # Create backup of existing configs
+    backup_configs
+    
+    # Create necessary directories
+    create_directories
+    
+    # Install packages
+    install_packages "pacman"
+    install_packages "aur"
+    
+    # Copy configurations
+    echo -e "${BLUE}Copying configurations...${NC}"
+    if [ -d "$DOTFILES_DIR/.config" ]; then
+        cp -r "$DOTFILES_DIR/.config"/* "$HOME/.config/"
+        echo -e "${GREEN}Configurations copied successfully${NC}"
+    fi
+    
+    # Setup wallpapers
+    setup_wallpapers
+    
+    # Setup SDDM
+    setup_sddm
+    
+    echo -e "${GREEN}Installation completed! Please log out and log back in to apply changes.${NC}"
 }
 
-# Run the main function
-main "$@"
+# Check if running on Arch Linux
+if ! command -v pacman &> /dev/null; then
+    echo -e "${RED}Error: This script requires Arch Linux${NC}"
+    exit 1
+fi
+
+# Check if yay is installed for AUR packages
+if ! command -v yay &> /dev/null; then
+    echo -e "${YELLOW}Warning: yay is not installed. Installing yay...${NC}"
+    git clone https://aur.archlinux.org/yay.git
+    cd yay
+    makepkg -si --noconfirm
+    cd ..
+    rm -rf yay
+fi
+
+# Run the main installation
+main
