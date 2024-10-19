@@ -71,22 +71,6 @@ chmod +x install.sh
 ./install.sh
 ```
 
-> [!TIP]
-> You can use the installation script in different ways depending on your needs:
-> 
-* `install.sh -f`, `--full`  
-  Installs Hyprland along with your custom configurations.
-
-* `install.sh -b`, `--base`  
-  Installs only Hyprland without any custom configurations.
-
-* `install.sh -c`, `--config`  
-  Copies your dotfiles to your home directory without installing anything else.
-
-* `install.sh -s`, `--services`  
-  Activates essential system services.
-  
-
 #### Manual Installation
 ##### Arch Linux
 You may want to set up an AUR helper. Check the instructions provided [here](https://github.com/Jguer/yay?tab=readme-ov-file#installation) to install yay.
@@ -104,10 +88,18 @@ git clone --depth=1 https://github.com/NotMugil/dotfiles.git && cd dotfiles
 2. Copy the configs to their respective directories. 
 
 ```bash
-cp -r .config/* ~/.config/
-cp -r .zshenv ~/
+cp -r dots/.config/* ~/.config/
+cp -r dots/.icons ~/
+cp -r dots/.themes ~/
+cp -r dots/.zshenv ~/
 ```
 
+3. To install sddm theme, copy the files into thier respective dir.
+
+```bash
+cp -r prefs/sddm.conf /etc/sddm.conf
+cp -r misc/sddm /usr/share/sddm/themes/
+```
 
 <details open>
 <summary>
