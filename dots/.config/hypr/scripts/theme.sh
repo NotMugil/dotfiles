@@ -44,7 +44,7 @@ switch_theme() {
     "$SCRIPT_DIR/waybar.sh" "$theme"
     "$SCRIPT_DIR/gtk.sh" "$theme"
     "$SCRIPT_DIR/wlogout.sh" "$theme"
-    "$SCRIPT_DIR/firefox.sh" "$theme"
+    #"$SCRIPT_DIR/firefox.sh" "$theme"
 
     
     # Change wallpapers

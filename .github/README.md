@@ -30,23 +30,65 @@
 
 |  **Lockscreen**                                          |
 | -------------------------------------------------------- |
-| ![gallery-1](../screenshots/hyprlock.gif)                |
+| ![gallery-1](../screenshots/gallery-01.png)              |
+
+<table>
+  <tr>
+    <td><img src="../screenshots/gallery-02.png" alt="Gruvbox Lockscreen" width="320"/></td>
+    <td><img src="../screenshots/gallery-03.png" alt="Tokyonight Lockscreen" width="320"/></td>
+    <td><img src="../screenshots/gallery-04.png" alt="Starlit Lockscreen" width="320"/></td>
+  </tr>
+</table>
 
 | **Neofetch & Thunar**                                    |
 | -------------------------------------------------------- |
-| ![gallery-7](../screenshots/filemanager.gif)             |
+| ![gallery-5](../screenshots/gallery-05.png)              |
+
+<table>
+  <tr>
+    <td><img src="../screenshots/gallery-06.png" alt="Gruvbox Lockscreen" width="320"/></td>
+    <td><img src="../screenshots/gallery-07.png" alt="Tokyonight Lockscreen" width="320"/></td>
+    <td><img src="../screenshots/gallery-08.png" alt="Starlit Lockscreen" width="320"/></td>
+  </tr>
+</table>
 
 | **Wlogout logout menu**   			           |
 | -------------------------------------------------------- |
-| ![gallery-4](../screenshots/wlogout.gif)                 |
+| ![gallery-9](../screenshots/gallery-09.png)              |
+
+<table>
+  <tr>
+    <td><img src="../screenshots/gallery-10.png" alt="Gruvbox Powermenu" width="320"/></td>
+    <td><img src="../screenshots/gallery-11.png" alt="Tokyonight Powermenu" width="320"/></td>
+    <td><img src="../screenshots/gallery-12.png" alt="Starlit Powermenu" width="320"/></td>
+  </tr>
+</table>
 
 | **Rofi Application Launcher**                            |
 | -------------------------------------------------------- |
-| ![gallery-5](../screenshots/rofi.gif)                    |
+| ![gallery-13](../screenshots/gallery-13.png)             |
+
+<table>
+  <tr>
+    <td><img src="../screenshots/gallery-14.png" alt="Gruvbox Powermenu" width="320"/></td>
+    <td><img src="../screenshots/gallery-15.png" alt="Tokyonight Powermenu" width="320"/></td>
+    <td><img src="../screenshots/gallery-16.png" alt="Starlit Powermenu" width="320"/></td>
+  </tr>
+</table>
+
 
 | **Wallpaper Selector**                                   |
 | -------------------------------------------------------- |
-| ![gallery-2](../screenshots/wallselect.gif)              |
+| ![gallery-2](../screenshots/gallery-17.png)              |
+
+<table>
+  <tr>
+    <td><img src="../screenshots/gallery-18.png" alt="Gruvbox Powermenu" width="320"/></td>
+    <td><img src="../screenshots/gallery-19.png" alt="Tokyonight Powermenu" width="320"/></td>
+    <td><img src="../screenshots/gallery-20.png" alt="Starlit Powermenu" width="320"/></td>
+  </tr>
+</table>
+
 
 | **Notification Center (SwayNC)**                         |
 | -------------------------------------------------------- |
@@ -140,3 +182,4 @@ dropping some informative stuff and resources that helped me here.
 - [r/unixporn](https://www.reddit.com/r/unixporn/)
 - [nam's ricing guide](https://namishh.me/blog/ricing)
 - [hyprland wiki](https://wiki.hyprland.org)
+

@@ -22,7 +22,7 @@ case "$theme" in
         icon_theme="Colloid-Teal-Gruvbox"
         ;;
     "Starlit")
-        gtk3_theme="Starlit-GTK3"
+        gtk3_theme="Cloudy-Dark"
         icon_theme="Colloid-Dark"
         ;;
     # Add more themes as needed
