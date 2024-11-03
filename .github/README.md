@@ -1,19 +1,16 @@
-<h1 align="center">
-	hyprland dotfiles
-</h1>
-
+<div align="center">
+  <h1>notmugil's dotfiles</h1>
+  <p>
+    <a href="https://github.com/NotMugil/dotfiles/stargazers"><img src="https://img.shields.io/github/stars/NotMugil/dotfiles?style=for-the-badge&logo=starship&color=b4befe&logoColor=b4befe&labelColor=302D41" alt="stars"><a>
+    <a href="https://github.com/NotMugil/dotfiles?tab=GPL-3.0-1-ov-file"><img alt="GitHub commit activity" src="https://img.shields.io/github/commit-activity/m/NotMugil/dotfiles?style=for-the-badge&logo=github&logoColor=f9e2af&label=Commit Activity&labelColor=302D41&color=f9e2af"></a> 
+    <a href="https://github.com/NotMugil/dotfiles/"><img src="https://img.shields.io/github/repo-size/NotMugil/dotfiles?style=for-the-badge&logo=github&logoColor=eba0ac&label=Size&labelColor=302D41&color=eba0ac" alt="REPO SIZE"></a>
+    <a href="https://github.com/NotMugil/dotfiles?tab=GPL-3.0-1-ov-file"><img src="https://img.shields.io/github/license/NotMugil/dotfiles?style=for-the-badge&logo=&color=CBA6F7&logoColor=CBA6F7&labelColor=302D41" alt="LICENSE"></a>
+</a>
+  </p>
+  
+</div>
 
 ![showcase](../screenshots/showcase.png)
-<br>
-<div align="center">
-<p>
-<a href="https://github.com/NotMugil/dotfiles/stargazers"><img src="https://img.shields.io/github/stars/NotMugil/dotfiles?style=for-the-badge&logo=starship&color=C9CBFF&logoColor=C9CBFF&labelColor=302D41" alt="stars"><a>
-<a href="https://github.com/NotMugil/dotfiles/issues"><img alt="GitHub Issues or Pull Requests" src="https://img.shields.io/github/issues/NotMugil/dotfiles?style=for-the-badge&logo=gitbook&color=A6E3A1&logoColor=A6E3A1&labelColor=302D41"></a>
-<a href="https://github.com/NotMugil/dotfiles/"><img src="https://img.shields.io/github/repo-size/NotMugil/dotfiles?style=for-the-badge&logo=hyprland&logoColor=f9e2af&label=Size&labelColor=302D41&color=f9e2af" alt="REPO SIZE"></a>
-<a href="https://github.com/NotMugil/dotfiles/commits/main/"><img src="https://img.shields.io/github/last-commit/NotMugil/dotfiles?style=for-the-badge&logo=github&logoColor=eba0ac&label=Last%20Commit&labelColor=302D41&color=eba0ac" alt="Last Commit"></a>
-<a href="https://github.com/NotMugil/dotfiles?tab=GPL-3.0-1-ov-file"><img src="https://img.shields.io/github/license/NotMugil/dotfiles?style=for-the-badge&logo=&color=CBA6F7&logoColor=CBA6F7&labelColor=302D41" alt="LICENSE"></a>
-</p>
-</div>
 
 
 > [!CAUTION]
@@ -168,10 +165,13 @@ cp -r misc/sddm /usr/share/sddm/themes/
 
 </details>
 
+
 #### Inspiration
 some of the cool people i took inspiration from for making my dotfiles. without them, this repo wouldn't exist.
 - [matt-ftw/dotfiles](https://github.com/Matt-ftw/dotfiles) 
 - [gh0stzk/dotfiles](https://github.com/gh0stzk/dotfiles)
+- [isabelroses/dotfiles](https://github.com/isabelroses/dotfiles)
+- [axenide/dotfiles](https://github.com/axenide/dotfiles)
 - [zakar98k/hyprland-catppuccin-dotz](https://github.com/Zakar98k/hyprland-catppuccin-dotz)
 - [deathemonic/cat-dots](https://github.com/Deathemonic/Cat-Dots)
 - [zdyantb/hyprnova](https://github.com/zDyanTB/HyprNova)
@@ -182,4 +182,3 @@ dropping some informative stuff and resources that helped me here.
 - [r/unixporn](https://www.reddit.com/r/unixporn/)
 - [nam's ricing guide](https://namishh.me/blog/ricing)
 - [hyprland wiki](https://wiki.hyprland.org)
-
