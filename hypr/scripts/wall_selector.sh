@@ -54,7 +54,7 @@ menu() {
   for i in "${!PICS[@]}"; do
   
     # If not *.gif, display
-    if [[ -z $(echo "${PICS[$i]}" | grep .gif$ | grep .webp$) ]]; then
+    if [[ -z $(echo "${PICS[$i]}" | grep .gif$|.webp$) ]]; then
       printf "$(basename "${PICS[$i]}" | cut -d. -f1)\x00icon\x1f${PICS[$i]}\n"
     else
     # Displaying .gif to indicate animated images
