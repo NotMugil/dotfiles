@@ -1,0 +1,174 @@
+/* config - Wallpaper select */
+configuration {
+    mode:                        "file-browser";
+    show-icons:                  true;
+    font:                        "SpaceMono Nerd Font 10";
+    file-browser-directory:      "~/wallpapers";
+    file-browser-extensions:     ["jpg", "png", "jpeg"];
+    hover-select:                true;
+    file-display-format:         "{basename}";
+}
+
+/* Config and colors ----------------------------------------------- */
+
+@theme "./config/catppuccin.rasi"
+@import "./config/colors.rasi"
+@import "./config/fonts.rasi"
+
+window {
+    fullscreen:                  true;
+    transparency:                "real";
+    cursor:                      "default";
+    background-color:            @background;
+    border:                      0px;
+    border-color:                @border-tb;
+}
+
+/* Elements ----------------------------------------------------- */
+element normal.normal,
+element alternate.normal {
+    background-color:            transparent;
+    text-color:                  @foreground;
+}
+
+element selected.normal {
+    background-color:            @accent;
+    text-color:                  @background;
+    border:                      1px solid;
+    border-color:                @border-tb;
+}
+
+element-text {
+    background-color:            transparent;
+    text-color:                  inherit;
+    highlight:                   inherit;
+    cursor:                      inherit;
+    vertical-align:              0.5;
+    horizontal-align:            0.5;
+}
+
+/* Listview ---------------------------------------------------- */
+
+listview {
+  border:                        0px;
+}
+
+/* Scrollbar ---------------------------------------------------- */
+scrollbar {
+    margin:                      0px 4px;
+    handle-width:                8px;
+    handle-color:                white;
+    background-color:            @background-tb;
+    border-radius:               5px;
+}
+
+/* Message ------------------------------------------------------ */
+message {
+    background-color:            @shade-bg;
+    border:                      1px solid;
+    border-color:                transparent;
+    border-radius:               12px;
+    padding:                     24px;
+}
+error-message {
+    padding:                     100px;
+    border:                      0px solid;
+    border-radius:               0px;
+    background-color:            black / 10%;
+    text-color:                  @text;
+}
+textbox {
+    background-color:            transparent;
+    text-color:                  @text;
+    vertical-align:              0.5;
+    horizontal-align:            0.5;
+    highlight:                   none;
+}
+
+/* Main Window ------------------------------------------------ */
+window {
+    width:                       70%;
+    height:                      85%;
+    margin:                      0px;
+    padding:                     0px;
+    border-radius:               5px;
+}
+/*****----- Inputbar -----*****/
+inputbar {
+    enabled:                     true;
+    spacing:                     10px;
+    margin:                      0% 35%;
+    padding:                     10px;
+    border:                      1px solid;
+    border-radius:               6px;
+    border-color:                white / 25%;
+    background-color:            white / 5%;
+    text-color:                  white;
+    children:                    [ "entry" ];
+}
+textbox-prompt-colon {
+    enabled:                     true;
+    expand:                      false;
+    str:                         "::";
+    background-color:            transparent;
+    text-color:                  inherit;
+}
+entry {
+    enabled:                     true;
+    background-color:            transparent;
+    text-color:                  inherit;
+    cursor:                      text;
+    placeholder:                 "Search";
+    placeholder-color:           inherit;
+}
+
+/* Main Box --------------------------------------------------- */
+mainbox {
+    children:                    ["inputbar", "listview" ];
+    background-color:            transparent;
+
+    spacing:                     20px;
+    margin:                      20px;
+    padding:                     20px;
+}
+
+/* ---- List ---- */
+listview {
+    columns:                     4;
+    lines:                       3;
+    cycle:                       true;
+    dynamic:                     true;
+    scrollbar:                   false;
+    layout:                      vertical;
+    reverse:                     false;
+    fixed-height:                true;
+    fixed-columns:               true;
+
+    background-color:           transparent;
+    text-color:                 @foreground;
+
+    spacing:                     0px;
+    margin:                      0px;
+    padding:                     0px;
+}
+
+/* Elements --------------------------------------------------- */
+element {
+    cursor:                      pointer;
+    border-radius:               5px;
+    background-color:            transparent;
+    text-color:                  @foreground;
+    orientation:                 vertical;
+
+    spacing:                     0px;
+    margin:                      0px;
+    padding:                     0px;
+}
+
+element-icon {
+    expand:                      false;
+    background-color:            transparent;
+    text-color:                  inherit;
+    size:                        23%;
+    cursor:                      inherit;
+}

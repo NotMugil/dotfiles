@@ -1,0 +1,183 @@
+@import url("colors/catppuccin.css");
+
+#waybar {
+    background-color: @background;
+    color: @text;
+    font-family: "SpaceMonoNerdFont", "JetBrainsMono Nerd Font", monospace;
+    font-size: 10px;
+}
+
+/* Space first and last modules evenly */
+.modules-right:last-child {
+    margin-right: 3px; /* Reduced from 5px */
+}
+.modules-left:first-child {
+    margin-left: 3px; /* Reduced from 5px */
+}
+
+/* Make all the NF icons smaller */
+#battery,
+#sys-info,
+#custom-notification,
+#pulseaudio,
+#backlight,
+#custom-power-button,
+#custom-keyboard,
+#custom-pomo-icon {
+    font-size: 10px; /* Reduced from 9px */
+}
+
+/* Active and inactive states */
+#network.wifi {
+    color: @text;
+}
+#network.disabled,
+#network.disconnected,
+#bluetooth.disabled,
+#bluetooth.off,
+#pulseaudio.muted,
+#pulseaudio.source-muted {
+    color: alpha(@textdark, 0.7);
+}
+
+/* Widget Groups Styling */
+#workspaces,
+#battery,
+box.modules-right > box.horizontal,
+#custom-notification,
+#sys-info,
+#custom-power-button {
+    background-color: @backgrounddark;
+    border-radius: 3px; /* Reduced from 4px */
+    margin: 7px 3px; /* Reduced from 10px 5px */
+    padding: 3px 8px; /* Reduced from 5px 10px */
+}
+
+#custom-power-button{
+    padding: 0px 16px 0px 12px;
+}
+
+/* Styling workspace */
+#workspaces,
+#workspaces button,
+#pulseaudio-slider,
+#backlight-slider {
+    all: unset;
+}
+#workspaces {    
+    color: @color12;
+    background-color: @backgrounddark;
+    margin: 7px 3px; /* Reduced from 10px 5px */
+    padding: 0px 0px; /* Reduced from 0px 20px */
+    border-radius: 3px; /* Reduced from 4px */
+}
+
+#workspaces > button {
+    padding: 0px 8px 0px 12px; /* Reduced from 0px 15px */
+    font-weight: 900;
+    border-radius: 3px;
+}
+#workspaces > button.empty {
+    color: @color12;
+}
+#workspaces > button.visible {
+    color: @foregroundlight;
+}
+#workspaces > button.active {
+    color: @color12;
+    background: alpha(@color12, 0.1);
+}
+#workspaces > button:hover {
+    background: alpha(@color12, 0.2);
+    color: @text;
+}
+
+/* Styling tray */
+#tray {
+    background-color: transparent;
+    padding: 0px;
+    margin: 0px;
+}
+#tray .active image {
+    margin: 0px;
+    padding: 0px 4px; /* Reduced from 0px 5px */
+}
+
+/* Wifi module spaced away from bluetooth */
+#network,
+#bluetooth {
+    margin-right: 12px; /* Reduced from 15px */
+}
+#backlight {
+    margin-right: 3px; /* Reduced from 5px */
+    margin-left: 5px; /* Reduced from 7px */
+}
+#pulseaudio {
+    margin-right: 7px; /* Reduced from 10px */
+}
+
+/* Styling brightness and volume and slider */
+#pulseaudio-slider,
+#backlight-slider {
+    border: none;
+}
+#pulseaudio-slider {
+    margin-left: 3px; /* Reduced from 5px */
+    margin-right: 3px; /* Reduced from 5px */
+}
+#backlight-slider {
+    margin-left: 7px; /* Reduced from 10px */
+}
+#pulseaudio-slider slider,
+#backlight-slider slider {
+    margin-left: -8px; /* Adjusted from -10px */
+    min-width: 8px; /* Reduced from 10px */
+    min-height: 8px; /* Reduced from 10px */
+    background: transparent;
+    box-shadow: none;
+    padding: 0px;
+}
+#pulseaudio-slider trough,
+#backlight-slider trough {
+    min-width: 70px; /* Reduced from 80px */
+    border-radius: 4px; /* Adjusted from 5px */
+    background-color: @foregrounddark;
+}
+#pulseaudio-slider highlight,
+#backlight-slider highlight {
+    border-radius: 4px; /* Adjusted from 5px */
+    min-height: 6px; /* Reduced from 8px */
+}
+
+/* Styling the clock */
+#clock.date {
+    font-weight: normal;
+}
+#clock.time {
+    padding: 0px;
+    font-weight: 500;
+}
+
+#clock {
+   margin: 0px 7px;
+}
+
+/* Styling tooltips */
+tooltip {
+    padding: 12px; /* Reduced from 15px */
+    background-color: @background;
+    color: @foregroundlight;
+    font-family: "Space Mono Nerd Font";
+    font-size: 10px; /* Reduced from 12px */
+}
+
+tooltip label {
+    padding: 8px; /* Reduced from 10px */
+    color: @foreground;
+}
+
+/* Custom Window Styling */
+#custom-window {
+    color: @color12;
+    padding: 0px 8px; /* Reduced from 0px 10px */
+}

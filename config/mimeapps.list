@@ -1,0 +1,27 @@
+[Added Associations]
+application/vnd.microsoft.portable-executable=wine.desktop;
+application/x-shellscript=zed.desktop;
+video/x-matroska=mpv.desktop;vlc.desktop;
+x-scheme-handler/http=userapp-Floorp-87AWP2.desktop;
+x-scheme-handler/https=userapp-Floorp-87AWP2.desktop;
+x-scheme-handler/chrome=userapp-Floorp-87AWP2.desktop;
+text/html=userapp-Floorp-87AWP2.desktop;
+application/x-extension-htm=userapp-Floorp-87AWP2.desktop;
+application/x-extension-html=userapp-Floorp-87AWP2.desktop;
+application/x-extension-shtml=userapp-Floorp-87AWP2.desktop;
+application/xhtml+xml=userapp-Floorp-87AWP2.desktop;
+application/x-extension-xhtml=userapp-Floorp-87AWP2.desktop;
+application/x-extension-xht=userapp-Floorp-87AWP2.desktop;
+
+[Default Applications]
+video/x-matroska=mpv.desktop
+x-scheme-handler/http=userapp-Floorp-87AWP2.desktop
+x-scheme-handler/https=userapp-Floorp-87AWP2.desktop
+x-scheme-handler/chrome=userapp-Floorp-87AWP2.desktop
+text/html=userapp-Floorp-87AWP2.desktop
+application/x-extension-htm=userapp-Floorp-87AWP2.desktop
+application/x-extension-html=userapp-Floorp-87AWP2.desktop
+application/x-extension-shtml=userapp-Floorp-87AWP2.desktop
+application/xhtml+xml=userapp-Floorp-87AWP2.desktop
+application/x-extension-xhtml=userapp-Floorp-87AWP2.desktop
+application/x-extension-xht=userapp-Floorp-87AWP2.desktop

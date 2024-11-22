@@ -1,0 +1,28 @@
+// Bottom Bar
+// Bar inspired by https://github.com/January180/silly-dotfiles
+[
+    {
+        "layer": "top",
+        "position": "bottom",
+        "height": 40,
+        "width": 1300,
+        "output": [
+            "HDMI-A-1",
+            "eDP-1"
+        ],
+        "include": "~/.config/waybar/modules/grounded.jsonc",
+        "modules-left": [
+            "hyprland/workspaces#circles",
+            "tray",
+            "cava"
+        ],
+        "modules-center": [
+            "group/music",
+        ],
+        "modules-right": [
+            "group/pulseaudio",
+            "group/btop",
+            "clock",
+        ],
+    }
+]

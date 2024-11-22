@@ -1,0 +1,34 @@
+// AMEDEUS
+[
+  {
+    "layer": "top", // Waybar on highest layer so tooltips go over windows
+    "output": [
+      "HDMI-A-1",
+      "eDP-1",
+    ], // Set output to primary monitor
+    "height": 34, // Set height to avoid jumping due to active workspace indicator
+    "include": "~/.config/waybar/modules/amedeus.jsonc",
+
+    // Sets modules for the left of the bar
+    "modules-left": [
+      "hyprland/workspaces",
+      "clock#time",
+      "clock#date",
+      "battery",
+    ],
+    // Set modules for the center of the bar
+    "modules-center": [
+      "hyprland/window",
+    ],
+    // Set modules for the center of the bar
+    "modules-right": [
+      "tray",
+      "temperature",
+      "cpu",
+      "memory",
+      "wireplumber",
+      "network",
+      "custom/notification",
+    ],
+  }
+]

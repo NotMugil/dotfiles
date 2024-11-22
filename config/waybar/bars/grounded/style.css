@@ -1,0 +1,216 @@
+@import "colors/catppuccin.css";
+
+window#waybar {
+	background-color: transparent;
+}
+
+window > box {
+	background-color: @backgrounddark;
+	margin: 0px 0px 8px 0px;
+	padding: 0px 2px;
+}
+
+* {
+	font-family: SpaceMono Nerd Font;
+	font-weight: 600;
+	font-size: 10px;
+	padding: 0;
+	border-radius: 8px;
+}
+
+.modules-left, .modules-center, .modules-right {
+	margin: 2px 10px;
+}
+
+#sys-info,
+#custom-updates,
+#workspaces,
+#clock,
+#pownet,
+#custom-updates
+#bluetooth.connected,
+#custom-spotify,
+#network,
+#network.linked,
+#network.ethernet,
+#network.wifi{
+	background-color: @background;
+}
+
+#custom-launcher {
+	margin: 6px 2px;
+	font-size: 16px;
+	color: @color11;
+	padding: 0px 5px 0px 10px;
+}
+
+#btop {
+	border-radius: 100px;
+	padding: 0px 10px;
+	margin: 6px 2px;
+	background-color: @backgrounddark;
+}
+
+#cpu,
+#memory,
+#disk {
+	color: @text;
+	padding: 0px 6px;
+}
+
+#music {
+	margin: 6px 2px;
+	padding: 0px 20px;
+	border-radius: 100px;
+	background-color: @background;
+}
+
+#mpris {
+	background-color: @background;
+	border-radius: 100px 0px 0px 100px;
+	color: @text;
+	padding: 0px 20px 0px 0px;
+}
+
+#custom-cava {
+	background-color: @background;
+	border-radius: 0px 100px 100px 0px;
+	color: @text;
+}
+
+#workspaces {
+	border-radius: 100px;
+	margin: 6px 2px;
+	padding: 0px 10px;
+}
+
+#workspaces button {
+	color: @color8;
+	padding: 0px 2px;
+}
+
+#workspaces button.urgent {
+	color: @color5;
+}
+
+#workspaces button.empty {
+	color: @textlight;
+}
+
+#workspaces button.active {
+	color: @color4;
+}
+
+#workspaces button:hover {
+	border-radius: 100px;
+	background-color: @background;
+}
+
+#pownet {
+	color: @text;
+	border-radius: 100px;
+	padding: 0px 10px;
+	margin: 6px 2px;
+}
+
+#battery{
+	margin-left: 2px;
+	margin-right: 10px;
+}
+
+#network {
+	font-size: 11px;
+	color: @text;
+	margin-right: 5px;
+}
+
+#bluetooth { 
+	margin-right: 6px;
+	font-size: 10px;
+	color: @color12;
+}
+
+@keyframes blink {
+    to {
+	color: #a6da95;
+    }
+}
+
+#battery.charging {
+    animation-name: blink;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#pulseaudio {
+	color: @text;
+	border-radius: 100px;
+	padding: 0px 10px;
+	margin: 6px 2px;
+}
+
+#custom-updates {
+	color: @text;
+	border-radius: 100px;
+	padding: 0px 10px;
+	margin: 6px 2px;
+}
+
+#clock {
+	color: @text;
+	border-radius: 100px;
+	padding: 0px 10px;
+	margin: 6px 2px;
+}
+
+#custom-power-button {
+	color: @color14;
+	padding: 0px 10px;
+	margin: 6px 2px;
+}
+
+#tray {
+	margin: 6px 2px;
+	padding: 0px 10px;
+}
+
+tooltip {
+    padding: 25px;
+    background-color: @background;
+    color: @text;
+}
+
+tooltip label {
+    padding: 15px;
+    color: @textlight;
+}
+
+label:focus {
+    background-color: @background;
+}
+
+#pulseaudio-slider {
+    border: none;
+}
+
+#pulseaudio-slider {
+    margin-left: 3px; 
+    margin-right: 3px;
+}
+
+#pulseaudio-slider slider {
+    min-width: 40px; 
+    min-height: 20px; 
+    color: @color12;
+    background: transparent;
+    box-shadow: none;
+    padding: 0px;
+}
+
+#pulseaudio-slider trough {
+    min-width: 70px; 
+    border-radius: 4px;
+    background-color: @foreground;
+}
