@@ -24,7 +24,7 @@ export ZSH_FZF_HISTORY_SEARCH_REMOVE_DUPLICATES=1 # Hide duplicates in zsh-fzf-h
 
 # Add additional directories to PATH
 export PATH=${PATH}:~/.local/scripts:~/.local/bin:~/.local/share/cargo/bin
-export PATH=$PATH:/home/rei/.spicetify
+export PATH=$PATH:/home/$USER/.spicetify
 
 # Set sudo password prompt
 export SUDO_PROMPT='[] Enter Password: '

@@ -6,10 +6,7 @@ source ${ZDOTDIR}/aliases.zsh # Source zsh aliases
 source ${ZDOTDIR}/keybinds.zsh # Source zsh keybinds
 source ${ZDOTDIR}/functions.zsh # Source custom functions
 source ${ZDOTDIR}/keybinds-late.zsh # Source late load keybinds
-#source ${ZDOTDIR}/ohmyzsh.zsh
+source ${ZDOTDIR}/ohmyzsh.zsh
 source ${ZDOTDIR}/aliases-late.zsh
 
 PROMPT='%F{yellow}%3~%f $ '
-
-
-export PATH=$PATH:/home/rei/.spicetify

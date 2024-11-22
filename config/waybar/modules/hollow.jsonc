@@ -214,7 +214,7 @@
     },
     "image": {
         "tooltip": false,
-        "path": "/home/rei/.face.icon",
+        "path": "/home/$USER/.face.icon",
         "size": 47
     },
 }
