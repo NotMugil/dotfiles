@@ -66,7 +66,7 @@ function BatteryLevel() {
         visible={bind(bat, "isPresent")}>
         <icon icon={bind(bat, "batteryIconName")} />
         <label label={bind(bat, "percentage").as(p =>
-            `${Math.floor(p * 100)} %`
+            `${Math.floor(p * 100)}%`
         )} />
     </box>
 }
@@ -93,30 +93,34 @@ function truncateText(text: string, limit: number) {
     return text.length > limit ? text.substring(0, limit) + "..." : text;
 }
 
-function Media({ titleLimit = 20 }) {
-    const mpris = Mpris.get_default()
 
-    return <box className="Media">
-        {bind(mpris, "players").as(ps => ps[0] ? (
-            <box>
-                <box
-                    className="Cover"
-                    valign={Gtk.Align.CENTER}
-                    css={bind(ps[0], "coverArt").as(cover =>
-                        `background-image: url('${cover}');`
-                    )}
-                />
-                <label
-                    label={bind(ps[0], "title").as(() =>
-                        truncateText(`${ps[0].title} - ${ps[0].artist}`, titleLimit)
-                    )}
-                />
+function Media({ titleLimit = 20 }) {
+    const mpris = Mpris.get_default();
+
+    return (
+        <button onClicked="/home/rei/.config/ags/scripts/mediaplayer.sh">
+            <box className="Media">
+                {bind(mpris, "players").as(ps => ps[0] ? (
+                    <box>
+                        <box
+                            className="Cover"
+                            valign={Gtk.Align.CENTER}
+                            css={bind(ps[0], "coverArt").as(cover =>
+                                `background-image: url('${cover}');`
+                            )}
+                        />
+                        <label
+                            label={bind(ps[0], "title").as(() =>
+                                truncateText(`${ps[0].title} - ${ps[0].artist}`, titleLimit)
+                            )}
+                        />
+                    </box>
+                ) : null)}
             </box>
-        ) : (
-            "Nothing Playing"
-        ))}
-    </box>
+        </button>
+    );
 }
+	
 
 function FocusedClient({ titleLimit = 20 }) {
     const hypr = Hyprland.get_default()
@@ -133,15 +137,29 @@ function FocusedClient({ titleLimit = 20 }) {
     </box>
 }
 
-function Time({ format = "%H:%M - %A %e." }) {
-    const time = Variable<string>("").poll(1000, () =>
-        GLib.DateTime.new_now_local().format(format)!)
+function Time({ format = "%H:%M" }) {
+    let currentFormat = format;
 
-    return <label
-        className="Time"
-        onDestroy={() => time.drop()}
-        label={time()}
-    />
+    const time = Variable<string>("").poll(1000, () =>
+        GLib.DateTime.new_now_local().format(currentFormat)!
+    );
+
+    function switchTime() {
+        if (currentFormat === "%H:%M") {
+            currentFormat = "%a %d"; // Day and date
+        } else {
+            currentFormat = "%H:%M"; // Hours and minutes
+        }
+        time.set(GLib.DateTime.new_now_local().format(currentFormat)!);
+    }
+
+    return <button onClicked={switchTime}>
+	<label
+        	className="Time"
+        	onDestroy={() => time.drop()}
+        	label={time()}
+    	/>
+   </button>
 }
 
 export default function Bar(monitor: Gdk.Monitor) {
