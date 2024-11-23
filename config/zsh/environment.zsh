@@ -30,7 +30,7 @@ export PATH=$PATH:/home/$USER/.spicetify
 export SUDO_PROMPT='[] Enter Password: '
 
 # Set default editor
-export EDITOR='nano'
+export EDITOR='nvim'
 
 # Set language environment
 export LANG=en_US.UTF-8
