@@ -94,7 +94,7 @@ function truncateText(text: string, limit: number) {
 }
 
 
-function Media({ titleLimit = 20 }) {
+function Media({ titleLimit = 18 }) {
     const mpris = Mpris.get_default();
 
     return (
