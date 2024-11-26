@@ -1,0 +1,17 @@
+.workspace-entry {
+    padding: 2px;
+}
+
+.workspace-entry.occupied {
+    color: $fg;
+}
+
+.workspace-entry.empty {
+    color: $dim-fg;
+}
+
+.workspace-entry.current {
+    // font-size: 11pt;
+    font-weight: 600;
+    color: $accent;
+}

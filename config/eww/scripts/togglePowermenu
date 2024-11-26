@@ -1,0 +1,11 @@
+#!/bin/sh
+LOCK=/home/$USER/.config/eww/temp/pm.lock
+eww=/home/$USER/.local/bin/eww
+
+if [ -f "$LOCK" ]; then
+    rm -rf "$LOCK"
+    $eww close powercontrols
+else 
+    touch "$LOCK"
+    $eww open powercontrols
+fi

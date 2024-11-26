@@ -1,0 +1,117 @@
+(defwidget workspaces []
+  (eventbox :onscroll "bash ~/.config/eww/scripts/change-active-workspace {} ${current_workspace}" :class "workspaces-widget"
+    (box :space-evenly false :spacing 5
+      (label :text "${workspaces}${current_workspace}" :visible false)
+      (for workspace in workspaces
+        (eventbox :onclick "hyprctl dispatch workspace ${workspace.id}"
+          (box :class "workspace-entry ${workspace.windows > 0 ? "occupied" : "empty"}"
+            (label :text "${workspace.id}" :class "workspace-entry ${workspace.id == current_workspace ? "current" : ""}" )
+            )
+          )
+        )
+      )
+    )
+  )
+
+(defwidget title []
+  (box
+    (label :text "${window}"
+    )
+  )
+)
+
+(defwidget clock []
+  (box
+    :class "time"
+    :halign "end"
+    :orientation "h"
+    (eventbox 
+      :onclick "sh ~/.config/eww/scripts/toggleCalender" 
+      :cursor "pointer"
+      (label
+        :class "bar-time"
+        :text "${hour}:${minute} ${period}"
+      )
+    )
+  )
+)
+
+(defwidget powermenu []
+  (eventbox
+    :onclick "sh ~/.config/eww/scripts/togglePowermenu"
+    :cursor "pointer"
+    (box :class "powerButton"
+      (label
+        :text " 󰐥 "
+      )
+    )
+  )
+)
+
+
+(defwidget notificationcenter []
+  (eventbox
+    :onclick "sh ~/.config/eww/scripts/toggleControlCenter"
+    :cursor "pointer"
+    (box 
+      :class ""
+      (clock)
+    )
+  )
+)
+
+
+(defwidget left []
+   (box 
+     :class "ccButton"
+     :halign "start"
+     :valign "center"
+     :space-evenly false
+     :spacing 10
+     (eventbox
+        :onclick "sh ~/.config/eww/scripts/toggleControlCenter"
+        :onhover ""
+        :cursor "pointer"
+        (label
+          :text " 󰣇 "
+        )
+      )
+    (title)
+    )
+)
+
+(defwidget center []
+  (box 
+    :class ""
+    :halign "center"
+    :valign "center"
+    :orientation "h"
+    :space-evenly false
+    (workspaces)  
+  ) 
+)
+
+(defwidget right [] 
+  (box
+    :class ""
+    :orientation "h"
+    :space-evenly false
+    :spacing 10
+    :halign "end"
+    :valign "center"
+    (notificationcenter)
+    (powermenu)
+  )
+)
+
+
+
+(defwidget bar [] 
+  (centerbox
+     :class "bar"
+     :orientation "h"
+     (left)
+     (center)
+     (right)
+   )
+)

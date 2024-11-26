@@ -1,0 +1,30 @@
+(defpoll minute :interval "5s"
+    "date '+%M'")
+(defpoll hour :interval "5s"
+        "date '+%I'")
+(defpoll period :interval "5s"
+    "date '+%p'")
+(defpoll date :interval "5s"
+    "date '+%B %d'")
+
+(deflisten workspaces :initial "[]" "bash ~/.config/eww/scripts/get-workspaces")
+(deflisten current_workspace :initial "1" "bash ~/.config/eww/scripts/get-active-workspace")
+(deflisten window :initial "..." "sh ~/.config/eww/scripts/get-window-title")
+
+
+(defpoll profile :interval "1s" "~/.config/eww/scripts/profile.sh")
+
+;;Calendar variables
+(defpoll day :interval "60s" "date '+%a'")
+(defpoll month :interval "60s" "date '+%b'")
+(defpoll calendarDay :interval "60s" "date '+%d'")
+(defpoll calendarMonth :interval "60s" "date '+%m'")
+(defpoll calendarYear :interval "60s" "date '+%Y'")
+(defpoll hr	:interval "10s"	"date '+%H'")
+(defpoll min	:interval "2s"	"date '+%M'")
+(defvar revealTime false)
+
+;;Notification variables
+(deflisten notificationsCards "scripts/logger.zsh subscribe")
+(defpoll notificationsCrits :interval "1s" "scripts/logger.zsh crits")
+(defpoll notificationNum :interval "1s" "scripts/logger.zsh tot")

@@ -1,0 +1,24 @@
+@import "widgets/workspaces";
+
+* {
+    font-size: 9pt;
+    font-family: "SpaceMono Nerd Font";
+}
+
+.bar {
+    color: $fg;
+    padding: 0px 10px;
+}
+
+.time {
+    margin-right: 10px;
+}
+
+.powerButton {
+    font-size: 12pt;
+}
+
+.ccButton,
+.powerButton {
+    color: $accent;
+}

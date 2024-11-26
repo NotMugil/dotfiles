@@ -1,0 +1,8 @@
+@import "./colors/matugen.scss";
+@import "./src/scss/bar/bar.scss";
+@import "./src/scss/notifications/notifications.scss";
+@import "./src/scss/powermenu/powermenu.scss";
+
+window {
+	background-color: $bg;
+}

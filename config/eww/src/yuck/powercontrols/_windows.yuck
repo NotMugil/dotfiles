@@ -1,0 +1,12 @@
+(defwindow powercontrols 
+	:monitor 0 
+	:focusable false
+	:stacking "overlay"
+  	:geometry (geometry :x "0" 
+			    :y "0" 
+			    :height "100" 
+			    :width "300" 
+			    :anchor "top right"
+		)
+  	(powercontrols)
+)

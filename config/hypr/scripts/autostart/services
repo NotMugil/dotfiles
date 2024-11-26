@@ -10,7 +10,7 @@ swww-daemon --format xrgb &
 pypr &
 
 # Bar
-waybar &
+eww open bar &
 
 # Notification Daemon
 swaync &
