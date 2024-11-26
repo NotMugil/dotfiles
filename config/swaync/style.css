@@ -1,43 +1,3 @@
-@define-color cc-bg rgba(0, 0, 0, 1);
-@define-color noti-border-color rgba(255, 255, 255, 0.15);
-@define-color noti-bg #24273a;
-@define-color noti-bg-darker #363a4f;
-@define-color noti-bg-hover rgb(27, 27, 43);
-@define-color noti-bg-focus rgba(27, 27, 27, 0.6);
-@define-color noti-close-bg rgba(255, 255, 255, 0.1);
-@define-color noti-close-bg-hover rgba(255, 255, 255, 0.15);
-@define-color text-color #cad3f5;
-
-@define-color base   #1E1D2E;
-@define-color mantle #181825;
-@define-color crust  #11111b;
-
-@define-color text     #cdd6f4;
-@define-color subtext0 #a6adc8;
-@define-color subtext1 #bac2de;
-
-@define-color surface0 #313244;
-@define-color surface1 #45475a;
-@define-color surface2 #585b70;
-
-@define-color overlay0 #6c7086;
-@define-color overlay1 #7f849c;
-@define-color overlay2 #9399b2;
-
-@define-color blue      #89b4fa;
-@define-color lavender  #b4befe;
-@define-color sapphire  #74c7ec;
-@define-color sky       #89dceb;
-@define-color teal      #94e2d5;
-@define-color green     #a6e3a1;
-@define-color yellow    #f9e2af;
-@define-color peach     #fab387;
-@define-color maroon    #eba0ac;
-@define-color red       #f38ba8;
-@define-color mauve     #cba6f7;
-@define-color pink      #f5c2e7;
-@define-color flamingo  #f2cdcd;
-@define-color rosewater #f5e0dc;
 
 * {
   all: unset;
@@ -109,14 +69,12 @@
 
 
 .floating-notifications.background .notification-row .notification-background {
-  box-shadow:
-    0 0 8px 0 rgba(0, 0, 0, 0.8),
-    inset 0 0 0 1px #363a4f;
-  border-radius: 10px;
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.8),
+		inset 0 0 0 1px #c0a36e;
+  border-radius: 5px;
   margin: 18px;
-  background-color: #24273a;
+  background-color: #16161D;
   color: #cad3f5;
-  border: 2px solid rgba(183, 189, 248, 0.5);
   padding: 0;
 }
 
@@ -132,7 +90,17 @@
   .notification-row
   .notification-background
   .notification.critical {
-  box-shadow: inset 0 0 7px 0 #ed8796;
+	border-radius: 5px;
+	border: 2px solid rgba(228, 104, 118, 0.5);
+}
+
+
+.floating-notifications.background
+  .notification-row
+  .notification-background
+  .notification.low {
+	border-radius: 5px;
+	border: 2px solid rgba(152, 187, 108, 0.5);
 }
 
 .floating-notifications.background
@@ -224,15 +192,15 @@
   margin: 7px;
   padding: 2px;
   border-radius: 6.3px;
-  color: #24273a;
-  background-color: #ed8796;
+  color: #dcd7ba;
+  background-color: #2a2a37;
 }
 
 .floating-notifications.background
   .notification-row
   .notification-background
   .close-button:hover {
-  background-color: #ee99a0;
+  background-color: #e46876;
   color: #24273a;
 }
 
