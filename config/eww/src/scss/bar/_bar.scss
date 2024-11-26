@@ -6,8 +6,15 @@
 }
 
 .bar {
-    color: $fg;
     padding: 0px 10px;
+    margin: 0px 5px;
+    background-color: $bg;
+    border-radius: 5px;
+}
+
+.title {
+    color: $text;
+    margin: 0 5px;
 }
 
 .time {

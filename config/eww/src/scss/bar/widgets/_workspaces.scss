@@ -3,15 +3,15 @@
 }
 
 .workspace-entry.occupied {
-    color: $fg;
+    color: $text;
 }
 
 .workspace-entry.empty {
-    color: $dim-fg;
+    color: $text-dim;
 }
 
 .workspace-entry.current {
-    // font-size: 11pt;
+    /* font-size: 10pt; */
     font-weight: 600;
     color: $accent;
 }

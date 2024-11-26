@@ -15,7 +15,7 @@
 
 (defwidget title []
   (box
-    (label :text "${window}"
+    (label :text "${window}" :class "title"
     )
   )
 )
@@ -25,8 +25,8 @@
     :class "time"
     :halign "end"
     :orientation "h"
-    (eventbox 
-      :onclick "sh ~/.config/eww/scripts/toggleCalender" 
+    (eventbox
+      :onclick "sh ~/.config/eww/scripts/toggleCalender"
       :cursor "pointer"
       (label
         :class "bar-time"
@@ -53,7 +53,7 @@
   (eventbox
     :onclick "sh ~/.config/eww/scripts/toggleControlCenter"
     :cursor "pointer"
-    (box 
+    (box
       :class ""
       (clock)
     )
@@ -62,7 +62,7 @@
 
 
 (defwidget left []
-   (box 
+   (box
      :class "ccButton"
      :halign "start"
      :valign "center"
@@ -81,17 +81,17 @@
 )
 
 (defwidget center []
-  (box 
+  (box
     :class ""
     :halign "center"
     :valign "center"
     :orientation "h"
     :space-evenly false
-    (workspaces)  
-  ) 
+    (workspaces)
+  )
 )
 
-(defwidget right [] 
+(defwidget right []
   (box
     :class ""
     :orientation "h"
@@ -106,7 +106,7 @@
 
 
 
-(defwidget bar [] 
+(defwidget bar []
   (centerbox
      :class "bar"
      :orientation "h"
