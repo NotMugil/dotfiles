@@ -1,0 +1,11 @@
+#!/bin/sh
+LOCK=/home/$USER/.config/eww/temp/launcher.lock
+launcher_cmd="rofi -show drun -theme ~/.config/rofi/launcher.rasi"
+
+if [ -f "$LOCK" ]; then
+    rm -rf "$LOCK"
+else
+    touch "$LOCK"
+    $launcher_cmd
+fi
+

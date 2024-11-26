@@ -20,6 +20,13 @@
   )
 )
 
+(defwidget seperator []
+  (box
+    (label :text "|" :class "seperator"
+    )
+  )
+)
+
 (defwidget clock []
   (box
     :class "time"
@@ -34,6 +41,24 @@
       )
     )
   )
+)
+
+(deflisten speakers :initial '{ "volume": 0, "muted": "false" }' "~/.config/eww/scripts/volume.sh")
+
+(defwidget speakers []
+    (box :class "speakers"
+      :space-evenly false
+      :spacing 5
+      (button :class "icon ${ speakers.volume > 100 ? 'over' : '' } ${ speakers.muted ? 'muted' : '' }"
+        :onclick "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+        (label :text {
+          speakers.muted ? "󰖁 ${speakers.volume}%":
+          speakers.volume == 0 ? "󰕾 ${speakers.volume}%":
+          speakers.volume < 33 ? "󰖀 ${speakers.volume}%":
+          "󰕿 ${speakers.volume}%"
+        }))
+    )
+
 )
 
 (defwidget powermenu []
@@ -69,13 +94,14 @@
      :space-evenly false
      :spacing 10
      (eventbox
-        :onclick "sh ~/.config/eww/scripts/toggleControlCenter"
+        :onclick "sh ~/.config/eww/scripts/toggleLauncher"
         :onhover ""
         :cursor "pointer"
         (label
           :text " 󰣇 "
         )
       )
+    (seperator)
     (title)
     )
 )
@@ -99,7 +125,10 @@
     :spacing 10
     :halign "end"
     :valign "center"
+    (speakers)
+    (seperator)
     (notificationcenter)
+    (seperator)
     (powermenu)
   )
 )

@@ -2,8 +2,8 @@
 (defwindow bar
   :monitor 0
   :geometry (geometry :x "0%"
-                      :y "5px"
-                      :width "95%"
+                      :y "0px"
+                      :width "99%"
                       :height "30px"
                       :anchor "top center"
             )

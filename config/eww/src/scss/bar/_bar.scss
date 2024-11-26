@@ -9,23 +9,33 @@
     padding: 0px 10px;
     margin: 0px 5px;
     background-color: $bg;
-    border-radius: 5px;
+    border-radius: 0px 0px 5px 5px;
 }
 
 .title {
     color: $text;
-    margin: 0 5px;
-}
-
-.time {
-    margin-right: 10px;
 }
 
 .powerButton {
     font-size: 12pt;
 }
 
+.seperator {
+    color: $text-dim;
+    margin: 0px 2px;
+}
+
 .ccButton,
 .powerButton {
     color: $accent;
+}
+
+.icon {
+    padding: 0px 4px;
+    color: $text;
+    background-color: $bg;
+}
+
+.icon:hover {
+    background: transparent;
 }
