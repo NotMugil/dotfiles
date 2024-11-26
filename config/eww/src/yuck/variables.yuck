@@ -11,6 +11,9 @@
 (deflisten current_workspace :initial "1" "bash ~/.config/eww/scripts/get-active-workspace")
 (deflisten window :initial "..." "sh ~/.config/eww/scripts/get-window-title")
 
+(deflisten speakers :initial '{ "volume": 0, "muted": "false" }' "~/.config/eww/scripts/volume.sh")
+(deflisten brightness :initial '{"brightness": 0, "current": 0, "max": 1}' "bash ~/.config/eww/scripts/brightness.sh")
+(deflisten battery :initial '{"percentage": 0, "status": "Unknown"}' "bash ~/.config/eww/scripts/battery.sh")
 
 (defpoll profile :interval "1s" "~/.config/eww/scripts/profile.sh")
 

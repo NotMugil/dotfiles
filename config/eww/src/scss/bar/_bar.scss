@@ -32,10 +32,22 @@
 
 .icon {
     padding: 0px 4px;
-    color: $text;
+    color: $blue;
     background-color: $bg;
 }
 
 .icon:hover {
     background: transparent;
+}
+
+.icon-brightness {
+    padding: 0px 4px;
+    color: $red;
+    background-color: $bg;
+}
+
+.icon-battery {
+    padding: 0px 4px;
+    color: $violet;
+    background-color: $bg;
 }

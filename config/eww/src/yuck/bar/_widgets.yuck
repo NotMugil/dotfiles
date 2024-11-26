@@ -43,8 +43,6 @@
   )
 )
 
-(deflisten speakers :initial '{ "volume": 0, "muted": "false" }' "~/.config/eww/scripts/volume.sh")
-
 (defwidget speakers []
     (box :class "speakers"
       :space-evenly false
@@ -58,7 +56,66 @@
           "󰕿 ${speakers.volume}%"
         }))
     )
+)
 
+
+(defwidget battery []
+    (box :class "battery icon-battery"
+        :space-evenly false
+        :spacing 5
+        (label
+            :class "${battery.status == 'Charging' ? 'charging' : ''}"
+            :text {
+                battery.status == "Charging" ?
+                    (battery.percentage > 90 ? "󰂄" :
+                     battery.percentage > 80 ? "󰂇" :
+                     battery.percentage > 70 ? "󰂆" :
+                     battery.percentage > 60 ? "󰂅" :
+                     battery.percentage > 50 ? "󰂌" :
+                     battery.percentage > 40 ? "󰂋" :
+                     battery.percentage > 30 ? "󰂊" :
+                     battery.percentage > 20 ? "󰂉" : "󰂈") :
+                    (battery.percentage > 90 ? "󰁹" :
+                     battery.percentage > 80 ? "󰂀" :
+                     battery.percentage > 70 ? "󰁿" :
+                     battery.percentage > 60 ? "󰁾" :
+                     battery.percentage > 50 ? "󰁽" :
+                     battery.percentage > 40 ? "󰁼" :
+                     battery.percentage > 30 ? "󰁻" :
+                     battery.percentage > 20 ? "󰁺" :
+                     battery.percentage > 10 ? "󰁹" : "󰂎")
+            }
+            :tooltip "${battery.percentage}% - ${battery.status}"
+        )
+        (label
+            :text "${battery.percentage}%"
+            :class "battery-percentage"
+        )
+    )
+)
+
+(defwidget brightness []
+    (box :class "brightness"
+        :space-evenly false
+        :spacing 5
+        (button
+            :class "icon-brightness ${brightness.brightness > 100 ? 'over' : ''}"
+            :onclick "brightnessctl set 5%+ && brightnessctl get"
+            :onrightclick "brightnessctl set 5%- && brightnessctl get"
+            (label
+                :text {
+                    brightness.brightness == 0 ? "󰄰 0%" :
+                    brightness.brightness < 10 ? "󰪞 ${brightness.brightness}%" :
+                    brightness.brightness < 25 ? "󰪟 ${brightness.brightness}%" :
+                    brightness.brightness < 40 ? "󰪠 ${brightness.brightness}%" :
+                    brightness.brightness < 60 ? "󰪢 ${brightness.brightness}%" :
+                    brightness.brightness < 76 ? "󰪣 ${brightness.brightness}%" :
+                    brightness.brightness < 90 ? "󰪤 ${brightness.brightness}%" :
+                    "󰪥 ${brightness.brightness}%"
+                }
+            )
+        )
+    )
 )
 
 (defwidget powermenu []
@@ -125,6 +182,8 @@
     :spacing 10
     :halign "end"
     :valign "center"
+    (battery)
+    (brightness)
     (speakers)
     (seperator)
     (notificationcenter)
