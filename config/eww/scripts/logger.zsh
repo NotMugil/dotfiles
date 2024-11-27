@@ -22,12 +22,12 @@ function create_cache() {
         "LOW"|"NORMAL"|"CRITICAL") urgency="$DUNST_URGENCY";;
         *) urgency="OTHER";;
     esac
-    
+
     local summary
     local body
     [ "$DUNST_SUMMARY" = "" ] && summary="Summary unavailable." || summary="$DUNST_SUMMARY"
     [ "$DUNST_BODY" = "" ] && body="Body unavailable." || body="$(print "$DUNST_BODY" | recode html)"
-    
+
     local glyph
     case "$urgency" in
         "LOW") glyph="";;
@@ -35,7 +35,7 @@ function create_cache() {
         "CRITICAL") glyph="";;
         *) glyph="";;
     esac
-    
+
     # Fix for discord web
     if [[ $body == *"discord"* ]]
     then
@@ -47,7 +47,7 @@ function create_cache() {
             body=$fixed_body
         fi
     fi
-    
+
     # Fix for spotify
     if [[ $DUNST_APP_NAME == "Spotify" ]]
     then
@@ -66,7 +66,7 @@ function create_cache() {
             summary=$DUNST_SUMMARY
         fi
     fi
-    
+
     if [[ $DUNST_ICON_PATH == "" ]]
     then
         ICON_PATH=/usr/share/icons/Papirus/128x128/apps/$DUNST_APP_NAME.svg
@@ -74,12 +74,12 @@ function create_cache() {
         FIXED_ICON_PATH=$(echo ${DUNST_ICON_PATH} | sed 's/32x32/48x48/g')
         ICON_PATH=$FIXED_ICON_PATH
     fi
-    
+
     if [[ $DUNST_APP_NAME == "Spotify" ]]
     then
         ICON_PATH=$HOME/.cache/temp-$SPOTIFY_TITLE.png
     fi
-    
+
     # pipe stdout -> pipe cat stdin (cat conCATs multiple files and sends to stdout) -> absorb stdout from cat
     # concat: "one" + "two" + "three" -> notice how the order matters i.e. "one" will be prepended
     print '(notification-card :class "notification-card notification-card-'$urgency' notification-card-'$DUNST_APP_NAME'" :SL "'$DUNST_ID'" :L "dunstctl history-pop '$DUNST_ID'" :body "'$body'" :summary "'$summary'" :image "'$ICON_PATH'" :application "'$DUNST_APP_NAME'")' \
@@ -157,4 +157,3 @@ sed -i '/^$/d' "$DUNST_LOG"
 _unset_vars
 
 # vim:ft=zsh
-

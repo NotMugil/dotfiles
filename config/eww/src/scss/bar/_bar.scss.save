@@ -8,7 +8,7 @@
 .bar {
     padding: 0px 10px;
     margin: 0px 5px;
-    background-color: $bg;
+    background-color: $bg;q
 }
 
 .title {
