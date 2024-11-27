@@ -32,9 +32,7 @@
     :class "time"
     :halign "end"
     :orientation "h"
-    (eventbox
-      :onclick "sh ~/.config/eww/scripts/toggleCalender"
-      :cursor "pointer"
+    (box
       (label
         :class "bar-time"
         :text "${hour}:${minute} ${period}"
@@ -48,12 +46,13 @@
       :space-evenly false
       :spacing 5
       (button :class "icon ${ speakers.volume > 100 ? 'over' : '' } ${ speakers.muted ? 'muted' : '' }"
-        :onclick "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+        :onclick "bash -e '~/.config/eww/scripts/pavucontrol.sh'"
+        :onrightclick "pactl set-sink-mute @DEFAULT_SINK@ toggle"
         (label :text {
           speakers.muted ? "󰖁 ${speakers.volume}%":
-          speakers.volume == 0 ? "󰕾 ${speakers.volume}%":
+          speakers.volume == 0 ? "󰕿 ${speakers.volume}%":
           speakers.volume < 33 ? "󰖀 ${speakers.volume}%":
-          "󰕿 ${speakers.volume}%"
+          "󰕾 ${speakers.volume}%"
         }))
     )
 )
@@ -68,22 +67,15 @@
             :text {
                 battery.status == "Charging" ?
                     (battery.percentage > 90 ? "󰂄" :
-                     battery.percentage > 80 ? "󰂇" :
-                     battery.percentage > 70 ? "󰂆" :
-                     battery.percentage > 60 ? "󰂅" :
-                     battery.percentage > 50 ? "󰂌" :
-                     battery.percentage > 40 ? "󰂋" :
-                     battery.percentage > 30 ? "󰂊" :
-                     battery.percentage > 20 ? "󰂉" : "󰂈") :
+                     battery.percentage > 70 ? "󰂌" :
+                     battery.percentage > 50 ? "󰂇" :
+                     battery.percentage > 20 ? "󰂆" : "󰂆") :
                     (battery.percentage > 90 ? "󰁹" :
                      battery.percentage > 80 ? "󰂀" :
-                     battery.percentage > 70 ? "󰁿" :
-                     battery.percentage > 60 ? "󰁾" :
-                     battery.percentage > 50 ? "󰁽" :
+                     battery.percentage > 60 ? "󰁿" :
                      battery.percentage > 40 ? "󰁼" :
-                     battery.percentage > 30 ? "󰁻" :
                      battery.percentage > 20 ? "󰁺" :
-                     battery.percentage > 10 ? "󰁹" : "󰂎")
+                     battery.percentage > 10 ? "󰂎" : "󰂎")
             }
             :tooltip "${battery.percentage}% - ${battery.status}"
         )
@@ -118,28 +110,36 @@
     )
 )
 
-(defwidget powermenu []
+(defwidget noti-button []
   (eventbox
-    :onclick "sh ~/.config/eww/scripts/togglePowermenu"
+    :onclick "sh ~/.config/eww/scripts/toggleCalender"
     :cursor "pointer"
     (box :class "powerButton"
       (label
-        :text " 󰐥 "
+        :text " 󰂚 "
       )
     )
   )
 )
 
 
-(defwidget notificationcenter []
+(defwidget time []
   (eventbox
-    :onclick "sh ~/.config/eww/scripts/toggleControlCenter"
     :cursor "pointer"
     (box
       :class ""
       (clock)
     )
   )
+)
+
+(defwidget tray []
+	(systray
+		:spacing 8
+		:orientation "h"
+		:icon-size 12
+		:prepend-new true
+	)
 )
 
 
@@ -171,6 +171,7 @@
     :orientation "h"
     :space-evenly false
     (workspaces)
+
   )
 )
 
@@ -182,13 +183,15 @@
     :spacing 10
     :halign "end"
     :valign "center"
+    (tray)
+    (seperator)
     (battery)
     (brightness)
     (speakers)
     (seperator)
-    (notificationcenter)
+    (time)
     (seperator)
-    (powermenu)
+    (noti-button)
   )
 )
 

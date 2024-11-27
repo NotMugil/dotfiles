@@ -1,7 +1,7 @@
 @import "widgets/workspaces";
 
 * {
-    font-size: 9pt;
+    font-size: 8pt;
     font-family: "SpaceMono Nerd Font";
 }
 
@@ -22,7 +22,7 @@
 
 .seperator {
     color: $text-dim;
-    margin: 0px 2px;
+    margin: 0px 1px;
 }
 
 .ccButton,
@@ -31,7 +31,7 @@
 }
 
 .icon {
-    padding: 0px 4px;
+    padding: 0px 2px;
     color: $blue;
     background-color: $bg;
 }
@@ -41,13 +41,13 @@
 }
 
 .icon-brightness {
-    padding: 0px 4px;
+    padding: 0px 2px;
     color: $red;
     background-color: $bg;
 }
 
 .icon-battery {
-    padding: 0px 4px;
+    padding: 0px 2px;
     color: $violet;
     background-color: $bg;
 }

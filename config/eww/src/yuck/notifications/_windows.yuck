@@ -1,11 +1,11 @@
-(defwindow notification 
-	:monitor 0 
+(defwindow notification
+	:monitor 0
 	:focusable false
 	:stacking "fg"
-  	:geometry (geometry :x "0" 
-			    :y "0" 
-			    :height "100" 
-			    :width "300" 
+  	:geometry (geometry :x "10px"
+			    :y "10px"
+			    :height "50%"
+			    :width "300"
 			    :anchor "top right"
 		)
   	(notification)

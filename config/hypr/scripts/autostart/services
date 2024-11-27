@@ -16,7 +16,11 @@ eww open bar &
 swaync &
 
 # Bluetooth Manager
-blueman-manager
+blueman-manager &
+blueman-applet &
+
+# Network Manager Applet
+nm-applet &
 
 # OSD Window
 swayosd-server &

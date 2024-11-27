@@ -1,22 +1,22 @@
 ;; calendar widgets
 
 (defwidget cal []
-  (box 
-	:class "cal-container" 
-	:width "350" 
-	:orientation "v" 
-	:space-evenly "false" 
+  (box
+	:class "cal-container"
+	:width "350"
+	:orientation "v"
+	:space-evenly "false"
 	:halign "center"
-    	(label 
-		:class "cal-date" 
+    	(label
+		:class "cal-date"
 		:text "${day}, ${month} ${calendarDay}, ${calendarYear}"
 	)
-    	(calendar 
-		:class "cal-cal" 
-		:day "${calendarDay}" 
-		:month "${calendarMonth}" 
-		:year "${calendarYear}" 
-		:show-day-names "true" 
+    	(calendar
+		:class "cal-cal"
+		:day "${calendarDay}"
+		:month "${calendarMonth}"
+		:year "${calendarYear}"
+		:show-day-names "true"
 	)
     )
 )
@@ -24,64 +24,64 @@
 ;; notification widgets
 
 (defwidget notification-card [?class summary body image ?SL ?M ?L ?R application]
-  (eventbox 
-	:onmiddleclick M 
-	:onclick L 
-	:onrightclick R 
+  (eventbox
+	:onmiddleclick M
+	:onclick L
+	:onrightclick R
 	:class "notification-card-eventbox"
-    	(box 
-		:space-evenly "false" 
+    	(box
+		:space-evenly "false"
 		:orientation "v"
-      		(box 
-			:space-evenly "true" 
-			:orientation "h" 
+      		(box
+			:space-evenly "true"
+			:orientation "h"
 			:class "notification-card-header-box"
-        		(label 
-				:class "notification-app-name" 
-				:text "${application}" 
-				:halign "start"	
+        		(label
+				:class "notification-app-name"
+				:text "${application}"
+				:halign "start"
 			)
-        		(button 
-				:onclick "scripts/logger.zsh rm_id ${SL}" 
-				:class "notification-card-notify-close" 
+        		(button
+				:onclick "scripts/logger.zsh rm_id ${SL}"
+				:class "notification-card-notify-close"
 				:halign "end"
-          			(label 
-					:text "󰅖" 
+          			(label
+					:text "󰅖"
 					:tooltip "Remove this notification."
 				)
 			)
 		)
-      	(box 
-		:space-evenly "false" 
-		:orientation "h" 
+      	(box
+		:space-evenly "false"
+		:orientation "h"
 		:class "notification-card-box"
-        	(image 
-			:image-width "75" 
-			:image-height "75" 
-			:class "notification-image" 
+        	(image
+			:image-width "75"
+			:image-height "75"
+			:class "notification-image"
 			:path "${image}"
 		)
-        (box 
+        (box
 		:class class
-		:orientation "vertical" 
-		:space-evenly false 
-		:hexpand true 
-		:class "notification-card-body"
-            (box 	
+		:orientation "vertical"
 		:space-evenly false
-            	(label 
-			:limit-width 25 
-			:wrap true :text 
-			summary :class "notification-summary" 
-			:halign "start" 
+		:hexpand true
+		:class "notification-card-body"
+            (box
+		:space-evenly false
+            	(label
+			:limit-width 25
+			:wrap true :text
+			summary :class "notification-summary"
+			:halign "start"
 			:hexpand true
 		)
 	    )
-	(label 
-		:limit-width 20 
-		:wrap true 
-		:text body 
-		:halign "start" 
+	(label
+		:limit-width 20
+		:wrap true
+		:text body
+		:halign "start"
 		:class "notification-body"
 	)
     )
@@ -91,17 +91,17 @@
 )
 
 (defwidget notifs-box[]
-  (box 
-	:orientation "v" 
-	:space-evenly "false" 
-	:class "notification-layout-box" 
-	:width "350" 
+  (box
+	:orientation "v"
+	:space-evenly "false"
+	:class "notification-layout-box"
+	:width "350"
 	:halign "center"
-    (box 
-	:space-evenly "true" 
+    (box
+	:space-evenly "true"
 	:class "notification-headers"
-      (label 
-	:text "Notifications" 
+      (label
+	:text "Notifications"
 	:class "notification-headers-label"
 	)
      )
@@ -110,12 +110,12 @@
 	:content notificationsCards
 	:class "notification-literal"
        )
-      (button 
-	:valign "end" 
-	:halign "end" 
-	:tooltip "Clear Notifications" 
-	:onclick "scripts/logger.zsh clear" 
-	:class "notification-headers-clear" "" 
+      (button
+	:valign "end"
+	:halign "end"
+	:tooltip "Clear Notifications"
+	:onclick "scripts/logger.zsh clear"
+	:class "notification-headers-clear" ""
 	)
       )
   )
@@ -129,6 +129,5 @@
 			:orientation "v"
 			:space-evenly "true"
 			(notifs-box)
-			(cal)
         )
 )
