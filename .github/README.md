@@ -2,53 +2,41 @@
   <h1>notmugil's dotfiles</h1>
   <p>
     <a href="https://github.com/NotMugil/dotfiles/stargazers"><img src="https://img.shields.io/github/stars/NotMugil/dotfiles?style=for-the-badge&logo=starship&color=b4befe&logoColor=b4befe&labelColor=302D41" alt="stars"><a>
-    <a href="https://github.com/NotMugil/dotfiles?tab=GPL-3.0-1-ov-file"><img alt="GitHub commit activity" src="https://img.shields.io/github/commit-activity/m/NotMugil/dotfiles?style=for-the-badge&logo=github&logoColor=f9e2af&label=Commit Activity&labelColor=302D41&color=f9e2af"></a> 
+    <a href="https://github.com/NotMugil/dotfiles?tab=GPL-3.0-1-ov-file"><img alt="GitHub commit activity" src="https://img.shields.io/github/commit-activity/m/NotMugil/dotfiles?style=for-the-badge&logo=github&logoColor=f9e2af&label=Commit Activity&labelColor=302D41&color=f9e2af"></a>
     <a href="https://github.com/NotMugil/dotfiles?tab=GPL-3.0-1-ov-file"><img src="https://img.shields.io/github/license/NotMugil/dotfiles?style=for-the-badge&logo=&color=eba0ac&logoColor=eba0ac&labelColor=302D41" alt="LICENSE"></a>
 </a>
   </p>
-  
+
 </div>
 
 ![showcase](./assets/showcase.png)
 
-> [!IMPORTANT]  
+> [!IMPORTANT]
 > The installation instructions for this dotfiles repository have been moved to a dedicated documentation site. For detailed information on installation and setup, please visit this [site](https://notmugil-dotfiles.vercel.app/).
 
 <details>
 <summary>
-	
+
 #### more previews
 </summary>
 
 |  **Lockscreen**                                          |
 | -------------------------------------------------------- |
-| ![gallery-1](./assets/gallery-01.png)              |
+| ![lockscreen](./assets/gallery-01.png)              |
 
 | **Neofetch & Thunar**                                    |
 | -------------------------------------------------------- |
-| ![gallery-5](./assets/gallery-05.png)              |
-
-| **Wlogout logout menu**   			           |
-| -------------------------------------------------------- |
-| ![gallery-9](./assets/gallery-09.png)              |
-
-| **Rofi Application Launcher**                            |
-| -------------------------------------------------------- |
-| ![gallery-13](./assets/gallery-13.png)             |
-
-| **Wallpaper Selector**                                   |
-| -------------------------------------------------------- |
-| ![gallery-2](./assets/gallery-17.png)              |
+| ![workflow](./assets/gallery-05.png)              |
 
 | **Notification Center (SwayNC)**                         |
 | -------------------------------------------------------- |
-| ![gallery-6](./assets/gallery-21.png)              |
+| ![notification center](./assets/gallery-21.png)              |
 
 </details>
 
 #### Inspiration
 some of the cool people i took inspiration from for making my dotfiles. without them, this repo wouldn't exist.
-- [matt-ftw/dotfiles](https://github.com/Matt-ftw/dotfiles) 
+- [matt-ftw/dotfiles](https://github.com/Matt-ftw/dotfiles)
 - [gh0stzk/dotfiles](https://github.com/gh0stzk/dotfiles)
 - [isabelroses/dotfiles](https://github.com/isabelroses/dotfiles)
 - [axenide/dotfiles](https://github.com/axenide/dotfiles)
