@@ -1,0 +1,37 @@
+(defwidget wallpaper-item [path]
+  (eventbox
+    :onclick `~/.config/eww/scripts/wallpaper_selector.sh "${path}"`
+    :onrightclick `~/.config/eww/scripts/remove_wallpaper.sh "${path}"`
+    (box
+      :orientation "v"
+      :class "wallpaper-item"
+      (image
+        :path "${WALLPAPER_PATH}/${path}"
+        :image-width 300
+        :image-height 180
+      )
+      (label
+        :text path
+        :class "wallpaper-label"
+      )
+    )
+  )
+)
+
+(defwidget wallpaper-body []
+  (scroll
+    :hscroll "always"
+    :vscroll "never"
+    (box
+      :spacing 10
+      :class "wallpaper-container"
+      (for wallpaper in WALLPAPERS
+        (wallpaper-item :path wallpaper)
+      )
+    )
+  )
+)
+
+(defpoll WALLPAPERS
+  :interval "1s"
+  `~/.config/eww/scripts/wallpaper_selector.sh`)

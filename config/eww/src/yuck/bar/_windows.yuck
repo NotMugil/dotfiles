@@ -1,6 +1,7 @@
 
 (defwindow bar
-  :monitor 0
+  :monitor '["HDMI-A-1"]'
+  :namespace 'eww-bar'
   :geometry (geometry :x "0%"
                       :y "0px"
                       :width "100%"

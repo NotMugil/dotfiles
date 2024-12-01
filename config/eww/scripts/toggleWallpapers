@@ -1,0 +1,10 @@
+#!/bin/sh
+LOCK=/home/$USER/.config/eww/temp/wall.lock
+
+if [ -f "$LOCK" ]; then
+    rm -rf "$LOCK"
+    eww close wallpapers
+else
+    touch "$LOCK"
+    eww open wallpapers
+fi

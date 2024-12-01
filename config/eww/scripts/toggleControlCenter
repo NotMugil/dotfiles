@@ -5,7 +5,7 @@ eww=/home/$USER/.local/bin/eww
 if [ -f "$LOCK" ]; then
     rm -rf "$LOCK"
     $eww close notification
-else 
+else
     touch "$LOCK"
     $eww open notification
 fi

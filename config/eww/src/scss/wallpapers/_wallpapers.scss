@@ -1,0 +1,39 @@
+.wallpapers-window {
+    background-color: $bg;
+    border-radius: 12px;
+    padding: 20px;
+
+    .window-title {
+        font-size: 18px;
+        font-weight: bold;
+        color: #cdd6f4;
+        margin-bottom: 15px;
+    }
+
+    .wallpaper-container {
+        background-color: rgba(49, 50, 68, 0.5);
+        border-radius: 10px;
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+
+    .wallpaper-item {
+        background-color: rgba(69, 71, 90, 0.5);
+        border-radius: 8px;
+        padding: 5px;
+
+        image {
+            border-radius: 6px;
+        }
+
+        .wallpaper-label {
+            color: #cdd6f4;
+            font-size: 12px;
+            margin-top: 5px;
+        }
+    }
+}
+
+image {
+    border-radius: 6px;
+}

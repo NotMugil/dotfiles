@@ -1,7 +1,8 @@
-@import "./colors/matugen.scss";
 @import "./src/scss/bar/bar.scss";
 @import "./src/scss/notifications/notifications.scss";
 @import "./src/scss/powermenu/powermenu.scss";
+@import "./src/scss/wallpapers/wallpapers.scss";
+@import "./src/scss/variables";
 
 window {
     background-color: transparent;

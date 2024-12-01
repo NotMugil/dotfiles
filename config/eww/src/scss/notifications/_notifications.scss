@@ -8,7 +8,7 @@
 }
 
 .notification-headers-label {
-    color: $fg;
+    /* color: $fg; */
     border-radius: 6px;
     margin: 10px;
     font-size: 9pt;
@@ -21,8 +21,8 @@
 }
 
 .notification-card-header-box {
-    background-color: $mantle;
-    color: $fg;
+    /* background-color: $mantle; */
+    /* color: $fg; */
     border-radius: 10px 10px 0px 0px;
     margin-top: 5px;
     margin-left: 5px;
@@ -41,7 +41,7 @@
 }
 
 .notification-card-box {
-    background-color: $element-med;
+    /* background-color: $element-med; */
     border-radius: 0px 0px 10px 10px;
     margin-bottom: 5px;
     margin-left: 5px;
@@ -83,22 +83,22 @@
 }
 
 .cal-date {
-    color: $fg;
+    /* color: $fg; */
     font-size: 10pt;
     margin: 10px;
 }
 
 .cal-cal {
-    color: $fg;
+    /* color: $fg; */
     background-color: $bg;
 }
 
 .cal-cal:indeterminate {
-    color: $dim-fg;
+    /* color: $dim-fg; */
 }
 
 .cal-cal:selected {
-    background-color: $fg;
+    /* background-color: $fg; */
     color: $bg;
     border-radius: 6px;
 }

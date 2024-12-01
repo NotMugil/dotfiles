@@ -17,8 +17,10 @@
 ;;(include "./src/yuck/powermenu/_widgets.yuck")
 ;;(include "./src/yuck/powermenu/_windows.yuck")
 
-;; Volume Slider
+;; Wallpaper selector
+(include "./src/yuck/wallpapers/_widgets.yuck")
+(include "./src/yuck/wallpapers/_windows.yuck")
 
 ;; Screenshots
 
-;; 
+;;

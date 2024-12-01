@@ -1,0 +1,21 @@
+(defwindow wallpapers
+  :monitor 0
+  :namespace 'eww-wallselect'
+  :geometry (geometry
+    :width "100%"
+    :height "20%"
+    :anchor "top right"
+  )
+  :stacking "fg"
+  :exclusive false
+  (box
+    :orientation "v"
+    :spacing 15
+    :class "wallpapers-window"
+    (label
+      :text "WALLPAPERS"
+      :class "window-title"
+    )
+    (wallpaper-body)
+  )
+)
