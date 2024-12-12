@@ -1,0 +1,153 @@
+window {
+    font-size: 7pt;
+    font-family: "JetBrainsMono Nerd Font";
+    background-color: $bg;
+}
+
+.bar {
+    margin: 0 0.4rem;
+    border-radius: 0.25rem;
+}
+
+.center, .left, .right {
+    margin: 0.5rem 0.4rem;
+}
+
+.button {
+    font-size: 8pt;
+    background-color: transparent;
+}
+
+.menu {
+    margin: 0.4rem 0.25rem;
+    padding: 0.4rem 0.8rem;
+    background-color: $muted;
+    border-radius: 0.25rem;
+
+    :hover {
+        background-color: $hover;
+        border-radius: 0.25rem;
+    }
+}
+
+.workspaces {
+    margin: 0.4rem 0rem;
+    border-radius: 0.25rem;
+    background-color: $muted;
+}
+
+.workspace-entry {
+    border-radius: 0.25rem;
+}
+
+.workspace-entry.occupied {
+    color: $fg-muted;
+}
+
+.workspace-entry.empty {
+    color: $muted;
+}
+
+.workspace-entry.current {
+    font-weight: 600;
+    color: $fg;
+    background-color: $hover;
+}
+
+.workspace-number {
+    padding: 0rem 0.8rem;
+}
+
+.outline {
+    background-color: $bg;
+}
+
+tooltip {
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 7pt;
+    border: 2px solid $hover;
+    background-color: $bg;
+    border-radius: 0.25rem;
+}
+
+.mpdcover,
+.widget {
+    margin: 0.4rem 0.25rem;
+    border-radius: 0.25rem;
+}
+
+.widget {
+    margin: 0rem 1rem;
+}
+
+.picon {
+    margin: 0 0.2rem;
+}
+
+
+.tray {
+    margin: 0.4rem 0.25rem;
+    padding: 0rem 0.8rem;
+    border-radius: 0.25rem;
+    background-color: $muted;
+}
+
+.tray-box {
+    margin-right: 0.8rem;
+}
+
+.tray-button {
+    padding: 0rem 0.2rem;
+}
+
+.battery-top {
+    font-size: 7pt;
+    color: $fg-muted;
+}
+
+.battery-bar {
+    color: $hover;
+    font-weight: 900;
+    font-size: 6pt;
+    padding: 0 0.2rem;
+    margin: 0.1rem 0rem;
+    border: 1px solid $fg-muted;
+    border-radius: 0.25rem;
+}
+
+.battery {
+    padding-left: 0.4rem;
+}
+
+.cc-button {
+    font-size: 8pt;
+    margin: 0.25rem 0.4rem;
+}
+
+.controlcenter {
+    margin: 0.4rem 0.25rem;
+    padding: 0 0.4rem;
+    background-color: $muted;
+    border-radius: 0.25rem;
+
+    :hover {
+        background-color: $hover;
+        border-radius: 0.25rem;
+    }
+}
+
+.notification {
+    margin: 0.25rem 0.4rem;
+}
+
+.powerbutton {
+    color: $red;
+    margin: 0.25rem 0.4rem;
+}
+
+.controls {
+    margin: 0.4rem 0.25rem;
+    padding: 0 0.4rem;
+    background-color: $muted;
+    border-radius: 0.25rem;
+}

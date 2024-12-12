@@ -69,12 +69,10 @@
 }
 
 .floating-notifications.background .notification-row .notification-background {
-    box-shadow:
-        0 0 8px 0 rgba(0, 0, 0, 0.8),
-        inset 0 0 0 1px #c0a36e;
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.8);
     border-radius: 5px;
     margin: 18px;
-    background-color: #16161d;
+    background-color: #181825;
     color: #cad3f5;
     padding: 0;
 }

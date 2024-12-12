@@ -1,0 +1,23 @@
+(defwidget cal []
+  (box :class "outline"
+  (box :class "cal" :orientation "h"
+    (calendar
+      :class "cal-cal"
+	  :day "${calendarDay}"
+	  :month "${calendarMonth}"
+	  :year "${calendarYear}"
+	  :show-day-names "true")
+    (label :text "G"))))
+
+(defwindow calendar
+  :monitor 0
+  :namespace 'eww-cal'
+    :geometry (geometry :x "0%"
+                      :y "8px"
+                      :width "20%"
+                      :height "2%"
+                      :anchor "bottom center")
+  :stacking "fg"
+  :exclusive false
+  :focusable false
+  (cal))

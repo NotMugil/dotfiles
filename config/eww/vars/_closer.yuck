@@ -1,0 +1,17 @@
+(defwidget closer [window]
+  (eventbox :onclick "eww close ${window} && eww close ${window}-closer"))
+
+(defwindow powercenter-closer
+  :monitor 0
+  :geometry (geometry :x "0" :y "0" :width "100%" :height "100%" :anchor "top center")
+  :stacking "fg"
+  :focusable false
+  (closer :window "powercenter"))
+
+(defwindow player-closer
+  :monitor 0
+  :geometry (geometry :width "100%" :height "100%")2
+  :stacking "fg"
+  :focusable false
+  (closer :window "player")
+)

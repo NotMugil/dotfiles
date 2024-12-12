@@ -17,10 +17,10 @@ swaync &
 
 # Bluetooth Manager
 blueman-manager &
-blueman-applet &
+#blueman-applet &
 
 # Network Manager Applet
-nm-applet &
+#nm-applet &
 
 # OSD Window
 swayosd-server &

@@ -1,0 +1,30 @@
+.cal {
+    border: 2px solid $hover;
+}
+
+.cal-cal {
+    border: 0px;
+    font-size: 10pt;
+}
+
+.cal-cal {
+    font-size: 10pt;
+    padding: 0.5rem;
+    margin: 0.5rem;
+}
+
+.cal-cal {
+    background-color: $bg;
+}
+
+.cal-cal:indeterminate {
+    color: #505050;
+}
+
+.cal-cal:selected {
+    color: $fg;
+    padding: 0;
+    margin: 0;
+    background-color: $hover;
+    border-radius: 0.25rem;
+}

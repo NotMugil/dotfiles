@@ -1,0 +1,65 @@
+(defwidget playerbox []
+    (eventbox :onclick "./scripts/player.sh"
+        (overlay
+        (box :halign "fill"
+                :width 240
+                :class { pcover != "" ? "mpdcover" : "widget"}
+                :style "background-image: url('${pcover}');")
+
+        (box :halign "fill"
+                :width 140
+                :class { pcover != "" ? "mpdcover" : ""}
+                :style "background: ${pcover != '' ? 'linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.8))' : 'transparent'};")
+
+        (box :class "widget"
+                :orientation "h"
+                :space-evenly false
+                :spacing 5
+                :halign "start"
+                :valign "center"
+            (box :class ""
+                :orientation "v"
+                :halign "start"
+                :valign "center"
+            (label :class ""
+                    :text { pstatus == "Playing" ? "Now ${pstatus}" : "Paused" })
+            (label :class ""
+                    :text "${playerboxsong}"))
+
+            (eventbox :onclick "${EWW_CMD} update playerreveal=false"
+            (image :path { pcover == "" ? "./image/emptympd.png" : pcover }
+                    :image-width 30
+                    :image-height 30
+                    :style "padding: 0px 5px;"))
+
+            (button :onclick "playerctl play-pause"
+            (label :class "playerbox-icon"
+                    :text { pstatus == "Playing" ? "" : "" }))
+        )))
+    )
+
+(defvar player_show false)
+
+(defwindow player
+    :monitor 0
+    :namespace 'player'
+    :geometry (geometry
+        :x "16%"
+        :y "10px"
+        :width "20%"
+        :height "18%"
+        :anchor "bottom right")
+    :stacking "fg"
+    :exclusive false
+    :focusable true
+    (eventbox
+        :onhover "${EWW_CMD} update player_show=true"
+        :onhoverlost "${EWW_CMD} update player_show=false"
+        (revealer
+             :transition "slideright"
+             :reveal "${player_show}"
+             :duration "350ms"
+             (playerbox)
+        )
+    )
+)

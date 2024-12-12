@@ -1,9 +1,19 @@
-@import "./src/scss/bar/bar.scss";
-@import "./src/scss/notifications/notifications.scss";
-@import "./src/scss/powermenu/powermenu.scss";
-@import "./src/scss/wallpapers/wallpapers.scss";
-@import "./src/scss/variables";
+/* Import */
+@import "./vars/variables";
 
-window {
+/* Bar */
+@import "./bar/bar";
+
+/* Calendar */
+@import "./calendar/calendar";
+
+/* Player */
+@import "./player/player";
+
+/* Powermenu */
+@import "./powermenu/powermenu";
+
+* {
+    all: unset;
     background-color: transparent;
 }

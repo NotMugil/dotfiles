@@ -1,26 +1,18 @@
-;; Variables
-(include "./src/yuck/variables.yuck")
+;; Common
+(include "./vars/_variables.yuck")
+;;(include "./vars/_closer.yuck")
 
 ;; Bar
-(include "./src/yuck/bar/_widgets.yuck")
-(include "./src/yuck/bar/_windows.yuck")
+(include "./bar/widgets/_center.yuck")
+(include "./bar/widgets/_left.yuck")
+(include "./bar/widgets/_right.yuck")
+(include "./bar/_bar.yuck")
 
-;; Control Center
-;(include "./src/yuck/controlcenter/_widgets.yuck")
-;(include "./src/yuck/controlcenter/_windows.yuck")
+;; Calendar
+(include "./calendar/_calendar.yuck")
 
-;; Notification Center
-(include "./src/yuck/notifications/_widgets.yuck")
-(include "./src/yuck/notifications/_windows.yuck")
+;; Player
+(include "./player/_player.yuck")
 
-;; Power Menu
-;;(include "./src/yuck/powermenu/_widgets.yuck")
-;;(include "./src/yuck/powermenu/_windows.yuck")
-
-;; Wallpaper selector
-(include "./src/yuck/wallpapers/_widgets.yuck")
-(include "./src/yuck/wallpapers/_windows.yuck")
-
-;; Screenshots
-
-;;
+;; Powermenu
+(include "./powermenu/_powermenu.yuck")

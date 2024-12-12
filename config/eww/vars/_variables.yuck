@@ -1,0 +1,34 @@
+(defpoll battery :interval "2s" './scripts/battery.sh')
+(defpoll network :interval "2s" `./scripts/network.sh`)
+(defpoll bluetooth :interval "2s" `./scripts/bluetooth.sh`)
+(defpoll time :interval "60s" "date '+%B %d, %H:%M'")
+
+(deflisten workspaces :initial "[]" "bash ~/.config/eww/scripts/workspace.sh")
+(deflisten current_workspace :initial "1" "bash ~/.config/eww/scripts/active-workspace.sh")
+(deflisten window :initial "..." "sh ~/.config/eww/scripts/get-window-title")
+
+(defpoll day :interval "60s" "date '+%a'")
+(defpoll month :interval "60s" "date '+%b'")
+(defpoll calendarDay :interval "60s" "date '+%d'")
+(defpoll calendarMonth :interval "60s" "date '+%m'")
+(defpoll calendarYear :interval "60s" "date '+%Y'")
+(defpoll hr	:interval "10s"	"date '+%H'")
+(defpoll min	:interval "2s"	"date '+%M'")
+(defvar revealTime false)
+
+;; playerctl
+(deflisten psong "playerctl metadata --format '{{ title }}' -F")
+(deflisten partist "playerctl metadata --format '{{ artist }}' -F")
+(deflisten pcover "./scripts/pollcover.sh")
+(deflisten pstatus "playerctl status -F")
+(deflisten ptime
+  :initial '{
+    "position": 0,
+    "duration": 0,
+    "readable": "0:00"
+  }'
+  "playerctl -F metadata -f '{ \"position\": {{position/1000000}}, \"duration\": {{mpris:length/1000000}}, \"readable\": \"{{duration(position)}}/{{duration(mpris:length)}}\" }'")
+
+(defvar reveal3 false)
+
+(deflisten playerboxsong "./scripts/pollsong.sh")

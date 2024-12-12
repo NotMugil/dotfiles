@@ -1,0 +1,184 @@
+(defwidget time []
+    (time)
+)
+
+(defwidget clock []
+    (box
+        :class "clock"
+        :orientation "h"
+        :space-evenly true
+        :halign "end"
+        :valign "center"
+        (time)
+        (date)
+    )
+)
+
+(defwidget playerctl []
+    (overlay
+        (eventbox :onclick "${EWW_CMD} update player_show=true"
+            (box
+                :halign "fill"
+                :width 140
+                :class { pcover != "" ? "mpdcover" : "widget"}
+                :style "background-image: url('${pcover}');"
+            )
+        )
+
+        (box
+            :halign "fill"
+            :width 140
+            :class { pcover != "" ? "mpdcover" : ""}
+            :style "background: ${pcover != '' ? 'linear-gradient(to right, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7))' : 'transparent'};"
+        )
+
+        (box
+            :class "widget"
+            :orientation "h"
+            :space-evenly false
+            :spacing 5
+            :halign "end"
+            :valign "center"
+            (eventbox	
+                :onclick "${EWW_CMD} update reveal1=false reveal2=false reveal3=${!reveal3}"
+                (image :path { pcover == "" ? "./image/emptympd.png" : pcover } :image-width 30 :image-height 30 :style "padding: 0px 5px;"))
+                (button :onclick "playerctl previous" (label :class "picon" :text "󰒮"))
+                (button :onclick "playerctl play-pause" (label :class "picon" :text  { pstatus == "Playing" ? "" : "" }))
+                (button :onclick "playerctl next" (label :class "picon" :text "󰒭"))
+            )
+    )
+)
+
+(defvar tray "true")
+
+(defwidget tray []
+    (box
+        :class "tray"
+        :space-evenly false
+        (revealer :reveal tray :transition "slideleft" :duration "300ms"
+            (systray :class "tray-box" :spacing 12 :orientation "h" :icon-size 14 :prepend-new true)
+        )
+        (button
+            :onclick "eww update tray=$([ \"$(eww get tray)\" = \"true\" ] && echo false || echo true)"
+            :class "tray-button"
+            (label :text "")
+        )
+    )
+)
+
+(defwidget battery-bar []
+    (box
+        :class "battery-bar"
+        :style "background-color: ${battery.color};"
+        :tooltip "Battery: ${battery.percentage}% (${battery.status})"
+        (label :text "${battery.percentage} ${battery.icon}")
+    )
+)
+
+(defwidget battery []
+    (box
+        :class "cc-button battery"
+        :orientation "h"
+        :space-evenly false
+        (battery-bar)
+        (label :text  "|" :class "battery-top")
+    )
+)
+
+(defwidget network []
+    (eventbox
+        :onrightclick "nmtui"
+        :cursor "pointer"
+        (button
+            :onclick ""
+            :class "cc-button"
+            :tooltip "${network.status} - ${network.name}"
+            (label :text "${network.icon}")
+        )
+    )
+)
+
+(defwidget bluetooth []
+    (box
+        :class ""
+        :style "color: ${bluetooth.color};"
+        (button
+            :onclick ""
+            :class "cc-button"
+            :tooltip "Status: ${bluetooth.status}, Devices: ${bluetooth.devices}"
+            (label :text "${bluetooth.icon}")
+        )
+    )
+)
+
+(defwidget controlcenter []
+    (eventbox
+        :onclick ""
+        :cursor "pointer"
+        (button
+            :onclick ""
+            :class ""
+            (box
+                :class "controlcenter"
+                :orientation "h"
+                :space-evenly false
+                :halign "end"
+                :valign "center"
+                (bluetooth)
+                (network)
+                (battery)
+            )
+        )
+    )
+)
+
+(defwidget notification []
+    (eventbox
+        :onclick ""
+        :cursor "pointer"
+            (button
+                :onclick ""
+                :class "button notification"
+                (label :text "󰂜")
+            )
+    )
+)
+
+(defwidget powerbutton []
+    (eventbox
+        :onclick "./scripts/powermenu.sh"
+        :cursor "pointer"
+            (button
+                :onclick ""
+                :class "button powerbutton"
+                (label :text "󰐥")
+            )
+    )
+)
+
+(defwidget controls []
+    (box
+        :class "controls"
+        :orientation "h"
+        :space-evenly true
+        :halign "end"
+        :valign "center"
+        (notification)
+        (powerbutton)
+    )
+)
+
+(defwidget right []
+    (box
+        :class ""
+        :orientation "h"
+        :space-evenly false
+        :spacing 1
+        :halign "end"
+        :valign "center"
+        (playerctl)
+        (tray)
+        (controlcenter)
+        (controls)
+    )
+)

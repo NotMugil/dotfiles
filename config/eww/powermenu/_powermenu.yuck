@@ -1,0 +1,24 @@
+(defwidget poweroptions []
+    (box :class "powermenu-container" :orientation "v" :space-evenly true
+    (button :class "lock power-button" :onclick "~/.config/hypr/scripts/hyprlock.sh" "")
+    (button :class "logout power-button" :onclick "hyprctl dispatch exit" "")
+    (button :class "suspend power-button" :onclick "systemctl suspend" "")
+    (button :class "restart power-button" :onclick "reboot" "")
+    (button :class "shutdown power-button" :onclick "shutdown -h now" "")
+    )
+)
+
+(defwindow powercenter
+    :monitor 0
+    :namespace 'powercenter'
+    :geometry (geometry
+        :x "6"
+        :y "10px"
+        :width "2%"
+        :height "18%"
+        :anchor "bottom right")
+    :stacking "fg"
+    :exclusive false
+    :focusable false
+    (poweroptions)
+)

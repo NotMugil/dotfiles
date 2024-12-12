@@ -1,0 +1,17 @@
+* {
+    all: unset;
+}
+
+.powermenu-container {
+    background-color: $bg;
+    /* border-radius: 0.25rem; */
+}
+
+.power-button {
+    padding: 1rem;
+}
+
+.power-button:hover {
+    /* border-radius: 0.25rem; */
+    background-color: $hover;
+}
