@@ -51,7 +51,7 @@
         :anchor "bottom right")
     :stacking "fg"
     :exclusive false
-    :focusable true
+    :focusable false
     (eventbox
         :onhover "${EWW_CMD} update player_show=true"
         :onhoverlost "${EWW_CMD} update player_show=false"

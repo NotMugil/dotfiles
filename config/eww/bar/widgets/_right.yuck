@@ -16,7 +16,7 @@
 
 (defwidget playerctl []
     (overlay
-        (eventbox :onclick "${EWW_CMD} update player_show=true"
+        (eventbox :onclick "${EWW_CMD} open player"
             (box
                 :halign "fill"
                 :width 140
@@ -39,7 +39,7 @@
             :spacing 5
             :halign "end"
             :valign "center"
-            (eventbox	
+            (eventbox
                 :onclick "${EWW_CMD} update reveal1=false reveal2=false reveal3=${!reveal3}"
                 (image :path { pcover == "" ? "./image/emptympd.png" : pcover } :image-width 30 :image-height 30 :style "padding: 0px 5px;"))
                 (button :onclick "playerctl previous" (label :class "picon" :text "󰒮"))

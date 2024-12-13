@@ -33,7 +33,7 @@ rofiCommand="rofi -show -dmenu -theme ${themesDir}/wallpaper.rasi"
 executeCommand() {
 
   if command -v swww &>/dev/null; then
-    swww img "$1" ${SWWW_PARAMS} && notify-send "Wallpaper Changed" -i "$1" --app-name=Wallpaper
+    swww img "$1" ${SWWW_PARAMS} && notify-send "Wallpaper Changed" -i "$1" --app-name=Wallpaper -u low -t 3000
 
   elif command -v swaybg &>/dev/null; then
     swaybg -i "$1" &

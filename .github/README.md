@@ -9,7 +9,7 @@
 
 </div>
 
-![showcase](./assets/showcase.png)
+![showcase](./assets/gallery-01.png)
 
 > [!IMPORTANT]
 > The installation instructions for this dotfiles repository have been moved to a dedicated documentation site. For detailed information on installation and setup, please visit this [site](https://notmugil-dotfiles.vercel.app/).
@@ -22,15 +22,23 @@
 
 |  **Lockscreen**                                          |
 | -------------------------------------------------------- |
-| ![lockscreen](./assets/gallery-01.png)              |
+| ![lockscreen](./assets/gallery-02.png)              |
 
-| **Neofetch & Thunar**                                    |
+| **File Manager**                                    |
 | -------------------------------------------------------- |
-| ![workflow](./assets/gallery-05.png)              |
+| ![workflow](./assets/gallery-03.png)              |
 
 | **Notification Center (SwayNC)**                         |
 | -------------------------------------------------------- |
-| ![notification center](./assets/gallery-21.png)              |
+| ![notification center](./assets/gallery-04.png)              |
+
+| **Vencord**                         |
+| -------------------------------------------------------- |
+| ![vencord discord client](./assets/gallery-05.png)              |
+
+| **Zed**                         |
+| -------------------------------------------------------- |
+| ![notification center](./assets/gallery-06.png)              |
 
 </details>
 
