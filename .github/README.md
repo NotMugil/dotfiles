@@ -14,7 +14,7 @@
 > [!IMPORTANT]
 > The installation instructions for this dotfiles repository have been moved to a dedicated documentation site. For detailed information on installation and setup, please visit this [site](https://notmugil-dotfiles.vercel.app/).
 
-<details>
+<details open>
 <summary>
 
 #### more previews
