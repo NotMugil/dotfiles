@@ -11,6 +11,11 @@
 
 ![showcase](./assets/gallery-01.png)
 
+> [!CAUTION]
+> This repository's **main** branch is experimental and will have frequent commits that may introduce breaking changes.
+>
+> If you prefer a stable version, please check out the **stable** branch.
+
 > [!IMPORTANT]
 > The installation instructions for this dotfiles repository have been moved to a dedicated documentation site. For detailed information on installation and setup, please visit this [site](https://notmugil-dotfiles.vercel.app/).
 
