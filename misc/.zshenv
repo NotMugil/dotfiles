@@ -1,3 +1,3 @@
-export ZDOTDIR=~/.config/zsh
+export ZDOTDIR=$HOME/.config/zsh
 
-. "/home/rei/.local/share/cargo/env"
+. "$HOME/.cargo/env"

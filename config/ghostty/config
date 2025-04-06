@@ -1,0 +1,7 @@
+theme = rose-pine-moon
+
+font-family = SpaceMonoNerdFont
+font-size = 10
+window-decoration = none
+window-padding-x = 15
+window-padding-y = 15

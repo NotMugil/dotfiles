@@ -27,7 +27,7 @@ export PATH=${PATH}:~/.local/scripts:~/.local/bin:~/.local/share/cargo/bin
 export PATH=$PATH:/home/$USER/.spicetify
 
 # Set sudo password prompt
-export SUDO_PROMPT='[] Enter Password: '
+# export SUDO_PROMPT='[] Enter Password: '
 
 # Set default editor
 export EDITOR='nvim'
@@ -36,7 +36,7 @@ export EDITOR='nvim'
 export LANG=en_US.UTF-8
 
 # Set default file manager
-export fileManager='thunar'
+export fileManager='nautilus'
 
 export RUST_BACKTRACE=1
 
