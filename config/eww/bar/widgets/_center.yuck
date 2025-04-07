@@ -1,3 +1,0 @@
-(defwidget center []
-  (eventbox :onclick "./scripts/calendar.sh" :cursor "pointer"
-    (label :text "${time}" :class "center")))
