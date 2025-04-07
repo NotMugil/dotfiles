@@ -1,7 +1,7 @@
-theme = rose-pine-moon
+theme = evergarden.yml
 
 font-family = SpaceMonoNerdFont
 font-size = 10
-window-decoration = none
+window-decoration = client
 window-padding-x = 15
 window-padding-y = 15

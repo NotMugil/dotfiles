@@ -155,7 +155,7 @@ layout {
         // - CSS-like notation: "rgb(255, 127, 0)", rgba(), hsl() and a few others.
 
         // Color of the ring on the active monitor.
-        active-color "#ebbcba"
+        active-color "#a1cfad"
 
         // Color of the ring on inactive monitors.
         inactive-color "#505050"
@@ -183,7 +183,7 @@ layout {
         // off
 
         width 1
-        active-color "#eb6f92"
+        active-color "#a1cfad"
         inactive-color "#6e6a86"
 
         // active-gradient from="#ffbb66" to="#ffc880" angle=45 relative-to="workspace-view"
@@ -297,7 +297,7 @@ window-rule {
 
 window-rule {
     match is-active=false
-    opacity 0.94
+    opacity 1.0
 }
 
 binds {

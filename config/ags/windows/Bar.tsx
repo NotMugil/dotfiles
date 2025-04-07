@@ -4,7 +4,7 @@ import Time from "../widgets/Time";
 import BatteryLevel from "../widgets/BatteryLevel";
 import Wifi from "../widgets/Network";
 import Workspaces from "../widgets/Workspaces";
-import Dock from "../widgets/Dock";
+import Systray from "../widgets/Systray";
 
 const time = Variable("").poll(1000, "date");
 
@@ -27,7 +27,7 @@ export function Bar(gdkmonitor: Gdk.Monitor) {
         </box>
         <box className="center"></box>
         <box className="right" hexpand halign={Gtk.Align.END}>
-          <SysSettings />
+          <Systray />
           <Wifi />
           <BatteryLevel />
           <Time />

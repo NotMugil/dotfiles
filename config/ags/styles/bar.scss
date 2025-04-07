@@ -1,18 +1,11 @@
-// https://gitlab.gnome.org/GNOME/gtk/-/blob/gtk-3-24/gtk/theme/Adwaita/_colors-public.scss
-$fg-color: #ffffff;
-$bg-color: #191724;
-$button-color: #1f1d2e;
-$hover-color: #26233a;
-$muted-color: #6e6a86;
-
-$radius: 7px;
+@use "./colors" as *;
 
 window.Bar {
     border: none;
     box-shadow: none;
     font-size: 0.8rem;
     background: transparent;
-    color: $fg-color;
+    color: $text;
     font-family: "Departure Mono";
     font-weight: bold;
 
@@ -20,35 +13,35 @@ window.Bar {
     }
 
     > centerbox {
-        background: $bg-color;
+        background: $mantle;
         padding: 4px;
     }
 
     button {
         all: unset;
         padding: 4px 8px;
-        color: $fg-color;
-        background: $button-color;
+        color: $text;
+        background: $base;
         border: 0;
         border-radius: 4px;
         margin: 0px;
 
         &:hover {
-            background: $hover-color;
+            background: $surface0;
         }
 
         &:active {
-            background: $button-color;
+            background: $base;
         }
     }
 
     .WorkspacesBox {
         border-radius: 4px;
-        background: $button-color;
+        background: $base;
     }
 
     .workspace-active-button {
-        background: $hover-color;
+        background: $surface0;
     }
 
     .right {
@@ -67,19 +60,19 @@ window.DockWindow {
         all: unset;
         padding: 8px;
         border-radius: 4px;
-        background: $button-color;
+        background: $mantle;
 
         &:hover {
-            background: $hover-color;
+            background: $surface0;
         }
 
         &:active {
-            background: $button-color;
+            background: $mantle;
         }
     }
 
     .Dock {
-        background: $button-color;
+        background: $mantle;
         padding: 4px;
         margin: 0px 0px 4px 0px;
         border-radius: 4px;
@@ -90,6 +83,6 @@ window.DockWindow {
     }
 
     .dock-active-button {
-        background: $hover-color;
+        background: $surface0;
     }
 }
