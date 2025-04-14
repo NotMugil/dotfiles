@@ -1,0 +1,33 @@
+@use "./colors" as *;
+
+$fg-color: $text;
+$bg-color: $mantle;
+
+window.OSD {
+    box.OSD {
+        /* border-radius: 100px; */
+        background-color: $bg-color;
+        padding: 13px 16px;
+        margin: 13px;
+        box-shadow: 3px 3px 7px 0 rgba(0, 0, 0, 0.4);
+    }
+
+    icon {
+        font-size: 1rem;
+    }
+
+    label {
+        font-size: 1rem;
+    }
+
+    levelbar {
+        trough {
+            margin: 1 0.6rem;
+        }
+
+        block {
+            border-radius: 1rem;
+            min-height: 0.4rem;
+        }
+    }
+}
