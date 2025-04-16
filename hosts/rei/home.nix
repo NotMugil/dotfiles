@@ -1,14 +1,23 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   home.username = "rei";
   home.homeDirectory = "/home/rei";
 
   home.stateVersion = "24.11";
+
+  imports = [
+    ../../modules/home-manager/gnome.nix
+  ];
   
   home.packages = with pkgs; [
      hello
-    # zed-editor
+     firefox
+     qbittorrent
+     zed-editor
+     gnome-tweaks
+     ghostty
+     marble-shell-theme
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
