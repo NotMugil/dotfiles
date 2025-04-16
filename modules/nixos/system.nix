@@ -14,6 +14,7 @@
     wget
     git
     zsh
+    gnumake
     home-manager
   ];
 
