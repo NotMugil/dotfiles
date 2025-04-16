@@ -1,27 +1,33 @@
 {
-  description = "Nixos config flake";
+  description = "NotMugil's dotfiles flake";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
     home-manager = {
-      url = "github:nix-community/home-manager";
+      type = "github";
+      owner = "nix-community";
+      repo = "home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
   outputs = { self, nixpkgs, ... }@inputs:
-    let 
-      system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.${system};
-    in 
     { 
-	nixosConfigurations.rei = nixpkgs.lib.nixosSystem {
-             specialArgs = {inherit inputs;};
-             modules = [
-		./hosts/rei/configuration.nix
-		inputs.home-manager.nixosModules.default
-             ];
-          };
+	nixosConfigurations = { 
+	  rei = let 
+            system = "x86_64-linux";
+            username = "rei";
+            specialArgs = {inherit username;};
+            pkgs = nixpkgs.legacyPackages.${system};
+          in
+	   nixpkgs.lib.nixosSystem {
+              specialArgs = {inherit username inputs;};
+              modules = [
+	 	 ./hosts/${username}/configuration.nix
+		 inputs.home-manager.nixosModules.default
+              ];
+           };
+         };
     };
 }
