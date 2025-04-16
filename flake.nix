@@ -12,7 +12,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, ... }@inputs:
     { 
 	nixosConfigurations = { 
 	  rei = let 
@@ -25,7 +25,13 @@
               specialArgs = {inherit username inputs;};
               modules = [
 	 	 ./hosts/${username}/configuration.nix
-		 inputs.home-manager.nixosModules.default
+
+		 home-manager.nixosModules.home-manager {
+		   home-manager.useGlobalPkgs = true;
+                   home-manager.useUserPackages = true;
+		   home-manager.extraSpecialArgs = inputs // specialArgs;
+ 		   home-manager.users.${username} = import ./hosts/${username}/home.nix;
+		 }
               ];
            };
          };

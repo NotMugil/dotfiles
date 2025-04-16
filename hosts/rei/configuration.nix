@@ -7,13 +7,6 @@
     ../../modules/nixos
   ];
 
-  home-manager = {
-    extraSpecialArgs = {inherit inputs;};
-    users = {
-      "rei" = import ./home.nix;
-    };
-  };
-
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
