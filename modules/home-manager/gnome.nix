@@ -1,11 +1,18 @@
 { username, pkgs, ... }: 
 
-{
+rec {
   home.packages = with pkgs.gnomeExtensions; [
     appindicator
     blur-my-shell
+    bluetooth-quick-connect
+    caffeine
+    coverflow-alt-tab
+    date-menu-formatter
+    panel-corners
+    pano
+    rounded-window-corners-reborn
     user-themes
-    window-title-is-back
+    # window-title-is-back
     dash-to-panel
   ];
   
@@ -13,12 +20,8 @@
     "org/gnome/shell" = {
       disable-user-extensions = false;
       disabled-extensions = "disabled";
-      enabled-extensions = with pkgs.gnomeExtensions; [
-        blur-my-shell.extensionUuid
-	user-themes.extensionUuid
-        dash-to-panel.extensionUuid
-	appindicator.extensionUuid
-      ];
+      enabled-extensions = (map (extension: extension.extensionUuid) home.packages) ++ [];
+      favorite-apps = ["firefox.desktop" "org.gnome.Console.desktop" "youtube-music.desktop" "org.gnome.Nautilus.desktop" ];
     };
 
     # Keybindings
@@ -64,7 +67,7 @@
       appicon-margin = 2;
       show-tooltip = false;
       dot-style-unfocused = "DOTS";
-      dot-style-focused = "SOLID";
+      dot-style-focused = "DOTS";
       trans-use-custom-opacity = true;
       trans-panel-opacity = "0.15";
       panel-sizes = "{ \"BOE-0x00000000\": 32 }";

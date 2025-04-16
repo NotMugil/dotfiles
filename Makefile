@@ -4,6 +4,10 @@ USER ?= rei
 switch:
 	sudo nixos-rebuild switch --flake .#$(USER)
 
+.PHONY: update
+update:
+	sudo nixos-rebuild switch --upgrade --flake .#$(USER)
+
 .PHONY: gc
 gc:
 	nix-collect-garbage --delete-older-than 3d
