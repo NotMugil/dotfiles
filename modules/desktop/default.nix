@@ -1,9 +1,7 @@
 { lib, ... }:
 
 {
-  import = [
-   # ./my-module.nix
+  imports = [
     ./gnome.nix
   ];
-
 }

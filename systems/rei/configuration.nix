@@ -1,10 +1,10 @@
-{ config, pkgs, inputs, username, ... }:
+{ config, pkgs, username, inputs, ... }:
 
 {
   imports = [
+    ./hardware.nix
+    ../../modules
     inputs.home-manager.nixosModules.default
-    ./hardware-configuration.nix
-    ../../modules/nixos
   ];
 
   # Bootloader.
