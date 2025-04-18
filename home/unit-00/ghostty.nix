@@ -1,9 +1,10 @@
 { config, lib, pkgs, ... }:
 
 {
-  programs.ghostty.enable = true;
-
   programs.ghostty = {
+    enable = true;
+    enableZshIntegration = true;
+    
     settings = {
       theme = "Everblush";
       font-size = 11;

@@ -3,8 +3,12 @@
 {
   environment.systemPackages = with pkgs; [
     wget
-    git
     zsh
+    oh-my-zsh
+    zsh-syntax-highlighting
+    eza
+    zsh-autosuggestions
+    git
     gnumake
     home-manager
     adw-gtk3
