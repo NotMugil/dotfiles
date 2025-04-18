@@ -1,15 +1,14 @@
-
-{ config, lib, ... }:
+{ username, lib, ... }:
 
 {
-  home.username = "shinji";
-  home.homeDirectory = "/home/shinji";
+  home.username = "${username}";
+  home.homeDirectory = "/home/${username}";
 
   home.stateVersion = "24.11";
 
   programs.home-manager.enable = true;
 
   imports = [
-    ../../home/shinji
+    ../../home/unit-01
   ];
 }

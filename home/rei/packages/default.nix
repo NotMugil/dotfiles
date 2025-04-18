@@ -1,9 +1,0 @@
-{ ... }:
-
-{
-  imports = [
-    ./gui
-
-    ./packages.nix
-  ];
-}

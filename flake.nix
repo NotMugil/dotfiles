@@ -29,7 +29,7 @@
             home-manager.nixosModules.home-manager {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
-              home-manager.extraSpecialArgs = inputs // specialArgs;
+              home-manager.extraSpecialArgs = { inherit inputs; username = "rei"; };
               home-manager.users.${username} = import ./systems/${username}/home.nix;
             }
           ];

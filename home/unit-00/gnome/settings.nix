@@ -2,6 +2,7 @@
 
 {
   dconf.settings = {
+
     # GNOME tweaks appearence
     "org/gnome/desktop/interface" = {
       icon-theme = "Adwaita";
@@ -11,8 +12,14 @@
     };
 
     # GNOME shell theme
-    "org/gnome/shell/extensions/user-theme" = {
-      name = "Marble-gray-dark";
+    "org/gnome/shell/extensions/user-theme".name = "Marble-gray-dark";
+
+    "org/gnome/mutter" = {
+      workspaces-only-on-primary = false;
+    };
+
+    "org/gnome/control-center" = {
+      last-panel = "display";
     };
   };
 }
