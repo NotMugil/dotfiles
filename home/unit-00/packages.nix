@@ -9,6 +9,7 @@
     gnome-tweaks
     ghostty
     marble-shell-theme
+    niri
     youtube-music
     vesktop
     whatsapp-for-linux

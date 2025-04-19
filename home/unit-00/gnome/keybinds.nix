@@ -26,5 +26,11 @@
 	    command = "ghostty";
  	    name = "open-terminal";
     };
+
+    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
+      binding = "<Super>E";
+	    command = "fileManager";
+ 	    name = "open-terminal";
+    };
   };
 }
