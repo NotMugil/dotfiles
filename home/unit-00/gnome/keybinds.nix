@@ -28,9 +28,9 @@
     };
 
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
-      binding = "<Super>E";
-	    command = "fileManager";
- 	    name = "open-terminal";
+      binding = "<Super>e";
+	    command = "nautilus";
+ 	    name = "open-nautilus";
     };
   };
 }

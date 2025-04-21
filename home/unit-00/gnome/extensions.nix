@@ -39,7 +39,7 @@ rec {
       brightness = "0.80";
       blur = true;
       blur-on-overview = true;
-      enable-all = true;
+      enable-all = false;
       opacity = 225;
       dynamic-opacity = false;
     };

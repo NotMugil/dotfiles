@@ -10,7 +10,9 @@
     eza
     zsh-autosuggestions
     git
+    niri
     gnumake
+    nodejs_23
     home-manager
     adw-gtk3
     amberol
