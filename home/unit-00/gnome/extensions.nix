@@ -13,6 +13,7 @@ rec {
     gsconnect
     gtk4-desktop-icons-ng-ding
     pano
+    pip-on-top
     privacy-settings-menu
     removable-drive-menu
     rounded-window-corners-reborn
