@@ -1,7 +1,0 @@
-{ lib, ... }:
-
-{
-  imports = [
-    ./gnome.nix
-  ];
-}

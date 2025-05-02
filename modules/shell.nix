@@ -1,6 +1,14 @@
 { pkgs, lib, ... }:
 
 {
+  environment.systemPackages = with pkgs; [
+    zsh
+    oh-my-zsh
+    zsh-syntax-highlighting
+    zsh-history-substring-search
+    zsh-autosuggestions
+  ];
+
   programs.zsh = {
     enable = true;
     autosuggestions.enable = true;

@@ -4,6 +4,12 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
+    hyprland = {
+      type = "github";
+      owner = "hyprwm";
+      repo = "Hyprland";
+    };
+
     home-manager = {
       type = "github";
       owner = "nix-community";
@@ -24,13 +30,13 @@
         nixpkgs.lib.nixosSystem {
           specialArgs = {inherit username inputs;};
           modules = [
-            ./systems/${username}/configuration.nix
+            ./system/configuration.nix
 
             home-manager.nixosModules.home-manager {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.extraSpecialArgs = { inherit inputs; username = "rei"; };
-              home-manager.users.${username} = import ./systems/${username}/home.nix;
+              home-manager.users.${username} = import ./home/home.nix;
             }
           ];
         };

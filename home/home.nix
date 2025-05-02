@@ -9,6 +9,8 @@
   programs.home-manager.enable = true;
 
   imports = [
-    ../../home/unit-01
+    ./desktop/gnome.nix
+    ./desktop/hyprland.nix
+    ./programs/ghostty.nix
   ];
 }

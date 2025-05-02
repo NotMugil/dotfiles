@@ -1,11 +1,9 @@
 { pkgs, lib, ... }:
 
 {
-  hardware.opengl = {
-    enable = true;
-  };
-
+  hardware.graphics.enable = true;
   programs.gamemode.enable = true;
+
   programs.steam = {
     enable = true;
     gamescopeSession.enable = true;
@@ -16,6 +14,8 @@
   };
 
   environment.systemPackages = with pkgs; [
+    steam
+    gamemode
     mangohud
     protonup-qt
     lutris

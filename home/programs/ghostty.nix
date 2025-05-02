@@ -1,6 +1,10 @@
-{ config, lib, pkgs, ... }:
+{ pkgs, ... }:
 
 {
+  home.packages = with pkgs; [
+    ghostty
+  ];
+
   programs.ghostty = {
     enable = true;
     enableZshIntegration = true;
@@ -53,7 +57,7 @@
         "shift+ctrl+k=new_split:down"
         "shift+ctrl+l=new_split:right"
         "super+t=new_tab"
-	"super+d=close_window"
+        "super+d=close_window"
      ];
     };
    };
