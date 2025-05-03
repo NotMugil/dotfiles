@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+{ pkgs, lib, username, ... }:
 
 {
   environment.systemPackages = with pkgs; [
@@ -8,6 +8,12 @@
     zsh-history-substring-search
     zsh-autosuggestions
   ];
+
+  # set zsh as default shell
+  users.users.${username}.shell = pkgs.zsh;
+
+  # Prevent the new user dialog in zsh
+  system.userActivationScripts.zshrc = "touch .zshrc";
 
   programs.zsh = {
     enable = true;

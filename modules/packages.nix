@@ -11,13 +11,18 @@
 
     # terminal
     eza
-    tree
+    tree 
+    fzf
+    ranger
+    zenith
+    yt-dlp
+    manga-tui
 
     # graphical
     firefox
+    miru
     mpv
     qbittorrent
-
     whatsapp-for-linux
     youtube-music
     zed-editor

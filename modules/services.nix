@@ -33,8 +33,7 @@
 
   users.users.${username} = {
     isNormalUser = true;
-    description = username;
-    shell = pkgs.zsh;
+    description = username;	
     extraGroups = [ "networkmanager" "wheel" ];
     packages = [];
   };
