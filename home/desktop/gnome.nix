@@ -11,6 +11,7 @@ rec {
     gamemode-indicator-in-system-settings
     gsconnect
     gtk4-desktop-icons-ng-ding
+    kimpanel
     pano
     pip-on-top
     privacy-settings-menu

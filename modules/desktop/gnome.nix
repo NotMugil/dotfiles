@@ -22,6 +22,7 @@
     amberol
     nautilus
     file-roller
+    evince
     eyedropper
     celluloid
     marble-shell-theme
