@@ -1,9 +1,7 @@
 @import "colors/catppuccin.css";
 
 * {
-  font-family:
-    SpaceMono Nerd Font,
-    feather;
+  font-family: SpaceMono Nerd Font;
   font-weight: 500;
   font-size: 8pt;
   color: @textlight;

@@ -13,7 +13,7 @@
 @define-color foreground #45475a;  /* surface1 */
 @define-color foregrounddark #313244;  /* surface0 */
 
-@define-color background #1e1e2e; /* base */
+@define-color background #080808; /* base */
 @define-color backgrounddark #181825; /* mantle */
 
 @define-color color1 #f5e0dc;   /* rosewater */

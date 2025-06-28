@@ -102,12 +102,12 @@
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
         "on-click-right": "kitty -e 'nmtui'",
-        "on-click-middle": "XDG_CURRENT_DESKTOP=GNOME gnome-control-center",
+        "on-click": "XDG_CURRENT_DESKTOP=GNOME gnome-control-center",
         "format-wifi": "<span color=\"#7aa2f7\">  </span>{essid} ({signalStrength}%)",
         "format-ethernet": "<span color=\"#7aa2f7\"> </span>{ifname}",
         "tooltip-format": "{ifname} via {gwaddr}",
         "format-linked": "{ifname} (No IP)",
         "format-disconnected": "<span color=\"#7aa2f7\">⚠ </span>Disconnected",
-        "format-alt": "{ipaddr}"
+        // "format-alt": "{ipaddr}"
     },
 }
