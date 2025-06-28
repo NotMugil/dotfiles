@@ -3,9 +3,10 @@ TERM = "xterm-256color"
 WINIT_X11_SCALE_FACTOR = "1"
 
 [window]
-dynamic_padding = true
+dynamic_padding = false
+padding = { x = 20, y = 20 }
 decorations = "full"
-title = "Alacritty@CachyOS"
+title = "Alacritty"
 opacity = 0.8
 decorations_theme_variant = "Dark"
 
