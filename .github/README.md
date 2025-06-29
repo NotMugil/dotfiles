@@ -2,9 +2,7 @@
   <h1>notmugil's dotfiles</h1>
   <p>
     <a href="https://github.com/NotMugil/dotfiles/stargazers"><img src="https://img.shields.io/github/stars/NotMugil/dotfiles?style=for-the-badge&logo=starship&color=b4befe&logoColor=b4befe&labelColor=302D41" alt="stars"><a>
-    <a href="https://github.com/NotMugil/dotfiles?tab=GPL-3.0-1-ov-file"><img alt="GitHub commit activity" src="https://img.shields.io/github/commit-activity/m/NotMugil/dotfiles?style=for-the-badge&logo=github&logoColor=f9e2af&label=Commit Activity&labelColor=302D41&color=f9e2af"></a>
     <a href="https://github.com/NotMugil/dotfiles?tab=GPL-3.0-1-ov-file"><img src="https://img.shields.io/github/license/NotMugil/dotfiles?style=for-the-badge&logo=&color=eba0ac&logoColor=eba0ac&labelColor=302D41" alt="LICENSE"></a>
-</a>
   </p>
 
 </div>
@@ -13,8 +11,7 @@
 
 > [!CAUTION]
 > This repository's **main** branch is experimental and will have frequent commits that may introduce breaking changes.
->
-> If you prefer a stable version, please check out the **stable** branch.
+
 
 > [!IMPORTANT]
 > The installation instructions for this dotfiles repository have been moved to a dedicated documentation site. For detailed information on installation and setup, please visit this [site](https://dotfiles-wiki.vercel.app/).
