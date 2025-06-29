@@ -17,7 +17,7 @@
 > If you prefer a stable version, please check out the **stable** branch.
 
 > [!IMPORTANT]
-> The installation instructions for this dotfiles repository have been moved to a dedicated documentation site. For detailed information on installation and setup, please visit this [site](https://notmugil-dotfiles.vercel.app/).
+> The installation instructions for this dotfiles repository have been moved to a dedicated documentation site. For detailed information on installation and setup, please visit this [site](https://dotfiles-wiki.vercel.app/).
 
 <details open>
 <summary>
