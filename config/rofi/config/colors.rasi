@@ -5,7 +5,7 @@
   red: #ed8796;
   green: #a6da95;
 
-  background:       #16161DCC;
+  background:       #080808FF;
   foreground:       #CAD3F5FF;
   accent:           #C0A36E69;
   background-tb:    #363646FF;
