@@ -7,7 +7,7 @@
 
 </div>
 
-![showcase](./assets/gallery-01.png)
+![showcase](./assets/preview.png)
 
 > [!CAUTION]
 > This repository's **main** branch is experimental and will have frequent commits that may introduce breaking changes.
@@ -15,34 +15,6 @@
 
 > [!IMPORTANT]
 > The installation instructions for this dotfiles repository have been moved to a dedicated documentation site. For detailed information on installation and setup, please visit this [site](https://dotfiles-wiki.vercel.app/).
-
-<details open>
-<summary>
-
-#### more previews
-</summary>
-
-|  **Lockscreen**                                          |
-| -------------------------------------------------------- |
-| ![lockscreen](./assets/gallery-02.png)              |
-
-| **File Manager**                                    |
-| -------------------------------------------------------- |
-| ![workflow](./assets/gallery-03.png)              |
-
-| **Notification Center (SwayNC)**                         |
-| -------------------------------------------------------- |
-| ![notification center](./assets/gallery-04.png)              |
-
-| **Vencord**                         |
-| -------------------------------------------------------- |
-| ![vencord discord client](./assets/gallery-05.png)              |
-
-| **Zed**                         |
-| -------------------------------------------------------- |
-| ![notification center](./assets/gallery-06.png)              |
-
-</details>
 
 #### Inspiration
 some of the cool people i took inspiration from for making my dotfiles. without them, this repo wouldn't exist.

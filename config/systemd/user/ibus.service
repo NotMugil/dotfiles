@@ -1,0 +1,11 @@
+[Unit]
+Description=ibus daemon
+Wants=ibus-env.service
+After=xorg.target
+
+[Service]
+ExecStart=/usr/bin/ibus-daemon
+Restart=on-abort
+
+[Install]
+WantedBy=xorg.target
